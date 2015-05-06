@@ -1,0 +1,10 @@
+body {
+}
+#buckets {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+#emptyBucket {
+    margin-right: 50px;
+}
