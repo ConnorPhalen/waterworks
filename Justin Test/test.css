@@ -1,0 +1,18 @@
+body {
+}
+#buckets {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+#emptyBucket {
+    margin-right: 50px;
+}
+#waterBox {
+    border: solid;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10%;
+    top: 40%;
+}
