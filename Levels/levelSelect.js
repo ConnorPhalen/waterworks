@@ -19,4 +19,4 @@ backImage.onload = function () {
 }
 
 // Sets the backImage to be an image.
-backImage.src = "null";
+backImage.src = "images/background_star.png";
