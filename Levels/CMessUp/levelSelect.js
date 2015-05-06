@@ -20,3 +20,10 @@ backImage.onload = function () {
 
 // Sets the backImage to be an image.
 backImage.src = "images/background_star.png";
+
+// Creates a function to draw the background.
+var render = function () {
+    if (bgReady) {
+        context.drawImage(backImage, 0, 0);
+    }
+}
