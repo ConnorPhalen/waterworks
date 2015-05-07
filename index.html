@@ -8,20 +8,22 @@
 		<style>
             body {
                 background-color: lightblue;
+                margin-top: 25px; 
+                margin-left: 50px;  
             }
             button {
-                background-color: lightgray;
-                border-radius: 14%;
-                border-top: 3px solid orange;
-                border-bottom: 3px solid darkorange;
-                border-left: 3px solid orange;
-                border-right: 3px solid darkorange;
+                background-color: darkblue;
+                border-radius: 11%;
+                border-top: 3px solid blue;
+                border-bottom: 3px solid black;
+                border-left: 3px solid blue;
+                border-right: 3px solid black;
                 box-shadow: 5px 5px 15px #888888;
-                color: orange;
-                font-family: 'Tahoma';
+                color: lightblue;
+                font-family: 'Arial Black';
                 font-size: 25px;
-                margin-top: 25px;
-                margin-bottom: 25px;
+                margin-top: 20px;
+                margin-bottom: 20px;
                 margin-left: 20px;
                 margin-right: 20px;
                 padding-top: 20px;
@@ -30,59 +32,62 @@
                 padding-right: 40px;   
             }
             button:hover {
-                background-color: green;
+                border: 3px solid yellow;
                 color: yellow;
+                cursor: pointer;  
                 font-size: 145%;
                 font-weight: bold;
             }
+            #cm_block {
+                background-color: rgba(255, 0, 0, 0);
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%; 
+                z-index: 1;
+            }
             #splash {
-				color: blue;
-				font-family: Comic Sans MS;
-                font-size: 50px;
+                margin-top: 50px;
+                margin-left: auto;
+                margin-right: auto;
 				text-align: center;
+                width: 700px;
 			}
 			#nav_wrapper {
 				display: block;
+                margin-top: 400px;
+                margin-right: auto;
+                margin-left: auto;
                 width: 360px;
 		    }
             #ryan_mod {
-                background-color: darkgray;
+                background-color: lightyellow;
                 border-radius: 14%;
                 border-top: 3px solid gold;
                 border-bottom: 3px solid gold;
                 border-left: 3px solid gold;
                 border-right: 3px solid gold;
                 box-shadow: 5px 5px 15px #888888;
-                color: yellow;
-                font-family: 'Tahoma';
-                font-size: 25px;
-                margin-top: 25px;
-                margin-bottom: 25px;
-                margin-left: 20px;
-                margin-right: 20px;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                padding-left: 40px;
-                padding-right: 40px;   
+                color: gold;
             }
             #ryan_mod:hover {
-                background-color: lightyellow;
+                background-color: white;
                 background-image: url("rsc/Ryan.png");
                 color: gold;
-                font-weight: bold;
-                font-size: 145%;
                 background-repeat: no-repeat;
-                padding-left: 100px;                
+                padding-left: 70px;             
             }
 		</style>
 	</head>
 	<body>
-		<p id="splash"><img src="rsc/splash.png" alt="splash!"></img></p>
-        <div id="try"></div>
-        <div id="nav_wrapper">
-            <button>Play</button>
-            <button>Options</button>
-            <button id="ryan_mod">Ryan Mode</button>
-        </div>
+        <p id="splash"><img src="rsc/splash.png" alt="splash!" /></p>
+        <div id="cm_block">
+            <div id="nav_wrapper">
+                <button>Play</button>
+                <button>Options</button>
+                <button id="ryan_mod">Ryan Mode</button>
+            </div>
+        </div> 
 	</body>
 </html>
