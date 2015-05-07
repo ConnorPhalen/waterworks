@@ -4,14 +4,28 @@
     <head>
         <meta charset="utf-8" />
         <title></title>
-        <script src="Script.js"></script>
+        <script>
+            function fillBucket(imgName) {
+                image = document.getElementById('empty_bucket');
+                image.src = imgName;
+            }
+            function dragStart(event) {
+                event.preventDefault();
+            }
+            function drag(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+        </script>
         <link rel="stylesheet" type="text/css" href="test.css">
     </head>
     <body>
-        <div id="waterBox"></div>
+        <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')"></div>
         <div id="buckets">
-            <img id="emptyBucket" alt="emptyBucket" src="bucket_empty.png" height="128" width="128">
-            <img id="waterBucket" alt="waterBucket" src="Bucket-Water-icon.png" height="128" width="128">
+            <div id="emptyBucket" draggable="true" ondragstart="drag(event)">
+                <label id="bucketone"><span id="bucketnum">0</span>/7</label>
+                <img id="empty_bucket" alt="emptyBucket" src="bucketempty.png" height="128" width="128">
+            </div>
+            <img id="waterBucket" alt="waterBucket" src="bucketwater.png" height="128" width="128">
         </div>
     </body>
 </html>
