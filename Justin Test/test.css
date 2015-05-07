@@ -6,7 +6,7 @@ body {
     left: 40%;
 }
 #emptyBucket {
-    margin-right: 50px;
+    margin-right: 30px;
 }
 #waterBox {
     border: solid;
@@ -15,4 +15,9 @@ body {
     position: absolute;
     left: 10%;
     top: 40%;
+}
+#bucketone {
+    position: absolute;
+    left: 55px;
+    top: 60px;
 }
