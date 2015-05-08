@@ -7,14 +7,140 @@
 #buckets {
     top: 0;
     left: 0;
-    width: 700px;
+    width: 600px;
+    height: 160px;
     margin-top: 25px; 
     margin-left: 50px; 
 }
-#emptyBucket {
-    margin-right: 50px;
-}
+/*#emptyBucket:hover{
+    border: 2px solid yellow;
+}*/
 #nextSection{
    bottom: 0;
-    padding-left: 400;
+    margin-left: 200px;
+}
+#levelOne{
+    border: 0;
+    width:75px;
+    height: 75px;
+    background: none;
+}
+#levelOne:hover{
+        border: 2px solid yellow;
+    padding-left: 2px;
+    padding-bottom: 75px;   
+}
+#level{
+    border: 0;
+    width:75px;
+    height: 75px;
+    background: none;
+    margin-left: 80px;
+}
+#level:hover{
+    border: 2px solid yellow;
+    padding-left: 2px;
+    padding-bottom: 75px;
+}
+#levelFive{
+    border: 0;
+    width:75px;
+    height: 75px;
+    background: none;
+    bottom: 0;
+}
+#levelFive:hover{
+     border: 2px solid yellow;
+    padding-left: 2px;
+    padding-bottom: 75px;   
+}
+
+#buttonA {
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;  
+    margin-left: 200px;
+    width: 300px;
+}
+#buttonA:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 145%;
+    font-weight: bold;
+    bottom: 0;
+    margin-left: 200px;
+}
+#homeScreens{
+     background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;    
+}
+#homeScreens:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 145%;
+    font-weight: bold;
+}
+#options{
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;  
+    margin-left: 300px;
+   right: 0;
+    top: 0;
+}
+#options:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 145%;
+    font-weight: bold;
+    margin-left: 300px;
 }
