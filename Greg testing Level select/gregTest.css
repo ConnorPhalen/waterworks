@@ -12,6 +12,7 @@
     margin-top: 25px; 
     margin-left: 50px; 
 }
+<<<<<<< HEAD
 /*#emptyBucket:hover{
     border: 2px solid yellow;
 }*/
@@ -144,3 +145,15 @@
     font-weight: bold;
     margin-left: 300px;
 }
+=======
+.emptyBucket {
+    margin-right: 50px;
+}
+#nextSection{
+   bottom: 0;
+   padding-left: 100px;
+}
+p{
+     position:  absolute;
+ }
+>>>>>>> 4d182442dba30632bcd6ddca5f0c7af2c99a81be

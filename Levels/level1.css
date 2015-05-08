@@ -1,0 +1,12 @@
+body {
+    
+}
+
+#tunnel {
+    width:  98%;
+    height: 25%;
+    background-color: #ff6a00;
+    border: 2px solid black;
+    position: absolute;
+    bottom: 0px;
+}
