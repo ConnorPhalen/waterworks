@@ -16,5 +16,8 @@
 }
 #nextSection{
    bottom: 0;
-    padding-left: 400px;
+   padding-left: 100px;
 }
+p{
+     position:  absolute;
+ }
