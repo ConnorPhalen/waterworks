@@ -25,6 +25,10 @@ window.onload = function () {
     
 }
 
+function timer(){
+    setInterval(function(){alert("Gotham is Mine.");}, 3000);
+}
+
 // Rises from the shadows of JavaScript...
 function batman(){
     alert("Batman!");
