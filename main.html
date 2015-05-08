@@ -72,6 +72,7 @@
 	<body style="background-color:lightblue">
         <script>
             var op_sound = new Audio('sounds/water_long.wav');
+            var ryan_mod = new Audio('sounds/ryan_mod_hover.mp3');
 
             onload = function () {
                 op_sound.play();
@@ -82,13 +83,19 @@
             function play_hover() {
                 new Audio('sounds/water_click_hollow.wav').play();
             }
+            function play_ryan_mod() {
+                ryan_mod.play();
+            }
+            function stop_ryan_mod() {
+                ryan_mod.stop();
+            }
         </script>
         <div id="splash"></div>
         <div id="cpyr">Team&nbspDragon&nbsp2015&nbsp|&nbspConnor&nbspGreg&nbspJustin&nbspRyan&nbspFrancis</div>
         <p style="text-align:center; margin-top:10px">
             <button id="btn_play" onmousedown="play_click()" onmouseover="play_hover()">Play</button>
             <button id="btn_options" onmousedown="play_click()" onmouseover="play_hover()">Options</button>
-            <button id="btn_ryan" onmousedown="play_click()" onmouseover="play_hover()">Ryan&nbspMode</button>
+            <button id="btn_ryan" onmousedown="play_click()" onmouseover="play_ryan_mod()" onmouseout="stop_ryan_mod()">Ryan&nbspMode</button>
         </p> 
 	</body>
 </html>
