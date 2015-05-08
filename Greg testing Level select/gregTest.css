@@ -11,10 +11,10 @@
     margin-top: 25px; 
     margin-left: 50px; 
 }
-#emptyBucket {
+.emptyBucket {
     margin-right: 50px;
 }
 #nextSection{
    bottom: 0;
-    padding-left: 400;
+    padding-left: 400px;
 }
