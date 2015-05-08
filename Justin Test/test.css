@@ -9,9 +9,31 @@ body {
     left: 40%;
     width: 300px;
 }
-#emptyBucket {
-    margin-right: 10px;
+#bucket1 {
+    width: 128px;
+    height: 128px;
     float: left;
+}
+#bucket2 {
+    width: 128px;
+    height: 128px;
+    float:  right;
+}
+#bucketone {
+    font-size: 30px;
+    position: absolute;
+    width: 128px;
+    height:  64px;
+    text-align: center;
+    padding-top: 64px;
+}
+#buckettwo {
+    font-size: 30px;
+    position: absolute;
+    width: 128px;
+    height:  64px;
+    text-align: center;
+    padding-top: 64px;
 }
 #waterBox {
     border: solid;
@@ -20,21 +42,6 @@ body {
     position: absolute;
     left: 10%;
     top: 20%;
-}
-#bucketone {
-    font-size: 30px;
-    position: absolute;
-    left: 47px;
-    top: 60px;
-}
-#buckettwo {
-    font-size: 30px;
-    position: absolute;
-    right: 45px;
-    top: 60px;
-}
-#waterBucket {
-    float:  right;
 }
 #drainBox {
     border: solid;
