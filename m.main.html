@@ -69,12 +69,27 @@
 		</style>
 	</head>
 	<body style="background-color:lightblue">
+        <script>
+            var op_sound = new Audio('sounds/water_long.wav');
+            var clk_sound = new Audio('sounds/water_click.wav');
+            var hov_sound = new Audio('sounds/water_click_hollow.wav');
+
+            onload = function () {
+                op_sound.play();
+            }
+            function play_click() {
+                clk_sound.play();
+            }
+            function play_hover() {
+                hov_sound.play();
+            }
+        </script>
         <div id="splash"></div>
         <div id="cpyr">Team&nbspDragon&nbsp2015&nbsp|&nbspConnor&nbspGreg&nbspJustin&nbspRyan&nbspFrancis</div>
         <p style="text-align:center; margin-top:10px">
-            <button id="btn_play">Play</button>
-            <button id="btn_options">Options</button>
-            <button id="btn_ryan">Ryan&nbspMode</button>
+            <button id="btn_play" onmousedown="play_click()" onmouseover="play_hover()">Play</button>
+            <button id="btn_options" onmousedown="play_click()" onmouseover="play_hover()">Options</button>
+            <button id="btn_ryan" onmousedown="play_click()" onmouseover="play_hover()">Ryan&nbspMode</button>
         </p> 
 	</body>
 </html>
