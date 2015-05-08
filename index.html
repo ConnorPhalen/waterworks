@@ -1,91 +1,51 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>
-			Water&nbspWorks
-		</title>
-		<style>
+    <head>
+        <meta charset="utf-8" />
+        <title>Water&nbspWorks</title>
+        <style>
             body {
-                background-color: lightblue;
-                margin-top: 25px; 
-                margin-left: 50px;  
+                background-color: #6480d4;    
             }
-            button {
-                background-color: darkblue;
-                border-radius: 11%;
-                border-top: 3px solid blue;
-                border-bottom: 3px solid black;
-                border-left: 3px solid blue;
-                border-right: 3px solid black;
-                box-shadow: 5px 5px 15px #888888;
-                color: lightblue;
-                font-family: 'Arial Black';
-                font-size: 25px;
-                margin-top: 20px;
-                margin-bottom: 20px;
-                margin-left: 20px;
-                margin-right: 20px;
-                padding-top: 20px;
-                padding-bottom: 20px;
-                padding-left: 40px;
-                padding-right: 40px;   
+            #banner {
+                background-color: rgba(0, 0, 0, 0.18);
+                margin-left: 10%;
+                margin-right: 10%;
+                position: fixed;
+                top: 0px;
+                height: 100%;
+                width: 80%;
             }
-            button:hover {
-                border: 3px solid yellow;
-                color: yellow;
-                cursor: pointer;  
-                font-size: 145%;
-                font-weight: bold;
-            }
-            #splash {
-                background-image: url("rsc/splash.png");
-                background-repeat: no-repeat;
-                margin-top: 50px;
-                margin-left: auto;
-                margin-right: auto;
-                height: 300px;
-                width: 800px;
-			}
-			#nav_wrapper {
-				display: block;
-                float: left;
-                margin-top: 90px;
-                margin-left: 200px;
-                width: 360px;
-		    }
-            #ryan_mod {
-                background-color: lightyellow;
-                border-top: 3px solid gold;
-                border-bottom: 3px solid gold;
-                border-left: 3px solid gold;
-                border-right: 3px solid gold;
-                color: gold;
-            }
-            #ryan_mod:hover {
-                background-color: white;
-                background-image: url("rsc/ryan.png");
-                background-position-y: 18px;
-                background-repeat: no-repeat;
-                color: gold;
-                padding-left: 80px;             
-            }
-            #copyright {
-                color: gray;
-                font-family: "Courier New";
-                font-size: 11px;
-                margin: 20px;
+            #lab { 
+                color:  white;
+                font-family: 'Lucida Sans Unicode';
+                font-size: 20px;
+                margin-top: 180px;
                 text-align: center;
             }
-		</style>
-	</head>
-	<body>
-        <div id="splash"></div>
-        <div id="copyright">Team&nbspDragon&nbsp2015&nbsp|&nbspConnor&nbspGreg&nbspJustin&nbspRyan&nbspFrancis</div>
-        <div id="nav_wrapper">
-            <button>Play</button>
-            <button>Options</button>
-            <button id="ryan_mod">Ryan&nbspMode</button>
-        </div>  
-	</body>
+            #lod {
+                background-image: url("rsc/lod.gif");
+                background-repeat: no-repeat;     
+                margin-left: auto;
+                margin-right: auto;
+                height: 56px;
+                width: 56px;
+            }
+        </style>
+        <script>
+            window.onload=function() {
+                if (navigator.userAgent.match(/(android|webos|iphone|ipad|blackberry)/i)) {
+                    setTimeout(function () { window.location.replace("http://www.doooge.netau.net/m.main.html") }, 3000);
+                } else {
+                    setTimeout(function () { window.location.replace("http://www.doooge.netau.net/main.html") }, 3000);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="banner"></div>
+        <p id="lab">Working...</p>
+        <p id="lod"></p>
+    </body>
 </html>
