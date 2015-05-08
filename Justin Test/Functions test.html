@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <title></title>
         <script>
+            //fills the buckets when dropped on waterBox
             function fillBucket(imgName) {
                 var data = event.dataTransfer.getData("text");
                 var imageId = document.getElementById(data).getElementsByTagName("img");
@@ -15,16 +16,19 @@
                 var numChange = maxId[0].id;
                 document.getElementById(numChange).innerHTML = max;
             }
+            //allows items to be dragged
             function dragStart(event) {
                 event.preventDefault();
             }
+            //drag for frist bucket
             function drag(event) {
                 event.dataTransfer.setData("text", event.target.id);
             }
-            //drag2 is does the same method as drag, so you can remove it.
+            //drag for second bucket
             function drag2(event) {
                 event.dataTransfer.setData("text", event.target.id);
             }
+            //empties buckets when dragged over
             function emptyBucket(imgName) {
                 var data = event.dataTransfer.getData("text");
                 var imageId = document.getElementById(data).getElementsByTagName("img");

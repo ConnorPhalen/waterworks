@@ -72,17 +72,15 @@
 	<body style="background-color:lightblue">
         <script>
             var op_sound = new Audio('sounds/water_long.wav');
-            var clk_sound = new Audio('sounds/water_click.wav');
-            var hov_sound = new Audio('sounds/water_click_hollow.wav');
 
             onload = function () {
                 op_sound.play();
             }
             function play_click() {
-                clk_sound.play();
+                new Audio('sounds/water_click.wav').play();
             }
             function play_hover() {
-                hov_sound.play();
+                new Audio('sounds/water_click_hollow.wav').play();
             }
         </script>
         <div id="splash"></div>
