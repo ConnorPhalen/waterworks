@@ -4,24 +4,35 @@
     <head>
         <meta charset="utf-8" />
         <title>Test Level Selection</title>
-        <script src="gregTest.js"></script>
         <link rel="stylesheet" type="text/css" href="gregTest.css">
         <link rel="stylesheet" type="text/javascript" href="gregTest.js">
     </head>
     <body>
-        <button id="homeScreens">Back</button>
-        <button id="options">options</button>
+        <script>
+        var audio = new Audio('../sounds/water_click.wav');
+var hollow = new Audio('../sounds/water_click_hollow.wav')
+var back = document.getElementById("homeScreens");
+
+function click_Button() {
+    audio.play();
+}
+function click_Bucket() {
+    hollow.play();
+}
+        </script>
+        <button id="homeScreens" onmousedown="click_Button()">Back</button>
+        <button id="options" onmousedown="click_Button()" >options</button>
         <div id="buckets">
 
-            <button id="levelOne"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
-            <button id="level"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
-            <button id="level"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
-            <button id="level"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
-            <button id="levelFive"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
-            <button id="level"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
-            <button id="level"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
-            <button id="level"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
+            <button id="levelOne" onmousedown="click_Bucket()"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
+            <button id="level" onmousedown="click_Bucket()"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
+            <button id="level" onmousedown="click_Bucket()"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
+            <button id="level" onmousedown="click_Bucket()"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
+            <button id="levelFive" onmousedown="click_Bucket()"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
+            <button id="level" onmousedown="click_Bucket()"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
+            <button id="level" onmousedown="click_Bucket()"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
+            <button id="level" onmousedown="click_Bucket()"><img id="emptyBucket" alt="emptyBucket" src="bucketempty.png" height="75" width="75">  </button>
         </div>
-        <button id="buttonA" width="200" >9-16</button>
+        <button id="buttonA" width="200" onmousedown="click_Button()">9-16</button>
     </body>
 </html>
