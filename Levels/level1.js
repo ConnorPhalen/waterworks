@@ -37,5 +37,5 @@ function bane(){
 
 // Sets the timeAdd() function to go off once a second.
 function test() {
-    bucket.setInterval(function(){time++; waterTimer();}, 1000);
+    setInterval(function(){time++; waterTimer();}, 1000);
 }
