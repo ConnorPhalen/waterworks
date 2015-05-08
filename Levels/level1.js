@@ -5,17 +5,19 @@ var TIME_MAX = 10;
 function waterTimer(){
     if(time >= TIME_MAX){
         alert("You Lose!");
+        time = 0;
     }
 }
 
 // Increments time by 1, and starts waterTimer().
 function timeAdd(){
     time++;
+    document.getElementById("batman").style.top + 5;
     waterTimer();
 }
 
 // Tried to get the page to set an interval when it loaded.
-window.onload = function () {
+/*window.onload = function () {
         if (time < 1) {
             setInterval(timeAdd(), 1000);
         } else {
@@ -23,9 +25,9 @@ window.onload = function () {
             time = 0;
         }
     
-}
+}*/
 
-function timer(){
+function scarecrow(){
     setInterval(function(){alert("Gotham is Mine.");}, 3000);
 }
 
