@@ -1,6 +1,12 @@
 var firstBucket = document.getElementById("emptyBucket0");
-var audio = new audio(../sounds/water_click.wav);
+
+var audio = new Audio('../sounds/water_click.wav');
+var hollow = new Audio('../sounds/water_click_hollow.wav')
 var back = document.getElementById("homeScreens");
-sound1:function(){
+
+function click_Button() {
     audio.play();
+}
+function click_Bucket() {
+    hollow.play();
 }
