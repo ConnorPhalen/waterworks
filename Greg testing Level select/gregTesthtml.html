@@ -8,6 +8,18 @@
         <link rel="stylesheet" type="text/javascript" href="gregTest.js">
     </head>
     <body>
+        <script>
+        var audio = new Audio('../sounds/water_click.wav');
+var hollow = new Audio('../sounds/water_click_hollow.wav')
+var back = document.getElementById("homeScreens");
+
+function click_Button() {
+    audio.play();
+}
+function click_Bucket() {
+    hollow.play();
+}
+        </script>
         <button id="homeScreens" onmousedown="click_Button()">Back</button>
         <button id="options" onmousedown="click_Button()" >options</button>
         <div id="buckets">
