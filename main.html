@@ -72,7 +72,7 @@
 	<body style="background-color:lightblue">
         <script>
             var op_sound = new Audio('sounds/water_long.wav');
-            var ryan_mod = new Audio('sounds/ryan_mod_hover.mp3');
+            var ryan_mod = new Audio('sounds/ryan_mod_hov.mp3');
 
             onload = function () {
                 op_sound.play();
@@ -87,7 +87,8 @@
                 ryan_mod.play();
             }
             function stop_ryan_mod() {
-                ryan_mod.stop();
+                ryan_mod.pause();
+                ryan_mod.currentTime = 0;
             }
         </script>
         <div id="splash"></div>
