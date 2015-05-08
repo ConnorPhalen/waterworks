@@ -71,8 +71,10 @@
 	</head>
 	<body style="background-color:lightblue">
         <script>
+            var op_sound = new Audio('sounds/water_long.wav');
+
             onload = function () {
-                new Audio('sounds/water_long.wav');
+                op_sound;
             }
             function play_click() {
                 new Audio('sounds/water_click.wav').play();
