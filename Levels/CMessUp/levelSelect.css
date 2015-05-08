@@ -1,6 +1,7 @@
-body {
+#heading{
+    color: #000
 }
 
-canvas{
-    border: 2px solid black;
+#heading2{
+    color:  #00ff21
 }
