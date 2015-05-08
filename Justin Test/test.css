@@ -1,12 +1,17 @@
 body {
 }
 #buckets {
+    float: right;
+    display: inline;
+    clear: both;
     position: absolute;
     top: 40%;
     left: 40%;
+    width: 300px;
 }
 #emptyBucket {
-    margin-right: 30px;
+    margin-right: 10px;
+    float: left;
 }
 #waterBox {
     border: solid;
@@ -14,10 +19,31 @@ body {
     height: 100px;
     position: absolute;
     left: 10%;
-    top: 40%;
+    top: 20%;
 }
 #bucketone {
+    font-size: 30px;
     position: absolute;
-    left: 55px;
+    left: 47px;
     top: 60px;
+}
+#buckettwo {
+    font-size: 30px;
+    position: absolute;
+    right: 45px;
+    top: 60px;
+}
+#waterBucket {
+    float:  right;
+}
+#drainBox {
+    border: solid;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10%;
+    top: 60%;
+}
+#boxes {
+    float: left;
 }

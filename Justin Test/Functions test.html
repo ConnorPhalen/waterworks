@@ -8,6 +8,8 @@
             function fillBucket(imgName) {
                 image = document.getElementById('empty_bucket');
                 image.src = imgName;
+                var max = document.getElementById('bucketnummax').innerHTML;
+                document.getElementById("bucketnum").innerHTML = max;
             }
             function dragStart(event) {
                 event.preventDefault();
@@ -15,17 +17,28 @@
             function drag(event) {
                 event.dataTransfer.setData("text", event.target.id);
             }
+            function emptyBucket(imgName) {
+                image = document.getElementById('water_Bucket');
+                image.src = imgName;
+                document.getElementById("bucketnumchange").innerHTML = "0";
+            }
         </script>
         <link rel="stylesheet" type="text/css" href="test.css">
     </head>
     <body>
-        <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')"></div>
+        <div id="boxes">
+            <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')"></div>
+            <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('bucketempty.png')"></div>
+        </div>
         <div id="buckets">
             <div id="emptyBucket" draggable="true" ondragstart="drag(event)">
-                <label id="bucketone"><span id="bucketnum">0</span>/7</label>
+                <label id="bucketone"><span id="bucketnumchange">0</span>/<span id="bucketnummax">7</span></label>
                 <img id="empty_bucket" alt="emptyBucket" src="bucketempty.png" height="128" width="128">
             </div>
-            <img id="waterBucket" alt="waterBucket" src="bucketwater.png" height="128" width="128">
+            <div id="waterBucket" draggable="true" ondragstart="drag(event)">
+                <label id="buckettwo"><span id="bucketnumchange">9</span>/<span id="bucketnummax">9</span></label>
+                <img id="water_Bucket" alt="waterBucket" src="bucketwater.png" height="128" width="128">
+            </div>
         </div>
     </body>
 </html>
