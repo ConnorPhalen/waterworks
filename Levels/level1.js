@@ -12,21 +12,24 @@ function waterTimer(){
 // Increments time by 1, and starts waterTimer().
 function timeAdd(){
     time++;
-    document.getElementById("batman").style.top = 
-				parseInt(document.getElementById("batman").style.top) -100 + "px";
     waterTimer();
 }
 
-// Tried to get the page to set an interval when it loaded.
-/*window.onload = function () {
+function move() {
+    document.getElementById("batman").style.left =
+				parseInt(document.getElementById("batman").style.left) + 1000 + "px";
+}
+
+// Page loads, then starts a timer that adds time plus 1 every second, and runs waterTimer.
+window.onload = function () {
         if (time < 1) {
-            setInterval(timeAdd(), 1000);
+            setInterval(function () { time++; waterTimer(); }, 1000);
         } else {
             clearInterval(time);
             time = 0;
         }
     
-}*/
+}
 
 function scarecrow(){
     setInterval(function(){alert("Gotham is Mine.");}, 3000);
