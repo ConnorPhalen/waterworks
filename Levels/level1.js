@@ -12,9 +12,12 @@ function waterTimer(){
 // Increments time by 1, and starts waterTimer().
 function timeAdd(){
     time++;
-    document.getElementById("batman").style.top = 
-				parseInt(document.getElementById("batman").style.top) -100 + "px";
     waterTimer();
+}
+
+function move() {
+    document.getElementById("batman").style.left =
+				parseInt(document.getElementById("batman").style.left) + 1000 + "px";
 }
 
 // Tried to get the page to set an interval when it loaded.
