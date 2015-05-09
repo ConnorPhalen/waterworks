@@ -20,16 +20,16 @@ function move() {
 				parseInt(document.getElementById("batman").style.left) + 1000 + "px";
 }
 
-// Tried to get the page to set an interval when it loaded.
-/*window.onload = function () {
+// Page loads, then starts a timer that adds time plus 1 every second, and runs waterTimer.
+window.onload = function () {
         if (time < 1) {
-            setInterval(timeAdd(), 1000);
+            setInterval(function () { time++; waterTimer(); }, 1000);
         } else {
             clearInterval(time);
             time = 0;
         }
     
-}*/
+}
 
 function scarecrow(){
     setInterval(function(){alert("Gotham is Mine.");}, 3000);
