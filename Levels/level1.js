@@ -1,3 +1,4 @@
+// Just sets up some initial variables.
 var time = 0;
 var TIME_MAX = 10;
 
@@ -5,7 +6,7 @@ var TIME_MAX = 10;
 function waterTimer(){
     if(time >= TIME_MAX){
         alert("You Lose!");
-        time = 0;
+        clearInterval(mainTimer);
     }
 }
 
@@ -15,34 +16,21 @@ function timeAdd(){
     waterTimer();
 }
 
+// Grabs the picture ID, and its style value of left, and adds 100px.
 function move() {
-    document.getElementById("batman").style.left =
-				parseInt(document.getElementById("batman").style.left) + 1000 + "px";
+    batman = document.getElementById("batman").style.left;
+				batman = (parseInt(batman)+ 100 + "px");
+				document.getElementById("batman").style.left = batman;
 }
 
 // Page loads, then starts a timer that adds time plus 1 every second, and runs waterTimer.
 window.onload = function () {
         if (time < 1) {
-            setInterval(function () { time++; waterTimer(); }, 1000);
+           mainTimer = setInterval(function () { time++; waterTimer(); }, 1000);
         } else {
-            clearInterval(time);
+            clearInterval(mainTimer);
             time = 0;
-        }
-    
-}
-
-function scarecrow(){
-    setInterval(function(){alert("Gotham is Mine.");}, 3000);
-}
-
-// Rises from the shadows of JavaScript...
-function batman(){
-    alert("Batman!");
-}
-
-// Back snap in 3...2...1...
-function bane(){
-    alert("You mearly adopted the darkness, I... was born in it.");
+        }  
 }
 
 // Sets the timeAdd() function to go off once a second.
