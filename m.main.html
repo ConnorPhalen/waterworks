@@ -53,7 +53,7 @@
             }
             #btn_ryan {
                 background-color: lightyellow;
-                border: 3px solid gold;
+                border: 4px solid gold;
                 color: gold;
             }
             #btn_ryan:hover {
@@ -73,17 +73,17 @@
             var op_sound = new Audio('sounds/water_long.wav');
             var ryan_mod = new Audio('sounds/ryan_mod_hov.mp3');
 
-            onload = function () {
-                op_sound.play();
-            }
+            op_sound.play();
+
             function play_click() {
                 new Audio('sounds/water_click.wav').play();
             }
-            function play_hover() {
-                new Audio('sounds/water_click_hollow.wav').play();
-            }
             function play_ryan_mod() {
-                ryan_mod.play();
+                if (ryan_mod.currentTime == 0) {
+                    ryan_mod.play();
+                } else {
+                    stop_ryan_mod();
+                }
             }
             function stop_ryan_mod() {
                 ryan_mod.pause();
@@ -93,9 +93,9 @@
         <div id="splash"></div>
         <div id="cpyr">Team&nbspDragon&nbsp2015&nbsp|&nbspConnor&nbspGreg&nbspJustin&nbspRyan&nbspFrancis</div>
         <p style="text-align:center; margin-top:10px">
-            <button id="btn_play" onmousedown="play_click()" onmouseover="play_hover()">Play</button>
-            <button id="btn_options" onmousedown="play_click()" onmouseover="play_hover()">Options</button>
-            <button id="btn_ryan" onmousedown="play_click()" onmouseover="play_ryan_mod()" onmouseout="stop_ryan_mod()">Ryan&nbspMode</button>
+            <button id="btn_play" onmousedown="play_click()">Play</button>
+            <button id="btn_options" onmousedown="play_click()">Options</button>
+            <button id="btn_ryan" onmousedown="play_ryan_mod()">Ryan&nbspMode</button>
         </p> 
 	</body>
 </html>
