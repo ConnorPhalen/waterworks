@@ -53,8 +53,12 @@
     </head>
     <body>
         <div id="boxes">
-            <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')"></div>
-            <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('bucketempty.png')"></div>
+            <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')">
+                <p>Fill</p>
+            </div>
+            <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('bucketempty.png')">
+                <p>Empty</p>
+            </div>
         </div>
         <div id="buckets">
             <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png')">
