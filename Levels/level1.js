@@ -12,7 +12,8 @@ function waterTimer(){
 // Increments time by 1, and starts waterTimer().
 function timeAdd(){
     time++;
-    document.getElementById("batman").style.top + 5;
+    document.getElementById("batman").style.top = 
+				parseInt(document.getElementById("batman").style.top) -100 + "px";
     waterTimer();
 }
 
@@ -43,5 +44,7 @@ function bane(){
 
 // Sets the timeAdd() function to go off once a second.
 function test() {
-    setInterval(function(){time++; waterTimer();}, 1000);
+    if (time < 1) {
+        setInterval(function () { time++; waterTimer(); }, 1000);
+    }
 }
