@@ -39,3 +39,27 @@ function test() {
         setInterval(function () { time++; waterTimer(); }, 1000);
     }
 }
+
+// testing out some collision code
+collideX = false;
+collideY = false;
+aX = document.getElementById("batman").style.left;
+bX = document.getElementById("bucket").style.left;
+aY = document.getElementById("batman").style.top;
+bY = document.getElementById("bucket").style.top;
+
+if(aX - 20 < bX && aX + 20 > bX){
+    collideX = true;
+}else{
+    collideX = false;
+}
+
+if(aY - 20 < bY && aY + 20 > bY){
+    collideY = true;
+}else{
+    collideY = false;
+}
+
+if(collideX && collideY){
+    alert("Collision!");
+}
