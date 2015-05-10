@@ -10,10 +10,11 @@ function waterTimer(){
     }
 }
 
-// Increments time by 1, and starts waterTimer().
+// MANUAL ACTIVATION ONLY: Increments time by 1, and starts waterTimer().
 function timeAdd(){
     time++;
     waterTimer();
+    move();
 }
 
 // Grabs the picture ID, and its style value of left, and adds 100px.
@@ -26,7 +27,7 @@ function move() {
 // Page loads, then starts a timer that adds time plus 1 every second, and runs waterTimer.
 window.onload = function () {
         if (time < 1) {
-           mainTimer = setInterval(function () { time++; waterTimer(); }, 1000);
+           mainTimer = setInterval(function () { time++; waterTimer(); move(); }, 1000);
         } else {
             clearInterval(mainTimer);
             time = 0;
@@ -40,7 +41,7 @@ function test() {
     }
 }
 
-// testing out some collision code
+//-------------------- testing out some collision code
 collideX = false;
 collideY = false;
 aX = document.getElementById("batman").style.left;
@@ -63,3 +64,4 @@ if(aY - 20 < bY && aY + 20 > bY){
 if(collideX && collideY){
     alert("Collision!");
 }
+//-------------------- End Collision test code.
