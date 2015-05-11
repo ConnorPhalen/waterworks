@@ -44,24 +44,29 @@ function test() {
 //-------------------- testing out some collision code
 collideX = false;
 collideY = false;
-aX = document.getElementById("batman").style.left;
-bX = document.getElementById("bucket").style.left;
-aY = document.getElementById("batman").style.top;
-bY = document.getElementById("bucket").style.top;
 
-if(aX - 20 < bX && aX + 20 > bX){
-    collideX = true;
-}else{
-    collideX = false;
-}
+function testCollision(){
+    aX = parseInt(document.getElementById("batman").style.left);
+    bX = parseInt(document.getElementById("gateImg").style.left);
+    aY = parseInt(document.getElementById("batman").style.top);
+    bY = parseInt(document.getElementById("gateImg").style.top);
 
-if(aY - 20 < bY && aY + 20 > bY){
-    collideY = true;
-}else{
-    collideY = false;
-}
+    if(aX - 50 < bX && aX + 50 > bX){
+        collideX = true;
+    }else{
+        collideX = false;
+    }
 
-if(collideX && collideY){
-    alert("Collision!");
+    if(aY - 50 < bY && aY + 50 > bY){
+        collideY = true;
+    }else{
+        collideY = false;
+    }
+
+    if(collideX && collideY){
+        alert("Collision!");
+    }else{
+        alert("Nope.");
+    }
 }
 //-------------------- End Collision test code.
