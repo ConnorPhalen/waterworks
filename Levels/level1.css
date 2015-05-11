@@ -11,6 +11,8 @@ body {
     bottom: 0px;
 }
 
-batman{
+#batman{
     position: absolute;
+    left: 10px;
+    top:  30px;
 }
