@@ -45,7 +45,7 @@ function test() {
 collideX = false;
 collideY = false;
 
-function testCollision(){
+function testCollisionBackup(){
     aX = parseInt(document.getElementById("batman").style.left);
     bX = parseInt(document.getElementById("gateImg").style.left);
     aY = parseInt(document.getElementById("batman").style.top);
@@ -58,6 +58,39 @@ function testCollision(){
     }
 
     if(aY - 50 < bY && aY + 50 > bY){
+        collideY = true;
+    }else{
+        collideY = false;
+    }
+
+    if(collideX && collideY){
+        alert("Collision!");
+    }else{
+        alert("Nope.");
+    }
+}
+//-------------------- End Collision test code.
+
+//-------------------- testing out some collision code
+collideX = false;
+collideY = false;
+
+function testCollision(){
+    a = "batman";
+    b = "gateImg";
+
+    aID = document.getElementById(a).style;
+    bID = document.getElementById(b).style;
+
+    //  ((bX - a.width) - 1) < aX && aX > ((bX + b.width) + 1)
+
+    if(parseInt(aID.left) > parseInt(bID.left) - 1 && parseInt(aID.left) + parseInt(aID.width) - 1 < parseInt(bID.left) + parseInt(bID.width)){
+        collideX = true;
+    }else{
+        collideX = false;
+    }
+
+    if(parseInt(aID.top) > parseInt(bID.top) - 1 && parseInt(aID.top) + parseInt(aID.height) - 1 < parseInt(bID.top) + parseInt(bID.height)){
         collideY = true;
     }else{
         collideY = false;
