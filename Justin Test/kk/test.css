@@ -1,0 +1,56 @@
+body {
+}
+#buckets {
+    float: right;
+    display: inline;
+    clear: both;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 300px;
+}
+#bucket1 {
+    width: 128px;
+    height: 128px;
+    float: left;
+}
+#bucket2 {
+    width: 128px;
+    height: 128px;
+    float:  right;
+}
+#bucketone {
+    font-size: 30px;
+    position: absolute;
+    width: 128px;
+    height:  64px;
+    text-align: center;
+    padding-top: 64px;
+}
+#buckettwo {
+    font-size: 30px;
+    position: absolute;
+    width: 128px;
+    height:  64px;
+    text-align: center;
+    padding-top: 64px;
+}
+#waterBox {
+    border: solid;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
+#drainBox {
+    border: solid;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10%;
+    top: 60%;
+}
+#boxes {
+    float: left;
+}
