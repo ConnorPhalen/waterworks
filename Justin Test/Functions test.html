@@ -56,7 +56,7 @@
             }
             function moveWater(imgName, imgName2) {
                 var data = event.dataTransfer.getData("text");
-                if (data == "bucket1" || data == "bucketone" && event.target.id == "bucket2" || event.target.id == "buckettwo") {
+                if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
                     // bucket2max parsed
                     var bucket2max = document.getElementById('bucketnummax2').innerHTML;
                     var bucket2max2 = parseInt(bucket2max);
@@ -103,7 +103,7 @@
                         image2.src = imgName2;
                     }
                 }
-                if (data == "bucket2" || data == "buckettwo" && event.target.id == "bucket1" || event.target.id == "bucketone") {
+                if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
                     //bucket1max parsed
                     var bucket1max = document.getElementById('bucketnummax').innerHTML;
                     var bucket1max1 = parseInt(bucket1max);
@@ -153,11 +153,18 @@
                         image2.src = imgName2;
                     }
                 }
-                if (data == "bucket1" || data == "bucketone" && event.target.id == "bucket1" || event.target.id == "bucketone") {
-                    
+                if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
+                    // bucket2change parsed
+                    var bucket2change = document.getElementById('bucketnumchange').innerHTML;
+                    var bucket2change2 = parseInt(bucket2change);
+                    document.getElementById('bucketnumchange').innerHTML = bucket2change2;
+
                 }
-                if (data == "bucket2" || data == "buckettwo" && event.target.id == "bucket2" || event.target.id == "buckettwo") {
-                    
+                if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
+                    // bucket2change parsed
+                    var bucket2change = document.getElementById('bucketnumchange2').innerHTML;
+                    var bucket2change2 = parseInt(bucket2change);
+                    document.getElementById('bucketnumchange2').innerHTML = bucket2change2;
                 }
             }
         </script>
