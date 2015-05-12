@@ -41,20 +41,16 @@ function test() {
     }
 }
 
-// Set these varibales to test if two objects collide with each other using testCollsion()
-testCollisionA = "batman";
-testCollisionB = "gateImg";
-
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
-function testCollision(){
+function testCollision(objectA, objectB){
 
     // Set these to false at start to prevent false positives.
     collideX = false;
     collideY = false;
 
     // Sets these variables to simplify code later by getting .css varibles easy.
-    aID = document.getElementById(testCollisionA).style;
-    bID = document.getElementById(testCollisionB).style;
+    aID = document.getElementById(objectA).style;
+    bID = document.getElementById(objectB).style;
 
     // Checks to see if the X position (from left of screen) is within the width of the second image.
     if((parseInt(bID.left) - parseInt(aID.width)) - 1 < parseInt(aID.left) && parseInt(aID.left) < ((parseInt(bID.left) + parseInt(bID.width)) + 1)){
