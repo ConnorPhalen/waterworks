@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style>
+            #bod_rep {
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                width: 100%;
+            }
+            #fill {
+                border: 2px solid black;
+                height: 200px;
+                width: 200px;
+                position: fixed;
+                top: 100px;
+                left: 40px;
+            }
+            #empty {
+                border: 2px solid black;
+                height: 200px;
+                width: 200px;
+                position: fixed;
+                top: 500px;
+                left: 40px;
+            }
+            #bucket {
+                background-image: url("Justin Test/bucketempty.png");
+                background-size: 120px;
+                background-repeat: no-repeat;
+                height: 200px;
+                width: 200px;
+                position: absolute;
+                top: 300px;
+                left: 500px;
+            }
+        </style>
+        <script>
+            var max;
+            var min;
+            var img;
+
+            var xMouse;
+            var yMouse
+
+            function fill() {
+
+            }
+            function empty() {
+
+            }
+            function getMouseInfo() {
+                xMouse = event.clientX;
+                yMouse = event.clientY;
+                document.getElementById("mousX").setAttribute("value", xMouse);
+                document.getElementById("mousY").setAttribute("value", yMouse);
+            }
+            function changeImage() {
+                if (document.getElementById("bucket").style.backgroundImage.match(/bucketwater/i)) {
+                    document.getElementById("bucket").style.backgroundImage = "url('Justin Test/bucketempty.png')"
+                } else {
+                    document.getElementById("bucket").style.backgroundImage = "url('Justin Test/bucketwater.png')";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="bod_rep" onmousemove="getMouseInfo()"></div>
+        <div id="fill">Fill</div>
+        <div id="empty">Empty</div>
+        <div id="bucket" draggable ondrag="" onmouseup="changeImage()"></div>
+        MouseX: <input id="mousX" type="text" readonly="true" value="0">
+        MouseY: <input id="mousY" type="text" readonly="true" value="0">
+    </body>
+</html>

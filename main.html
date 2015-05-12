@@ -13,84 +13,112 @@
                 border-bottom: 3px solid black;
                 border-left: 3px solid blue;
                 border-right: 3px solid black;
-                box-shadow: 5px 5px 15px #888888;
                 color: lightblue;
                 font-family: 'Arial Black';
-                font-size: 25px;
-                margin-top: 30px;
-                margin-left:20px;
+                font-size: 20px;
+                margin-top: 5px;
+                margin-bottom: 5px; 
+                margin-left: 5px;
+                margin-right: 5px; 
                 padding-top: 20px;
                 padding-bottom: 20px;  
-                width: 400px;
+                width: 220px;
             }
             button:hover {
                 border: 3px solid yellow;
                 color: yellow;
                 cursor: pointer;  
-                font-size: 180%;
+                font-size: 25px;
                 font-weight: bold;
             }
             #splash {
-                background-image: url("rsc/splash.png");
+                background-image: url("rsc/Menu.jpg");
                 background-repeat: no-repeat;
-                margin-top: 25px;
-                margin-left: auto;
-                margin-right: auto;
-                height: 225px;
-                width: 600px;
+                background-size: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: -1;
 			}
-            #cpyr {
-                color: gray;
+            #cop {
+                color: white;
                 font-family: "Courier New";
-                font-size: 11px;
-                margin-top: 20px;
+                font-size: 55%;
+                position: fixed;
+                top: 10px;
+                left: 15px;
                 text-align: center;
+            }
+            #nav_wrapper{ 
+                margin-top: 28%;
+                position: fixed;
+                right: 70px;
             }
             #btn_play {
             }
             #btn_options {
-          
             }
             #btn_ryan {
                 background-color: lightyellow;
-                border: 3px solid gold;
+                border: 4px solid gold;
                 color: gold;
             }
             #btn_ryan:hover {
                 background-color: white;
                 background-image: url("rsc/ryan.png");
-                background-position-x: 35px;
-                background-position-y: 25px;
+                background-position-x: 20px;
+                background-position-y: 15px;
                 background-repeat: no-repeat;
                 border-color: yellow;
+                box-shadow: 0px 0px 100px lightyellow;
                 color: yellow;
-                padding-left: 80px;             
+                padding-left: 80px;   
+                width: 300px;          
             }
 		</style>
         
 	</head>
-	<body style="background-color:lightblue">
+	<body>
         <script>
+
             var op_sound = new Audio('sounds/water_long.wav');
-            var clk_sound = new Audio('sounds/water_click.wav');
-            var hov_sound = new Audio('sounds/water_click_hollow.wav');
+            var ryan_mod = new Audio('sounds/ryan_mod_hov.mp3');
 
             onload = function () {
+
                 op_sound.play();
+
             }
             function play_click() {
-                clk_sound.play();
+
+                new Audio('sounds/water_click.wav').play();
+
             }
-            function play_hover() {
-                hov_sound.play();
+
+            function play_ryan_mod() {
+
+                ryan_mod.play();
+
             }
+            function stop_ryan_mod() {
+
+                ryan_mod.pause();
+
+                ryan_mod.currentTime = 0;
+
+            }
+
         </script>
         <div id="splash"></div>
-        <div id="cpyr">Team&nbspDragon&nbsp2015&nbsp|&nbspConnor&nbspGreg&nbspJustin&nbspRyan&nbspFrancis</div>
-        <p style="text-align:center; margin-top:10px">
-            <button id="btn_play" onmousedown="play_click()" onmouseover="play_hover()">Play</button>
-            <button id="btn_options" onmousedown="play_click()" onmouseover="play_hover()">Options</button>
-            <button id="btn_ryan" onmousedown="play_click()" onmouseover="play_hover()">Ryan&nbspMode</button>
-        </p> 
+        <div id="cop">Team&nbspDragon&nbsp2015&nbsp|&nbspConnor&nbspGreg&nbspJustin&nbspRyan&nbspFrancis</div>
+        <div id="nav_wrapper">
+            <p style="text-align:center; margin-top:10px">
+                <button id="btn_play" onmouseup="play_click()">Play</button>
+                <button id="btn_options" onmouseup="play_click()">Options</button>
+                <button id="btn_ryan" onmousedown="play_click()" onmouseover="play_ryan_mod()" onmouseout="stop_ryan_mod()">Ryan&nbspMode</button>
+            </p> 
+        </div>
 	</body>
 </html>

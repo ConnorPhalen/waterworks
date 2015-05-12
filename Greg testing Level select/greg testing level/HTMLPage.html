@@ -5,6 +5,12 @@
         <meta charset="utf-8" />
         <title></title>
         <script>
+            // gets the sound
+            var audio = new Audio('../sounds/water_click.wav');
+            //plays the sound when clicked
+            function click_Button() {
+            audio.play();
+            }
             //fills the buckets when dropped on waterBox
             function fillBucket(imgName) {
                 var data = event.dataTransfer.getData("text");
@@ -52,7 +58,11 @@
         <link rel="stylesheet" type="text/css" href="test.css">
     </head>
     <body>
+        <button id="quit" onmousedown="click_Button()">Quit</button>
+        <button id="options" onmousedown="click_Button()" >options</button>
         <div id="boxes">
+            <div id="hose" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')">
+            <p>hose also fills</p></div>
             <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')">
                 <p>Fill</p>
             </div>
@@ -70,5 +80,10 @@
                 <img id="bucketNum2" alt="Bucket2" src="bucketempty.png" height="128" width="128">
             </div>
         </div>
+                    <div id="tankToFill"><p>0</p></div>
+            <div id="tankAlreadyFull"><p>18</p></div>
+            <div id="tunnel">
+            <div id="ironGate"><p>This is a gate</p></div>
+            </div>
     </body>
 </html>
