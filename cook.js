@@ -11,6 +11,7 @@
         document.cookie = cnam + "=" +  cval + ";" + expd;
     }
 
+    // alter expiry date below
     function newDate(val) {
         var dat = new Date();
         dat.setTime(dat.getTime() + (val * 24 * 60 * 60 * 1000));
@@ -18,21 +19,49 @@
         return etime;
     }
 
-    function getName(cnam) {
+    // get cookie
+    function getDat(cnam) {
         var name = cnam + "=";
-
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
     }
 
-    function getProgress() {
-        
-    }
-
+    // check whether or not visitor has client data
     function checkData() {
-        var cname = getCookieData("username");
-        if(cname != "") {
-            alert(cname);
+        var username = getDat("username");
+        if(username != "" && progress != "") {
+            alert("Welcome back " + username + "!" + "\n" + "user level: " + progress);
+        } else {
+            username = prompt("Please enter your name:" + "");
+            if(username != "" && username != null) {
+                newUser("username", username, 999);
+            } else {
+                alert("username set error");   
+            }
+            /**progress = prompt("For testing purposes, enter false player progress number:" + "");
+            if(isNumeric(progress) && progress < 0) {
+                newProgress("progress", progress, 999);
+            } else {
+                alert("user progress set error");   
+            }*/
         }
     }
+
+    // check if number
+    function isNumeric(n) {
+        return !NaN(parseFloat(n)) && isFinite(n);
+    }
+
+    window.onload = checkData();
+
+
+
+
 
     // cookie is a one key-value pair
     // need to create two cookies; 1 for name, the other for userprogress
