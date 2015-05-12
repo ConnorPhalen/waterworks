@@ -24,7 +24,7 @@ function move() {
 				document.getElementById("batman").style.left = batman;
 }
 
-// Page loads, then starts a timer that adds time plus 1 every second, and runs waterTimer.
+/* Page loads, then starts a timer that adds time plus 1 every second, and runs waterTimer.
 window.onload = function () {
         if (time < 1) {
            mainTimer = setInterval(function () { time++; waterTimer(); move(); }, 1000);
@@ -33,7 +33,7 @@ window.onload = function () {
             time = 0;
         }  
 }
-
+*/
 // Sets the timeAdd() function to go off once a second.
 function test() {
     if (time < 1) {
@@ -69,6 +69,7 @@ function testCollision(objectA, objectB){
     // If both X and Y have collided, then a collision has occured.
     if(collideX && collideY){
         alert("Collision!");
+        // document.getElementById(objectB).id = 'dead';
     }else{
         alert("Nope.");
     }
