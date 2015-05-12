@@ -26,3 +26,8 @@ body {
     width: 80px; 
     height: 80px;
 }
+
+#dead{
+    height: 400px;
+    left: -400px;
+}

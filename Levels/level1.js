@@ -24,7 +24,7 @@ function move() {
 				document.getElementById("batman").style.left = batman;
 }
 
-// Page loads, then starts a timer that adds time plus 1 every second, and runs waterTimer.
+/* Page loads, then starts a timer that adds time plus 1 every second, and runs waterTimer.
 window.onload = function () {
         if (time < 1) {
            mainTimer = setInterval(function () { time++; waterTimer(); move(); }, 1000);
@@ -33,7 +33,7 @@ window.onload = function () {
             time = 0;
         }  
 }
-
+*/
 // Sets the timeAdd() function to go off once a second.
 function test() {
     if (time < 1) {
@@ -41,20 +41,16 @@ function test() {
     }
 }
 
-// Set these varibales to test if two objects collide with each other using testCollsion()
-testCollisionA = "batman";
-testCollisionB = "gateImg";
-
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
-function testCollision(){
+function testCollision(objectA, objectB){
 
     // Set these to false at start to prevent false positives.
     collideX = false;
     collideY = false;
 
     // Sets these variables to simplify code later by getting .css varibles easy.
-    aID = document.getElementById(testCollisionA).style;
-    bID = document.getElementById(testCollisionB).style;
+    aID = document.getElementById(objectA).style;
+    bID = document.getElementById(objectB).style;
 
     // Checks to see if the X position (from left of screen) is within the width of the second image.
     if((parseInt(bID.left) - parseInt(aID.width)) - 1 < parseInt(aID.left) && parseInt(aID.left) < ((parseInt(bID.left) + parseInt(bID.width)) + 1)){
@@ -73,6 +69,7 @@ function testCollision(){
     // If both X and Y have collided, then a collision has occured.
     if(collideX && collideY){
         alert("Collision!");
+        // document.getElementById(objectB).id = 'dead';
     }else{
         alert("Nope.");
     }
