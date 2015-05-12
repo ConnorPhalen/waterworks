@@ -12,12 +12,20 @@
     <body>
         <img id="bucket" src="../Justin Test/bucketempty.png" alt="Bucket" width="100px" height="100px" style="position: absolute; left:0px;">
         <div id="tunnel">
-            <button id="bestTest" onclick="move()"> Click Me To Begin Timer Test </button>
+            <button id="bestTest" onclick="move()"> Move Batman Left </button>
+            <button id="bestTest" onclick="testCollision('batman', 'stickman1')"> Test Stickman Collision </button>
             <img id="batman" src="images/batman_logo.gif" alt="Batman!" style="position: absolute;left: 10px;top:30px;width: 100px; height: 50px;">
-             <div id="gate">
+            <div id="stickmen">
+                <img src="images/stickman_test.png" id="stickman1" alt="Stickman" style="position: absolute;left: 200px;top:30px;width: 50px; height: 80px;">
+                <img src="images/stickman_test.png" id="stickman1" alt="Stickman+" style="position: absolute;left: 300px;top:30px;width: 50px; height: 80px;">
+                <img src="images/stickman_test.png" id="stickman1" alt="Stickman++" style="position: absolute;left: 400px;top:30px;width: 50px; height: 80px;">
+                <img src="images/stickman_test.png" id="stickman1" alt="Stickman+++" style="position: absolute;left: 450px;top:30px;width: 50px; height: 80px;">
+                <img src="images/stickman_test.png" id="stickman1" alt="Stickman++++" style="position: absolute;left: 650px;top:30px;width: 50px; height: 80px;">
+            </div>
+            <div id="gate">
                  <img id="gateImg" src="images/gate.gif" alt="Batman!" style="position: absolute;left: 750px;top:30px;width: 80px; height: 80px;">
              </div>
-            <button id="collisionTest" onclick="testCollision()">Test Collisons Here.</button>
+            <button id="collisionTest" onclick="testCollision('gateImg', 'batman')">Test Collisions Here.</button>
         </div>
 
     </body>

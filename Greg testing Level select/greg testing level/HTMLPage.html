@@ -5,6 +5,10 @@
         <meta charset="utf-8" />
         <title></title>
         <script>
+            var bucket1Max = 7;
+            var bucket2Max = 9
+            var bucket1Amount = 0;
+            var bucket2Amount = 0;
             // gets the sound
             var audio = new Audio('../sounds/water_click.wav');
             //plays the sound when clicked
@@ -20,7 +24,14 @@
                 var maxId = document.getElementById(data).getElementsByTagName("span");
                 var max = maxId[1].innerHTML;
                 var numChange = maxId[0].id;
-                document.getElementById(numChange).innerHTML = data;
+                if(document.getElementById(data) == bucket1){
+                document.getElementById(numChange).innerHTML = bucket1Max;
+                bucket1Amount = bucket1Max;
+                }
+                else{
+                document.getElementById(numChange).innerHTML = bucket2Max;
+                bucket2Amount = bucket2Max;
+                }
             }
             //allows items to be dragged
             function dragStart(event) {
@@ -43,16 +54,122 @@
                 var maxId = document.getElementById(data).getElementsByTagName("span");
                 var numChange = maxId[0].id;
                 document.getElementById(numChange).innerHTML = "0";
+               // WE NEED TO WORK ON THIS SET IT TO + ) FOR AMOUNT 
+                if(document.getElementById(data) == bucket1){
+                    bucket1Amount=0;    
+                }
+                if(document.getElementById(data) == bucket2){
+                    bucket2Amount=0;    
+                }
             }
-            function moveWater(imgName) {
+            function moveWater() {
                 var data = event.dataTransfer.getData("text");
                 var maxId = document.getElementById(event.target.id).getElementsByTagName("span");
-                var imageId = document.getElementById(data).getElementsByTagName("img");
-                image = document.getElementById(imageId[0].id);
-                image.src = imgName;
+               // var other = document.getElementById(bucket1).getElementsByTagName("span");
+               // var imageId = document.getElementById(data).getElementsByTagName("img");
+               //image = document.getElementById(imageId[0].id);
+               // image.src = imgName;
+                var other = document.getElementById(data).getElementsByTagName("span");
+                var otherChange = other[0].id;
                 var numChange = maxId[0].id;
                 var max = maxId[1].innerHTML;
-                document.getElementById(numChange).innerHTML = max;
+                var equate = (bucket2Max - bucket2Amount);
+                var equatePart2 = (bucket1Max - bucket1Amount);
+                if(document.getElementById(data) == bucket1){
+                    //bucket1's equations                               this is the path bucket 1 takes when dragged
+                 if(bucket2Max>bucket1Max && bucket2Amount != bucket2Max){ //9>7
+                    
+                    bucket2Amount = bucket1Amount + bucket2Amount; // this works
+                    bucket1Amount = bucket1Amount - equate;
+                    
+                     // a series of boundries for the equations 
+                    if(bucket1Amount<0){
+                     bucket1Amount =0;   
+                    }
+                    if(bucket2Amount<0){
+                     bucket2Amount=0;   
+                    }
+                    if(bucket1Amount>bucket1Max){
+                        bucket1Amount=bucket1Max;
+                    }
+                    if(bucket2Amount>bucket2Max){
+                        bucket2Amount=bucket2Max;
+                    }
+                     
+                    document.getElementById(otherChange).innerHTML = bucket1Amount; // + 70; 
+                    document.getElementById(numChange).innerHTML = bucket2Amount; // + 55;
+                    }else if(bucket2Amount != bucket2Max){ // clause that causes the user to not be able to empty bucket 2 into bucket 1
+                        // for if bucket 2 is less than bucket 1
+                        
+                        if(bucket2Amount< bucket2Max/2 && bucket2Amount !=0){
+                        equate = bucket2Amount;
+                    } 
+                    bucket2Amount = bucket1Amount + bucket2Amount; //7-9
+                    bucket1Amount = bucket1Amount - equate; // i have no clue if this will do anything 
+                    // a series of boundries for the equations 
+                    if(bucket1Amount<0){
+                     bucket1Amount =0;   
+                    }
+                    if(bucket2Amount<0){
+                     bucket2Amount=0;   
+                    }
+                    if(bucket1Amount>bucket1Max){
+                        bucket1Amount=bucket1Max;
+                    }
+                    if(bucket2Amount>bucket2Max){
+                        bucket2Amount=bucket2Max;
+                    }
+                        // replaces the lowest span with the number needed
+                    document.getElementById(numChange).innerHTML = bucket2Amount; //bucket1=2
+                    document.getElementById(otherChange).innerHTML = bucket1Amount;
+                    }
+                }
+                if(document.getElementById(data) == bucket2){
+                if(bucket1Max>bucket2Max && bucket1Amount != bucket1Max){ // bucket 2 draggable equation
+                    
+                    bucket1Amount = bucket2Amount + bucket1Amount;
+                    bucket2Amount = bucket2Amount - equatePart2;
+                    
+                    // a series of boundries for the equations 
+                    if(bucket1Amount<0){
+                     bucket1Amount =0;   
+                    }
+                    if(bucket2Amount<0){
+                     bucket2Amount=0;   
+                    }
+                    if(bucket1Amount>bucket1Max){
+                        bucket1Amount=bucket1Max;
+                    }
+                    if(bucket2Amount>bucket2Max){
+                        bucket2Amount=bucket2Max;
+                    }
+                    
+                    document.getElementById(otherChange).innerHTML = bucket2Amount; //bucket1=0 
+                    document.getElementById(numChange).innerHTML = bucket1Amount;
+                    }else if(bucket1Amount != bucket1Max){// clause that causes the user to not be able to empty bucket 2 into bucket 1
+                    if(bucket1Amount< bucket1Max/2 && bucket1Amount !=0){
+                        equatePart2 = bucket1Amount;
+                    }                   // path bucket 2 takes 
+                    bucket1Amount = bucket1Amount + bucket2Amount;
+                    bucket2Amount = bucket2Amount - equatePart2; 
+                    
+                        // a series of boundries for the equations 
+                    if(bucket1Amount<0){
+                     bucket1Amount =0;   
+                    }
+                    if(bucket2Amount<0){
+                     bucket2Amount=0;   
+                    }
+                    if(bucket1Amount>bucket1Max){
+                        bucket1Amount=bucket1Max;
+                    }
+                    if(bucket2Amount>bucket2Max){
+                        bucket2Amount=bucket2Max;
+                    }
+                    document.getElementById(numChange).innerHTML = bucket1Amount;//70;
+                    document.getElementById(otherChange).innerHTML = bucket2Amount; //55;
+                    }
+                }
             }
         </script>
         <link rel="stylesheet" type="text/css" href="test.css">
@@ -61,21 +178,23 @@
         <button id="quit" onmousedown="click_Button()">Quit</button>
         <button id="options" onmousedown="click_Button()" >options</button>
         <div id="boxes">
+            <!--got this to work-->
             <div id="hose" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')">
             <p>hose also fills</p></div>
             <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')">
                 <p>Fill</p>
             </div>
+            <!--works-->
             <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('bucketempty.png')">
                 <p>Empty</p>
             </div>
         </div>
         <div id="buckets">
-            <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png')">
+            <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater()">
                 <label id="bucketone" for="bucket1"><span id="bucketnumchange">0</span>/<span id="bucketnummax">7</span></label>
                 <img id="bucketNum1" alt="Bucket1" src="bucketempty.png" height="128" width="128">
             </div>
-            <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png')">
+            <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater()">
                 <label id="buckettwo"  for="bucket2"><span id="bucketnumchange2">0</span>/<span id="bucketnummax2">9</span></label>
                 <img id="bucketNum2" alt="Bucket2" src="bucketempty.png" height="128" width="128">
             </div>
