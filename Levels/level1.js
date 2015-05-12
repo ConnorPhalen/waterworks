@@ -41,32 +41,40 @@ function test() {
     }
 }
 
-//-------------------- testing out some collision code
-collideX = false;
-collideY = false;
+// Set these varibales to test if two objects collide with each other using testCollsion()
+testCollisionA = "batman";
+testCollisionB = "gateImg";
 
+// ---------------------- Function to test out collisions between images. Best used with more rectangular images.
 function testCollision(){
-    aX = parseInt(document.getElementById("batman").style.left);
-    bX = parseInt(document.getElementById("gateImg").style.left);
-    aY = parseInt(document.getElementById("batman").style.top);
-    bY = parseInt(document.getElementById("gateImg").style.top);
 
-    if(aX - 50 < bX && aX + 50 > bX){
+    // Set these to false at start to prevent false positives.
+    collideX = false;
+    collideY = false;
+
+    // Sets these variables to simplify code later by getting .css varibles easy.
+    aID = document.getElementById(testCollisionA).style;
+    bID = document.getElementById(testCollisionB).style;
+
+    // Checks to see if the X position (from left of screen) is within the width of the second image.
+    if((parseInt(bID.left) - parseInt(aID.width)) - 1 < parseInt(aID.left) && parseInt(aID.left) < ((parseInt(bID.left) + parseInt(bID.width)) + 1)){
         collideX = true;
     }else{
         collideX = false;
     }
 
-    if(aY - 50 < bY && aY + 50 > bY){
+    // Checks to see if the Y position (from top of screen) is within the height of the second image.
+    if((parseInt(bID.top) - parseInt(aID.height)) - 1 < parseInt(aID.top) && parseInt(aID.top) < ((parseInt(bID.top) + parseInt(bID.height)) + 1)){
         collideY = true;
     }else{
         collideY = false;
     }
 
+    // If both X and Y have collided, then a collision has occured.
     if(collideX && collideY){
         alert("Collision!");
     }else{
         alert("Nope.");
     }
 }
-//-------------------- End Collision test code.
+//-------------------- End Collision code.

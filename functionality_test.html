@@ -32,8 +32,8 @@
                 background-image: url("Justin Test/bucketempty.png");
                 background-size: 120px;
                 background-repeat: no-repeat;
-                height: 200px;
-                width: 200px;
+                height: 120px;
+                width: 120px;
                 position: absolute;
                 top: 300px;
                 left: 500px;
@@ -70,9 +70,9 @@
     </head>
     <body>
         <div id="bod_rep" onmousemove="getMouseInfo()"></div>
-        <div id="fill">Fill</div>
-        <div id="empty">Empty</div>
-        <div id="bucket" draggable ondrag="" onmouseup="changeImage()"></div>
+        <div id="fill"></div>
+        <div id="empty"></div>
+        <div id="bucket" draggable ondrag="event.preventDefault()" onmouseup="changeImage()"></div>
         MouseX: <input id="mousX" type="text" readonly="true" value="0">
         MouseY: <input id="mousY" type="text" readonly="true" value="0">
     </body>
