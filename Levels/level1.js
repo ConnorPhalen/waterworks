@@ -1,6 +1,6 @@
 // Just sets up some initial variables.
 var time = 0;
-var TIME_MAX = 1200;
+var TIME_MAX = 1100;
 var timeOverflow = 0;
 var timerDelay = 33;
 
