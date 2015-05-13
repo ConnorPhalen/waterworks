@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Options</title>
+    <style>
+        body {
+            height: 100px;
+            background: lightblue;
+        }
+        
+        #player {
+            width: 300px;
+            height: 54px;
+            position: relative;
+            margin: 0 auto;
+            top: 200px;
+            background: url('images/volume-background1.png') no-repeat left top;
+        }
+        
+        #volume {
+            position: absolute;
+            left: -40px;
+            top: 13px;
+            margin: 0 auto;
+            height: 15px;
+            width: 300px;
+            background: url('images/volume-empty.png') no-repeat left top;
+        }
+        
+        #volume .ui-slider-range-min {
+            height: 15px;
+            width: 300px;
+            position: absolute;
+            background: url('images/volume-full.png') no-repeat left top;
+        }
+        
+        #volume .ui-slider-handle {
+            width: 38px;
+            height: 39px;
+            background: url('images/dial-knob.png') no-repeat left top;
+            position: absolute;
+            margin-left: -15px;
+            margin-top: -8px;
+        }
+        
+        #player p {
+            color: blue;
+            position: absolute;
+            top: -10px;
+            left: -150px;
+            font-size: 20px;
+        }
+        
+        #fa {
+            width: 300px;
+            height: 54px;
+            position: relative;
+            margin: 0 auto;
+            top: 80px;
+            background: url('images/volume-background1.png') no-repeat left top;
+        }
+        
+        #music {
+            position: absolute;
+            left: -40px;
+            top: 13px;
+            margin: 0 auto;
+            height: 15px;
+            width: 300px;
+            background: url('images/volume-empty.png') no-repeat left top;
+        }
+        
+        #music .ui-slider-range-min {
+            height: 15px;
+            width: 300px;
+            position: absolute;
+            background: url('images/volume-full.png') no-repeat left top;
+        }
+        
+        #music .ui-slider-handle {
+            width: 38px;
+            height: 39px;
+            background: url('images/dial-knob.png');
+            background-repeat: no-repeat;
+            position: absolute;
+            margin-left: -15px;
+            margin-top: -8px;
+        }
+        
+        #milk1 p {
+            color: blue;
+            position: absolute;
+            top: 70px;
+            left: -150px;
+            font-size: 20px;
+        }
+        
+        button {
+            background-color: darkblue;
+            border-radius: 15%;
+            border-top: 3px solid blue;
+            border-bottom: 3px solid black;
+            border-left: 3px solid blue;
+            border-right: 3px solid black;
+            color: lightblue;
+            font-family: 'Arial Black';
+            font-size: 20px;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            margin-left: 3px;
+            margin-right: 3px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            width: 120px;
+        }
+        
+        button:hover {
+            border: 3px solid yellow;
+            color: yellow;
+            cursor: pointer;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        #nav_wrapper {
+            margin-top: 28%;
+            position: fixed;
+            right: 680px;
+            bottom: 230px;
+        }
+        
+        h1 {
+            position: absolute;
+            font-size: 3em;
+            top: -150px;
+            left: 0px;
+            font-weight: bold;
+            color: blue;
+        }
+        
+        #btn_play {
+            color: lightblue;
+        }
+    </style>
+	  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+  <script type="text/javascript" src="options.js"></script>
+</head>
+
+<body>
+	
+    <div id="player">
+        <h1>Options</h1>
+		<div>
+			<p>Volume</p>
+			<div id="volume"></div>
+		</div>
+		<div id="fa">
+			<p>Music</p>
+			<div id="music"></div>
+		</div>
+		<div id="nav_wrapper">
+			<p style="text-align:center; margin-top:10px">
+					<button id="btn_back"  onmousedown="click_Button()" type=button onClick="parent.location='http://www.doooge.netau.net/main.html'" value='Back'>Back</button>
+			</p>
+		</div>
+	</div>
+</body>
+</html>
