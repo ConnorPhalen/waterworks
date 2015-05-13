@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Data Test</title>
+        <script>
+
+            onload = function () {
+
+                if (window.location.href.match(/true/)) {
+
+                    alert("Welcome back!");
+
+                } else {
+
+                    var user = prompt("Enter name", "");
+                    var score = prompt("Enter a number", "");
+
+                    window.location.href = "http://www.doooge.netau.net/prgTst/dat_manip.php?usn=" + user + "&s=" + score;
+
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <?php
+            $file=fopen("dat.txt", "r");
+        
+            while(!feof($file)) {
+
+                echo fgets($file). "<br />";
+
+            }
+
+            fclose($file);
+        ?>
+        <?php
+            
+            $file = file("dat.txt");
+            
+            echo substr($file[0], 0, strpos($file[0], ';')). "<br />";
+            echo substr($file[0], strpos($file[0], ';') + 1);
+
+        ?>
+    </body>
+</html>
