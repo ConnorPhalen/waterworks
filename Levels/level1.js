@@ -2,13 +2,15 @@
 var time = 0;
 var TIME_MAX = 1100;
 var timeOverflow = 0;
+var overflowDelay = 2;
 var timerDelay = 33;
+var mainTimer;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
-    if(time >= TIME_MAX){
-        alert("You Lose!");
+    if(testCollision('batman', 'gateImg')){
         clearInterval(mainTimer);
+        alert("You Lose!");
     }
 }
 
@@ -16,7 +18,7 @@ function loseCheck(){
 // Want to make an algorithm to just plug-in numbers to get a set time. Would take a lot of math and time though.
 function timeAdd(){
     timeOverflow++;
-    if(timeOverflow > 2){
+    if(timeOverflow > overflowDelay){
         timeOverflow = 0;
         time++;
         move();
@@ -69,8 +71,8 @@ function testCollision(objectA, objectB){
     if(collideX && collideY){
         alert("Collision!");
         // document.getElementById(objectB).id = 'dead';
-    }else{
-        alert("Nope.");
+        collideX = false;
+        collideY = false;
     }
 }
 //-------------------- End Collision code.
