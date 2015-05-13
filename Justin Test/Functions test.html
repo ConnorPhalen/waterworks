@@ -5,6 +5,12 @@
         <meta charset="utf-8" />
         <title></title>
         <script>
+            // gets the sound
+            var audio = new Audio('../sounds/water_click.wav');
+            //plays the sound when clicked
+            function click_Button() {
+            audio.play();
+            }
             //fills the buckets when dropped on waterBox
             function fillBucket(imgName) {
                 var data = event.dataTransfer.getData("text");
@@ -171,22 +177,24 @@
         <link rel="stylesheet" type="text/css" href="test.css">
     </head>
     <body>
-        <div id="boxes">
-            <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')">
-                <p>Fill</p>
+        <div id="game">
+            <div id="boxes">
+                <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')">
+                    <p>Fill</p>
+                </div>
+                <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('bucketempty.png')">
+                    <p>Empty</p>
+                </div>
             </div>
-            <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('bucketempty.png')">
-                <p>Empty</p>
-            </div>
-        </div>
-        <div id="buckets">
-            <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png','bucketwater.png')">
-                <label id="bucketone" for="bucket1" draggable="false"><span id="bucketnumchange">0</span>/<span id="bucketnummax">7</span></label>
-                <img id="bucketNum1" alt="Bucket1" src="bucketempty.png" height="128" width="128">
-            </div>
-            <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png','bucketwater.png')">
-                <label id="buckettwo"  for="bucket2" draggable="false"><span id="bucketnumchange2">0</span>/<span id="bucketnummax2">9</span></label>
-                <img id="bucketNum2" alt="Bucket2" src="bucketempty.png" height="128" width="128">
+            <div id="buckets">
+                <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png','bucketwater.png')">
+                    <label id="bucketone" for="bucket1" draggable="false"><span id="bucketnumchange">0</span>/<span id="bucketnummax">7</span></label>
+                    <img id="bucketNum1" alt="Bucket1" src="bucketempty.png" height="128" width="128">
+                </div>
+                <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png','bucketwater.png')">
+                    <label id="buckettwo"  for="bucket2" draggable="false"><span id="bucketnumchange2">0</span>/<span id="bucketnummax2">9</span></label>
+                    <img id="bucketNum2" alt="Bucket2" src="bucketempty.png" height="128" width="128">
+                </div>
             </div>
         </div>
     </body>
