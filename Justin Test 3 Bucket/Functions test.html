@@ -9,7 +9,7 @@
             var audio = new Audio('../sounds/water_click.wav');
             //plays the sound when clicked
             function click_Button() {
-            audio.play();
+                audio.play();
             }
             //fills the buckets when dropped on waterBox
             function fillBucket(imgName) {
@@ -26,6 +26,12 @@
                     var max = document.getElementById("bucketnummax2").innerHTML;
                     document.getElementById("bucketnumchange2").innerHTML = max;
                 }
+                if (data == "bucket3" || data == "bucketNum3") {
+                    image = document.getElementById("bucketNum3");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax3").innerHTML;
+                    document.getElementById("bucketnumchange3").innerHTML = max;
+                }
                 else {
                 }
             }
@@ -39,6 +45,10 @@
             }
             //drag for second bucket
             function drag2(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+            //drag for third bucket
+            function drag3(event) {
                 event.dataTransfer.setData("text", event.target.id);
             }
             //empties buckets when dragged over
@@ -60,6 +70,7 @@
 
                 }
             }
+            //moves water between 
             function moveWater(imgName, imgName2) {
                 var data = event.dataTransfer.getData("text");
                 if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
@@ -196,6 +207,10 @@
                 <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png','bucketwater.png')">
                     <label id="buckettwo"  for="bucket2" draggable="false"><span id="bucketnumchange2">0</span>/<span id="bucketnummax2">9</span></label>
                     <img id="bucketNum2" alt="Bucket2" src="bucketempty.png" height="128" width="128">
+                </div>
+                <div id="bucket3" draggable="true" ondragstart="drag3(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png','bucketwater.png')">
+                    <label id="bucketthree"  for="bucket3" draggable="false"><span id="bucketnumchange3">0</span>/<span id="bucketnummax3">16</span></label>
+                    <img id="bucketNum3" alt="Bucket3" src="bucketempty.png" height="128" width="128">
                 </div>
             </div>
         </div>
