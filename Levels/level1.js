@@ -2,8 +2,9 @@
 var time = 0;
 var TIME_MAX = 1100;
 var timeOverflow = 0;
-var overflowDelay = 2;
+var TIMEOVERFLOW_MAX = 2;
 var timerDelay = 33;
+var waveMovement = 4;
 var mainTimer;
 
 // Checks to see if time has reached its max limit.
@@ -18,7 +19,7 @@ function loseCheck(){
 // Want to make an algorithm to just plug-in numbers to get a set time. Would take a lot of math and time though.
 function timeAdd(){
     timeOverflow++;
-    if(timeOverflow > overflowDelay){
+    if(timeOverflow > TIMEOVERFLOW_MAX){
         timeOverflow = 0;
         time++;
         move();
@@ -28,7 +29,7 @@ function timeAdd(){
 // Grabs the picture ID, and its style value of left, and adds x px.
 function move() {
     batman = document.getElementById("batman").style.left;
-	batman = (parseInt(batman)+ 1 + "px");
+	batman = (parseInt(batman)+ waveMovement + "px");
 	document.getElementById("batman").style.left = batman;
 }
 
@@ -71,8 +72,6 @@ function testCollision(objectA, objectB){
     if(collideX && collideY){
         alert("Collision!");
         // document.getElementById(objectB).id = 'dead';
-        collideX = false;
-        collideY = false;
     }
 }
 //-------------------- End Collision code.
