@@ -12,7 +12,7 @@ function loseCheck(){
     }
 }
 
-// Increments the timer and moves the image. tiemOverflow basically slows things down by a division of X.
+// Increments the timer and moves the image. timeOverflow basically slows things down by a division of X.
 // Want to make an algorithm to just plug-in numbers to get a set time. Would take a lot of math and time though.
 function timeAdd(){
     timeOverflow++;
