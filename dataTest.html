@@ -9,7 +9,15 @@
 
                 if (window.location.href.match(/true/)) {
 
-                    alert("Welcome back!");
+                    if(window.location.href.match(/yes/)) {
+                        
+                        alert("Welcome new user!");
+
+                    } else {
+
+                        alert("Welcome back jack!");
+
+                    }
 
                 } else {
 
@@ -25,23 +33,13 @@
     </head>
     <body>
         <?php
-            $file=fopen("dat.txt", "r");
-        
-            while(!feof($file)) {
+            $file=file("dat.txt");
+            
+            foreach ($file as $line) {
 
-                echo fgets($file). "<br />";
-
+                echo substr($line, 0, strpos($line, ';')). "<br />";
+            
             }
-
-            fclose($file);
-        ?>
-        <?php
-            
-            $file = file("dat.txt");
-            
-            echo substr($file[0], 0, strpos($file[0], ';')). "<br />";
-            echo substr($file[0], strpos($file[0], ';') + 1);
-
         ?>
     </body>
 </html>
