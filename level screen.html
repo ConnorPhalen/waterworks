@@ -320,7 +320,7 @@ function testCollision(objectA, objectB){
             </div>
         </div>
         <div id="tunnel">
-
+            <button id="bestTest" onclick="move()"> Move Batman</button>
             <img id="batman" src="rsc/batman_logo.gif" alt="Batman!" style="position: absolute;left: 10px;top:30px;width: 100px; height: 50px;">
             <div id="stickmen">
                 <img src="rsc/stickman_test.png" id="stickman1" alt="Stickman" style="position: absolute;left: 200px;top:30px;width: 50px; height: 80px;">
@@ -332,10 +332,11 @@ function testCollision(objectA, objectB){
             <div id="gate">
                  <img id="gateImg" src="rsc/gate.gif" alt="Batman!" style="position: absolute;left: 1150px;top:30px;width: 80px; height: 80px;">
              </div>
+             <button id="collisionTest" onclick="testCollision('gateImg', 'batman')">Test Collisions Here.</button>
         </div>
 
                     <div id="tankToFill" ondrop="fillTank()">
-                    <label id="tank" for="tankToFill"><span id="Tank">0</span></div></label>
+                    <label id="tank" for="tankToFill"><span id="Tank">0</span></label></div>
             <div id="tankAlreadyFull"><span id="fillTo">18</span></div>
     </body>
 </html>
