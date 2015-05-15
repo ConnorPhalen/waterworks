@@ -126,6 +126,7 @@
                         image2.src = imgName2;
                     }
                 }
+
                 if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
                     //bucket1max parsed
                     var bucket1max = document.getElementById('bucketnummax').innerHTML;
@@ -176,6 +177,7 @@
                         image2.src = imgName2;
                     }
                 }
+
                 if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
                     // bucket2change parsed
                     var bucket2change = document.getElementById('bucketnumchange').innerHTML;
@@ -189,6 +191,7 @@
                     var bucket2change2 = parseInt(bucket2change);
                     document.getElementById('bucketnumchange2').innerHTML = bucket2change2;
                 }
+
             }
         </script>
         <link rel="stylesheet" type="text/css" href="test.css">
