@@ -1,43 +1,72 @@
 // Just sets up some initial variables.
 var time = 0;
-var TIME_MAX = 10;
+var timeOverflow = 0;
+var TIMEOVERFLOW_MAX = 2;
+var timerDelay = 33;
+var waveMovement = 4;
+var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 
 // Checks to see if time has reached its max limit.
-function waterTimer(){
-    if(time >= TIME_MAX){
-        alert("You Lose!");
+function loseCheck(){
+    if(testCollision('batman', 'gateImg')){
         clearInterval(mainTimer);
+     }
+}
+
+// Increments the timer and moves the image. timeOverflow basically slows things down by a division of X.
+// Want to make an algorithm to just plug-in numbers to get a set time. Would take a lot of math and time though.
+function timeAdd(){
+    time++;
+    timeOverflow++;
+    if(timeOverflow > TIMEOVERFLOW_MAX){
+        timeOverflow = 0;
+        move();
+    }
+    loseCheck();
+    // Tests for checking if there is a stickmanX, then run the collision code and delete them if true.
+    if(document.getElementById('stickman1') !== null){
+        stickmanCollision('batman', 'stickman1');
+    }
+    if(document.getElementById('stickman2') !== null){
+        stickmanCollision('batman', 'stickman2');
+    }
+    if(document.getElementById('stickman3') !== null){
+        stickmanCollision('batman', 'stickman3');
+    }
+    if(document.getElementById('stickman4') !== null){
+        stickmanCollision('batman', 'stickman4');
+    }
+    if(document.getElementById('stickman5') !== null){
+        stickmanCollision('batman', 'stickman5');
     }
 }
 
-// MANUAL ACTIVATION ONLY: Increments time by 1, and starts waterTimer().
-function timeAdd(){
-    time++;
-    waterTimer();
-    move();
-}
-
-// Grabs the picture ID, and its style value of left, and adds 100px.
+// Grabs the picture ID, and its style value of left, and adds x px.
 function move() {
     batman = document.getElementById("batman").style.left;
-				batman = (parseInt(batman)+ 100 + "px");
-				document.getElementById("batman").style.left = batman;
+	batman = (parseInt(batman)+ waveMovement + "px");
+	document.getElementById("batman").style.left = batman;
 }
 
-/* Page loads, then starts a timer that adds time plus 1 every second, and runs waterTimer.
-window.onload = function () {
+// Page loads, then starts a timer that moves and increments values with a delay of timerDelay.
+/*window.onload = function () {
         if (time < 1) {
-           mainTimer = setInterval(function () { time++; waterTimer(); move(); }, 1000);
+          var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
         } else {
             clearInterval(mainTimer);
             time = 0;
         }  
-}
-*/
-// Sets the timeAdd() function to go off once a second.
-function test() {
-    if (time < 1) {
-        setInterval(function () { time++; waterTimer(); }, 1000);
+}*/
+
+// Function to test out the "wave" and stickman collisions. If they do collide, the stickman will delete itself.
+function stickmanCollision(wave, stickman) {
+    waveID = wave;
+    stickmanID = stickman;
+    if(testCollision(waveID, stickmanID)){
+        stickmanID = document.getElementById(stickman);
+        if (stickmanID.parentNode) {
+            stickmanID.parentNode.removeChild(stickmanID);
+        }
     }
 }
 
@@ -69,9 +98,9 @@ function testCollision(objectA, objectB){
     // If both X and Y have collided, then a collision has occured.
     if(collideX && collideY){
         alert("Collision!");
-        // document.getElementById(objectB).id = 'dead';
+        return true;
     }else{
-        alert("Nope.");
+        return false;
     }
 }
 //-------------------- End Collision code.
