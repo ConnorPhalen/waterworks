@@ -292,8 +292,8 @@ function testCollision(objectA, objectB){
         <link rel="stylesheet" type="text/css" href="test.css">
     </head>
     <body>
-        <button id="quit" onmousedown="click_Button()">Quit</button>
-        <button id="options" onmousedown="click_Button()" >options</button>
+        <button id="quit" onclick="window.location.href='/main.html'" onmousedown="click_Button()">Quit</button>
+        <button id="options" onclick="window.location.href='/Test%20for%20option/optiontest/options.html'" onmousedown="click_Button()" >options</button>
         <div id="boxes">
             <!--got this to work-->
             <div id="hose" ondragover="dragStart(event)" ondrop="fillBucket('rsc/bucketwater.png')">
