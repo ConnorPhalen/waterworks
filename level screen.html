@@ -12,8 +12,7 @@
             audio.play();
             }
 
-
-            // Just sets up some initial variables.
+// Just sets up some initial variables.
 var time = 0;
 var timeOverflow = 0;
 var TIMEOVERFLOW_MAX = 2;
@@ -73,7 +72,8 @@ function move() {
         }  
 }*/
 
-// Function to test out the "wave" and stickman collisions. If they do collide, the stickman will delete itself.
+// Function to test out the "wave" and stickman collisions. If they do collide, the 
+// stickman will delete itself from the parent (the html page).
 function stickmanCollision(wave, stickman) {
     waveID = wave;
     stickmanID = stickman;
