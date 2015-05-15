@@ -3,6 +3,8 @@
     $score = $_GET["s"];
     $new = "no";
 
+    $targ;
+
     if(strlen($name) > 5) {
         
         if (!is_numeric($score)) {
@@ -24,6 +26,8 @@
          if (strcmp($name, substr($line, 0, strpos($line, ';'))) == 0) {
              
               $match = TRUE;
+
+              $targ = $line;
              
               break;
          } 
@@ -42,7 +46,15 @@
 
     } else {
 
-        $score = substr($line, strpos($line, ';') + 1);
+        // get score
+        //$score = substr($line, strpos($line, ';') + 1);
+
+        //update score
+        $dat = file_get_contents("dat.txt");
+
+        $newdat = str_replace($targ, "$name;$score\n", $dat);
+
+        file_put_contents("dat.txt", $newdat);
 
     }  
 
