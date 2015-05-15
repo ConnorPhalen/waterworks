@@ -1,11 +1,11 @@
 // Just sets up some initial variables.
 var time = 0;
-var TIME_MAX = 1100;
 var timeOverflow = 0;
 var TIMEOVERFLOW_MAX = 2;
 var timerDelay = 33;
 var waveMovement = 4;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
+
 // Checks to see if time has reached its max limit.
 function loseCheck(){
     if(testCollision('batman', 'gateImg')){
@@ -16,13 +16,29 @@ function loseCheck(){
 // Increments the timer and moves the image. timeOverflow basically slows things down by a division of X.
 // Want to make an algorithm to just plug-in numbers to get a set time. Would take a lot of math and time though.
 function timeAdd(){
+    time++;
     timeOverflow++;
     if(timeOverflow > TIMEOVERFLOW_MAX){
         timeOverflow = 0;
-        time++;
         move();
     }
     loseCheck();
+    // Tests for checking if there is a stickmanX, then running the collision and deleting them.
+    if(document.getElementById('stickman1') !== null){
+        stickmanCollision('batman', 'stickman1');
+    }
+    if(document.getElementById('stickman2') !== null){
+        stickmanCollision('batman', 'stickman2');
+    }
+    if(document.getElementById('stickman3') !== null){
+        stickmanCollision('batman', 'stickman3');
+    }
+    if(document.getElementById('stickman4') !== null){
+        stickmanCollision('batman', 'stickman4');
+    }
+    if(document.getElementById('stickman5') !== null){
+        stickmanCollision('batman', 'stickman5');
+    }
 }
 
 // Grabs the picture ID, and its style value of left, and adds x px.
@@ -41,6 +57,18 @@ function move() {
             time = 0;
         }  
 }*/
+
+// Function to test out the "wave" and stickman collisions. If they do collide, the stickman will delete itself.
+function stickmanCollision(wave, stickman) {
+    waveID = wave;
+    stickmanID = stickman;
+    if(testCollision(waveID, stickmanID)){
+        stickmanID = document.getElementById(stickman);
+        if (stickmanID.parentNode) {
+            stickmanID.parentNode.removeChild(stickmanID);
+        }
+    }
+}
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
 function testCollision(objectA, objectB){
@@ -71,7 +99,8 @@ function testCollision(objectA, objectB){
     if(collideX && collideY){
         alert("Collision!");
         return true;
-        // document.getElementById(objectB).id = 'dead';
+    }else{
+        return false;
     }
 }
 //-------------------- End Collision code.
