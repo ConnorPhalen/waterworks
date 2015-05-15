@@ -23,7 +23,7 @@ function timeAdd(){
         move();
     }
     loseCheck();
-    // Tests for checking if there is a stickmanX, then running the collision and deleting them.
+    // Tests for checking if there is a stickmanX, then run the collision code and delete them if true.
     if(document.getElementById('stickman1') !== null){
         stickmanCollision('batman', 'stickman1');
     }
