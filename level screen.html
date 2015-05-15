@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script>
+      // gets the sound
+            var audio = new Audio('sounds/water_click.wav');
+            //plays the sound when clicked
+            function click_Button() {
+            audio.play();
+            }
+
+
+            // Just sets up some initial variables.
+var time = 0;
+var timeOverflow = 0;
+var TIMEOVERFLOW_MAX = 2;
+var timerDelay = 33;
+var waveMovement = 4;
+var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
+
+// Checks to see if time has reached its max limit.
+function loseCheck(){
+    if(testCollision('batman', 'gateImg')){
+        clearInterval(mainTimer);
+     }
+}
+
+// Increments the timer and moves the image. timeOverflow basically slows things down by a division of X.
+// Want to make an algorithm to just plug-in numbers to get a set time. Would take a lot of math and time though.
+function timeAdd(){
+    time++;
+    timeOverflow++;
+    if(timeOverflow > TIMEOVERFLOW_MAX){
+        timeOverflow = 0;
+        move();
+    }
+    loseCheck();
+    // Tests for checking if there is a stickmanX, then run the collision code and delete them if true.
+    if(document.getElementById('stickman1') !== null){
+        stickmanCollision('batman', 'stickman1');
+    }
+    if(document.getElementById('stickman2') !== null){
+        stickmanCollision('batman', 'stickman2');
+    }
+    if(document.getElementById('stickman3') !== null){
+        stickmanCollision('batman', 'stickman3');
+    }
+    if(document.getElementById('stickman4') !== null){
+        stickmanCollision('batman', 'stickman4');
+    }
+    if(document.getElementById('stickman5') !== null){
+        stickmanCollision('batman', 'stickman5');
+    }
+}
+
+// Grabs the picture ID, and its style value of left, and adds x px.
+function move() {
+    batman = document.getElementById("batman").style.left;
+	batman = (parseInt(batman)+ waveMovement + "px");
+	document.getElementById("batman").style.left = batman;
+}
+
+// Page loads, then starts a timer that moves and increments values with a delay of timerDelay.
+/*window.onload = function () {
+        if (time < 1) {
+          var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
+        } else {
+            clearInterval(mainTimer);
+            time = 0;
+        }  
+}*/
+
+// Function to test out the "wave" and stickman collisions. If they do collide, the stickman will delete itself.
+function stickmanCollision(wave, stickman) {
+    waveID = wave;
+    stickmanID = stickman;
+    if(testCollision(waveID, stickmanID)){
+        stickmanID = document.getElementById(stickman);
+        if (stickmanID.parentNode) {
+            stickmanID.parentNode.removeChild(stickmanID);
+        }
+    }
+}
+
+// ---------------------- Function to test out collisions between images. Best used with more rectangular images.
+function testCollision(objectA, objectB){
+
+    // Set these to false at start to prevent false positives.
+    collideX = false;
+    collideY = false;
+
+    // Sets these variables to simplify code later by getting .css varibles easy.
+    aID = document.getElementById(objectA).style;
+    bID = document.getElementById(objectB).style;
+
+    // Checks to see if the X position (from left of screen) is within the width of the second image.
+    if((parseInt(bID.left) - parseInt(aID.width)) - 1 < parseInt(aID.left) && parseInt(aID.left) < ((parseInt(bID.left) + parseInt(bID.width)) + 1)){
+        collideX = true;
+    }else{
+        collideX = false;
+    }
+
+    // Checks to see if the Y position (from top of screen) is within the height of the second image.
+    if((parseInt(bID.top) - parseInt(aID.height)) - 1 < parseInt(aID.top) && parseInt(aID.top) < ((parseInt(bID.top) + parseInt(bID.height)) + 1)){
+        collideY = true;
+    }else{
+        collideY = false;
+    }
+
+    // If both X and Y have collided, then a collision has occured.
+    if(collideX && collideY){
+        alert("Collision!");
+        return true;
+    }else{
+        return false;
+    }
+}
+//-------------------- End Collision code.
+
+
+
+            //fills the buckets when dropped on waterBox
+            function fillBucket(imgName) {
+                var data = event.dataTransfer.getData("text");
+                if (data == "bucket1" || data == "bucketone") {
+                    image = document.getElementById("bucketNum1");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax").innerHTML;
+                    document.getElementById("bucketnumchange").innerHTML = max;
+                }
+                if (data == "bucket2" || data == "bucketNum2") {
+                    image = document.getElementById("bucketNum2");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax2").innerHTML;
+                    document.getElementById("bucketnumchange2").innerHTML = max;
+                }
+                else {
+                }
+            }
+            //allows items to be dragged
+            function dragStart(event) {
+                event.preventDefault();
+            }
+            //drag for frist bucket
+            function drag(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+            //drag for second bucket
+            function drag2(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+            //empties buckets when dragged over
+            function emptyBucket(imgName) {
+                var data = event.dataTransfer.getData("text");
+                if (data == "bucket1" || data == "bucketone") {
+                    image = document.getElementById("bucketNum1");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax").innerHTML;
+                    document.getElementById("bucketnumchange").innerHTML = "0";
+                }
+                if (data == "bucket2" || data == "bucketNum2") {
+                    image = document.getElementById("bucketNum2");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax2").innerHTML;
+                    document.getElementById("bucketnumchange2").innerHTML = "0";
+                }
+                else {
+
+                }
+            }
+            function moveWater(imgName, imgName2) {
+                var data = event.dataTransfer.getData("text");
+                if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
+                    // bucket2max parsed
+                    var bucket2max = document.getElementById('bucketnummax2').innerHTML;
+                    var bucket2max2 = parseInt(bucket2max);
+                    // bucket2change parsed
+                    var bucket2change = document.getElementById('bucketnumchange2').innerHTML;
+                    var bucket2change2 = parseInt(bucket2change);
+                    // numChange parsed
+                    var numChange = document.getElementById('bucketnumchange').innerHTML;
+                    var numChange2 = parseInt(numChange);
+                    // diff parsed
+                    var diff2 = bucket2max - bucket2change;
+                    var diff = parseInt(diff2);
+                    var zero = "0";
+                    if (numChange2 > diff) {
+                        document.getElementById('bucketnumchange2').innerHTML = bucket2max2;
+                        var originBucket = numChange2 - diff;
+                        document.getElementById('bucketnumchange').innerHTML = originBucket;
+
+                        if (originBucket == zero) {
+                            image = document.getElementById('bucketNum1');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 < diff) {
+                        var both = numChange2 + bucket2change2;
+                        document.getElementById('bucketnumchange2').innerHTML = both;
+                        document.getElementById('bucketnumchange').innerHTML = zero;
+                        image = document.getElementById('bucketNum1');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum2');
+                        image2.src = imgName2;
+
+                        if (both == zero) {
+                            image = document.getElementById('bucketNum2');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 == diff) {
+                        document.getElementById('bucketnumchange2').innerHTML = bucket2max2;
+                        document.getElementById('bucketnumchange').innerHTML = zero;
+                        image = document.getElementById('bucketNum1');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum2');
+                        image2.src = imgName2;
+                    }
+                }
+                if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
+                    //bucket1max parsed
+                    var bucket1max = document.getElementById('bucketnummax').innerHTML;
+                    var bucket1max1 = parseInt(bucket1max);
+                    //bucket1change parsed
+                    var bucket1change = document.getElementById('bucketnumchange').innerHTML;
+                    var bucket1change1 = parseInt(bucket1change);
+                    //numChange parsed
+                    var numChange = document.getElementById('bucketnumchange2').innerHTML;
+                    var numChange2 = parseInt(numChange);
+                    //diff parsed
+                    var diff = bucket1max1 - bucket1change1;
+                    var diff2 = parseInt(diff);
+                    //ZERO
+                    var zero = "0";
+                    if (numChange2 > diff2) {
+                        document.getElementById('bucketnumchange').innerHTML = bucket1max1;
+                        var originBucket = numChange2 - diff2;
+                        document.getElementById('bucketnumchange2').innerHTML = originBucket;
+                        image2 = document.getElementById('bucketNum1');
+                        image2.src = imgName2;
+
+                        if (originBucket == zero) {
+                            image = document.getElementById('bucketNum2');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 < diff2) {
+                        var both = numChange2 + bucket1change1;
+                        document.getElementById('bucketnumchange').innerHTML = both;
+                        document.getElementById('bucketnumchange2').innerHTML = zero;
+                        image2 = document.getElementById('bucketNum1');
+                        image2.src = imgName2;
+                        image = document.getElementById('bucketNum2');
+                        image.src = imgName;
+
+                        if (both == zero) {
+                            image2 = document.getElementById('bucketNum1');
+                            image2.src = imgName
+                        }
+                    }
+                    if (numChange2 == diff2) {
+                        document.getElementById('bucketnumchange').innerHTML = bucket1max1;
+                        document.getElementById('bucketnumchange2').innerHTML = "0";
+                        image = document.getElementById('bucketNum2');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum1');
+                        image2.src = imgName2;
+                    }
+                }
+                if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
+                    // bucket2change parsed
+                    var bucket2change = document.getElementById('bucketnumchange').innerHTML;
+                    var bucket2change2 = parseInt(bucket2change);
+                    document.getElementById('bucketnumchange').innerHTML = bucket2change2;
+
+                }
+                if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
+                    // bucket2change parsed
+                    var bucket2change = document.getElementById('bucketnumchange2').innerHTML;
+                    var bucket2change2 = parseInt(bucket2change);
+                    document.getElementById('bucketnumchange2').innerHTML = bucket2change2;
+                }
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="test.css">
+    </head>
+    <body>
+        <button id="quit" onmousedown="click_Button()">Quit</button>
+        <button id="options" onmousedown="click_Button()" >options</button>
+        <div id="boxes">
+            <!--got this to work-->
+            <div id="hose" ondragover="dragStart(event)" ondrop="fillBucket('rsc/bucketwater.png')">
+            <p>hose also fills</p></div>
+            <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('rsc/bucketwater.png')">
+                <p>Fill</p>
+            </div>
+            <!--works-->
+            <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('rsc/bucketempty.png')">
+                <p>Empty</p>
+            </div>
+        </div>
+        <div id="buckets">
+            <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater('rsc/bucketwater.png')">
+                <label id="bucketone" for="bucket1"><span id="bucketnumchange">0</span>/<span id="bucketnummax">7</span></label>
+                <img id="bucketNum1" alt="Bucket1" src="rsc/bucketempty.png" height="128" width="128">
+            </div>
+            <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater('rsc/bucketwater.png')">
+                <label id="buckettwo"  for="bucket2"><span id="bucketnumchange2">0</span>/<span id="bucketnummax2">9</span></label>
+                <img id="bucketNum2" alt="Bucket2" src="rsc/bucketempty.png" height="128" width="128">
+            </div>
+        </div>
+        <div id="tunnel">
+
+            <img id="batman" src="rsc/batman_logo.gif" alt="Batman!" style="position: absolute;left: 10px;top:30px;width: 100px; height: 50px;">
+            <div id="stickmen">
+                <img src="rsc/stickman_test.png" id="stickman1" alt="Stickman" style="position: absolute;left: 200px;top:30px;width: 50px; height: 80px;">
+                <img src="rsc/stickman_test.png" id="stickman2" alt="Stickman+" style="position: absolute;left: 300px;top:30px;width: 50px; height: 80px;">
+                <img src="rsc/stickman_test.png" id="stickman3" alt="Stickman++" style="position: absolute;left: 400px;top:30px;width: 50px; height: 80px;">
+                <img src="rsc/stickman_test.png" id="stickman4" alt="Stickman+++" style="position: absolute;left: 450px;top:30px;width: 50px; height: 80px;">
+                <img src="rsc/stickman_test.png" id="stickman5" alt="Stickman++++" style="position: absolute;left: 650px;top:30px;width: 50px; height: 80px;">
+            </div>
+            <div id="gate">
+                 <img id="gateImg" src="rsc/gate.gif" alt="Batman!" style="position: absolute;left: 1150px;top:30px;width: 80px; height: 80px;">
+             </div>
+        </div>
+
+                    <div id="tankToFill" ondrop="fillTank()">
+                    <label id="tank" for="tankToFill"><span id="Tank">0</span></div>
+            <div id="tankAlreadyFull"><span id="fillTo">18</span></div>
+    </body>
+</html>
