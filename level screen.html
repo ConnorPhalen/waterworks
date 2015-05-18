@@ -38,21 +38,9 @@ function timeAdd(){
         move();
     }
     loseCheck();
-    // Tests for checking if there is a stickmanX, then run the collision code and delete them if true.
-    if(document.getElementById('stickman1') !== null){
-        stickmanCollision('batman', 'stickman1');
-    }
-    if(document.getElementById('stickman2') !== null){
-        stickmanCollision('batman', 'stickman2');
-    }
-    if(document.getElementById('stickman3') !== null){
-        stickmanCollision('batman', 'stickman3');
-    }
-    if(document.getElementById('stickman4') !== null){
-        stickmanCollision('batman', 'stickman4');
-    }
-    if(document.getElementById('stickman5') !== null){
-        stickmanCollision('batman', 'stickman5');
+    // Tests for checking if there is a antX, then run the collision code and delete them if true.
+    if(document.getElementById('ant1') !== null){
+        antCollision('batman', 'ant1');
     }
 }
 
@@ -74,13 +62,13 @@ function move() {
 }*/
 
 // Function to test out the "wave" and stickman collisions. If they do collide, the stickman will delete itself.
-function stickmanCollision(wave, stickman) {
+function antCollision(wave, ant) {
     waveID = wave;
-    stickmanID = stickman;
-    if(testCollision(waveID, stickmanID)){
-        stickmanID = document.getElementById(stickman);
-        if (stickmanID.parentNode) {
-            stickmanID.parentNode.removeChild(stickmanID);
+    antID = ant;
+    if(testCollision(waveID, antID)){
+        antID = document.getElementById(ant);
+        if (antID.parentNode) {
+            antID.parentNode.removeChild(antID);
         }
     }
 }
@@ -320,11 +308,7 @@ function testCollision(objectA, objectB){
             <div id="timer">
                 <img id="batman" src="rsc/batman_logo.gif" alt="Batman!" style="position: absolute;left: 10px;top:30px;width: 100px; height: 50px;">
                 <div id="stickmen">
-                    <img src="rsc/stickman_test.png" id="stickman1" alt="Stickman" style="position: absolute;left: 200px;top:30px;width: 50px; height: 80px;">
-                    <img src="rsc/stickman_test.png" id="stickman2" alt="Stickman+" style="position: absolute;left: 300px;top:30px;width: 50px; height: 80px;">
-                    <img src="rsc/stickman_test.png" id="stickman3" alt="Stickman++" style="position: absolute;left: 400px;top:30px;width: 50px; height: 80px;">
-                    <img src="rsc/stickman_test.png" id="stickman4" alt="Stickman+++" style="position: absolute;left: 450px;top:30px;width: 50px; height: 80px;">
-                    <img src="rsc/stickman_test.png" id="stickman5" alt="Stickman++++" style="position: absolute;left: 650px;top:30px;width: 50px; height: 80px;">
+                    <img src="artwork/ants.png" id="ant1" alt="Ant" style="position: absolute;left: 200px;top:30px;width: 400px; height: 80px;">
                 </div>
                 <div id="gate">
                     <img id="gateImg" src="rsc/gate.gif" alt="Batman!" style="position: absolute;left: 1150px;top:30px;width: 80px; height: 80px;">
