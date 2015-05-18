@@ -32,10 +32,16 @@
         </script>
     </head>
     <body>
+        <?php 
+            echo "NOTE FROM OWNER: To rearrange Top 10 list, change existing value(s), or create a new one and ";
+        ?>
+        <a href="http://www.doooge.netau.net/prgTst/leadbd.php">click this</a>.
+        <br />
         <?php
+
             $file=file("dat.txt");
             
-            echo "Data text file<br/>";
+            echo "<br />EXISTING DATA:<br/>";
 
             foreach ($file as $line) {
 
@@ -45,7 +51,7 @@
             
             $file=file("ldb.txt");
 
-            echo "<br/>Top 10<br />";
+            echo "<br/>TOP 10:<br />";
 
             foreach ($file as $line) {
 
