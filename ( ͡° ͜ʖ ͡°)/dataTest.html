@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Data Test</title>
+        <script>
+
+            onload = function () {
+
+                if (window.location.href.match(/true/)) {
+
+                    if(window.location.href.match(/yes/)) {
+                        
+                        alert("Welcome new user!");
+
+                    } else {
+
+                        alert("Welcome back jack!");
+
+                    }
+
+                } else {
+
+                    var user = prompt("Enter name", "");
+                    var score = prompt("Enter a number", "");
+
+                    window.location.href = "http://www.doooge.netau.net/prgTst/dat_manip.php?usn=" + user + "&s=" + score;
+
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <?php 
+            echo "NOTE FROM OWNER: To rearrange Top 10 list, change existing value(s), or create a new one and ";
+        ?>
+        <a href="http://www.doooge.netau.net/prgTst/leadbd.php">click this</a>.
+        <br />
+        <?php
+
+            $file=file("dat.txt");
+            
+            echo "<br />EXISTING DATA:<br/>";
+
+            foreach ($file as $line) {
+
+                echo "$line<br />";
+            
+            }
+            
+            $file=file("ldb.txt");
+
+            echo "<br/>TOP 10:<br />";
+
+            foreach ($file as $line) {
+
+                echo "$line<br />";
+            
+            }
+        ?>
+    </body>
+</html>
