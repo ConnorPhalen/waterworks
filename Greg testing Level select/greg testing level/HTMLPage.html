@@ -15,6 +15,45 @@
             function click_Button() {
             audio.play();
             }
+            
+             function fillTank(){
+                var data = event.dataTransfer.getData("text");
+                var additionAmount;
+                var maxTank = document.getElementById(event.target.id).getElementsByTagName("span");
+                var tanks = maxTank[0].id
+                 
+                 if(document.getElementById(data) == bucket1){
+                  additionAmount = bucket1Amount;   
+                 }else if( document.getElementById(data) == bucket2Amount){
+                  additionAmount = bucket2Amount;   
+                 }
+               document.getElementById(tanks).innerHTML += additionAmount;
+                
+            }
+            /*
+            
+            document.addEventListener("drop", function(event) {
+    event.preventDefault();
+    if ( event.target.className == "droptarget" ) {
+        document.getElementById("demo").style.color = "";
+        event.target.style.border = "";
+        var data = event.dataTransfer.getData("Text");
+        event.target.appendChild(document.getElementById(data));
+    }
+}
+            <div id="tankToFill" ondrop="fillTank()">
+                    <label id="tank" for="tankToFill"><span id="Tank">
+                
+                var data = event.dataTransfer.getData("text"); done
+                var maxId = document.getElementById(event.target.id).getElementsByTagName("span");
+                var other = document.getElementById(data).getElementsByTagName("span");
+                var otherChange = other[0].id;
+                var numChange = maxId[0].id;
+                var max = maxId[1].innerHTML;
+                var equate = (bucket2Max - bucket2Amount);
+                var equatePart2 = (bucket1Max - bucket1Amount);
+            */
+            
             //fills the buckets when dropped on waterBox
             function fillBucket(imgName) {
                 var data = event.dataTransfer.getData("text");
@@ -49,8 +88,8 @@
             function emptyBucket(imgName) {
                 var data = event.dataTransfer.getData("text");
                 var imageId = document.getElementById(data).getElementsByTagName("img");
-                image = document.getElementById(imageId[0].id);
-                image.src = imgName;
+                //image = document.getElementById(imageId[0].id);
+                //image.src = imgName;
                 var maxId = document.getElementById(data).getElementsByTagName("span");
                 var numChange = maxId[0].id;
                 document.getElementById(numChange).innerHTML = "0";
@@ -62,13 +101,11 @@
                     bucket2Amount=0;    
                 }
             }
-            function moveWater() {
+            function moveWater(imgName) {
                 var data = event.dataTransfer.getData("text");
                 var maxId = document.getElementById(event.target.id).getElementsByTagName("span");
-               // var other = document.getElementById(bucket1).getElementsByTagName("span");
-               // var imageId = document.getElementById(data).getElementsByTagName("img");
-               //image = document.getElementById(imageId[0].id);
-               // image.src = imgName;
+                var imageId = document.getElementById(data).getElementsByTagName("img");
+                image = document.getElementById(imageId[0].id);
                 var other = document.getElementById(data).getElementsByTagName("span");
                 var otherChange = other[0].id;
                 var numChange = maxId[0].id;
@@ -122,6 +159,7 @@
                         // replaces the lowest span with the number needed
                     document.getElementById(numChange).innerHTML = bucket2Amount; //bucket1=2
                     document.getElementById(otherChange).innerHTML = bucket1Amount;
+                    
                     }
                 }
                 if(document.getElementById(data) == bucket2){
@@ -168,9 +206,17 @@
                     }
                     document.getElementById(numChange).innerHTML = bucket1Amount;//70;
                     document.getElementById(otherChange).innerHTML = bucket2Amount; //55;
+                    
                     }
                 }
+                 /*    if(bucket1Amount>=(bucket1Max/2)){
+                     otherChange.image.src = imgName;
+                     }
+                     if(bucket2Amount>=(bucket2Max/2)){
+                     image.src = imgName;
+                     }*/
             }
+            
         </script>
         <link rel="stylesheet" type="text/css" href="test.css">
     </head>
@@ -190,17 +236,18 @@
             </div>
         </div>
         <div id="buckets">
-            <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater()">
+            <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketwater.png')">
                 <label id="bucketone" for="bucket1"><span id="bucketnumchange">0</span>/<span id="bucketnummax">7</span></label>
                 <img id="bucketNum1" alt="Bucket1" src="bucketempty.png" height="128" width="128">
             </div>
-            <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater()">
+            <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketwater.png')">
                 <label id="buckettwo"  for="bucket2"><span id="bucketnumchange2">0</span>/<span id="bucketnummax2">9</span></label>
                 <img id="bucketNum2" alt="Bucket2" src="bucketempty.png" height="128" width="128">
             </div>
         </div>
-                    <div id="tankToFill"><p>0</p></div>
-            <div id="tankAlreadyFull"><p>18</p></div>
+                    <div id="tankToFill" ondrop="fillTank()">
+                    <label id="tank" for="tankToFill"><span id="Tank">0</span></div>
+            <div id="tankAlreadyFull"><span id="fillTo">18</span></div>
             <div id="tunnel">
             <div id="ironGate"><p>This is a gate</p></div>
             </div>
