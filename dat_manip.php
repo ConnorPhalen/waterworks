@@ -34,6 +34,8 @@
          
     }
 
+    $loc = "http://www.doooge.netau.net/prgTst/dataTest.html?reg=true&ndat=$new";
+
     if (!$match) {
         
         $new = "yes";
@@ -56,8 +58,10 @@
 
         file_put_contents("dat.txt", $newdat);
 
+        $loc = "http://www.doooge.netau.net/prgTst/leadbd.php";
+
     }  
 
-    header("Location: http://www.doooge.netau.net/prgTst/dataTest.html?reg=true&ndat=$new");
+    header("Location: $loc");
     die();
 ?>
