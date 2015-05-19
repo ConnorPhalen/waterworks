@@ -35,6 +35,21 @@ function timeAdd(){
     if(document.getElementById('ant1') !== null){
         antCollision('wave', 'ant1');
     }
+    if(document.getElementById('ant2') !== null){
+        antCollision('wave', 'ant2');
+    }
+    if(document.getElementById('ant3') !== null){
+        antCollision('wave', 'ant3');
+    }
+    if(document.getElementById('ant4') !== null){
+        antCollision('wave', 'ant4');
+    }
+    if(document.getElementById('ant5') !== null){
+        antCollision('wave', 'ant5');
+    }
+    if(document.getElementById('ant6') !== null){
+        antCollision('wave', 'ant6');
+    }
 }
 
 // Grabs the picture ID, and its style value of left, and adds x px.
