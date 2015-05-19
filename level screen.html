@@ -284,10 +284,38 @@ function testCollision(objectA, objectB){
                     document.getElementById('bucketnumchange2').innerHTML = bucket2change2;
                 }
             }
-           /* function fillTank(){
+            function fillTank(imgName){
+                var tankAmount = document.getElementById("tank");
+                var data = event.dataTransfer.getData("text");
+                if (data == "bucket1" || data == "bucketone") {
+                    image = document.getElementById("bucketNum1");
+                    image.src = imgName;
+                    var tank2 = document.getElementById('tank').innerHTML;
+                    var tank2Amount = parseInt(tank2);
+                    var bucket1Change = document.getElementById('bucketnumchange').innerHTML;
+                    var tankChange1 = parseInt(bucket1Change);
+                    var total2 = tank2Amount + bucketChange2;
+                    var total = parseInt(total2);
+                    document.getElementById('tank').innerHTML = total
+                    document.getElementById("bucketnumchange").innerHTML = "0";
+                }
+                if (data == "bucket2" || data == "bucketNum2") {
+                    image = document.getElementById("bucketNum2");
+                    image.src = imgName;
+                    var tank2 = document.getElementById('tank').innerHTML;
+                    var tank2Amount = parseInt(tank2);
+                    var bucket2Change = document.getElementById('bucketnumchange2').innerHTML;
+                    var bucketChange2 = parseInt(bucket2Change);
+                    var total2 = tank2Amount + bucketChange2;
+                    var total = parseInt(total2);
+                    document.getElementById('tank').innerHTML = total;
+                    document.getElementById("bucketnumchange2").innerHTML = "0";
+                }
+                else {
+
+                }
                 
-                
-            }*/
+            }
         </script>
         <link rel="stylesheet" type="text/css" href="test.css">
     </head>
@@ -332,7 +360,7 @@ function testCollision(objectA, objectB){
             </div>
         </div>
 
-                    <div id="tankToFill" ondrop="fillTank()">
+                    <div id="tankToFill" ondragover="dragStart(event)" ondrop="fillTank('rsc/bucketempty.png')">
                     <label id="tank" for="tankToFill"><span id="tank">0</span></label></div>
             <div id="tankAlreadyFull"><span id="fillTo">18</span></div>
     </body>
