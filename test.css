@@ -1,5 +1,5 @@
 body {
-        background-image: url("rsc/Background.jpg");
+        background-image: url("artwork/level_back.png");
     background-size: 100%;
     height: 100%;
     width: 100%;
@@ -135,7 +135,7 @@ body {
     height: 200px;
     position: absolute;
     right: 10%;
-    top: 40%;
+    top: 60%;
 }
 #tankAlreadyFull{
     border: solid;
@@ -144,7 +144,7 @@ body {
     height: 200px;
     position: absolute;
     right: 4%;
-    top: 42%;
+    top: 62%;
 }
 #tunnel {
     width:  98%;
@@ -155,23 +155,10 @@ body {
     bottom: 0px;
 }
 
-#batman{
-    position: absolute;
-    left: 10px;
-    top:30px;
-    width: 100px;
-    height: 50px;
-}
-
 #gateImg{
     position: absolute;
     left: 750px;
     top:30px;
     width: 80px; 
     height: 80px;
-}
-
-#dead{
-    height: 400px;
-    left: -400px;
 }

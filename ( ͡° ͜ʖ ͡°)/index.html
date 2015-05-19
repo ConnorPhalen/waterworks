@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Water&nbspWorks</title>
+        <style>
+            body {
+                background-color: #6480d4;    
+            }
+            #banner {
+                background-color: rgba(0, 0, 0, 0.18);
+                margin-left: 10%;
+                margin-right: 10%;
+                position: fixed;
+                top: 0px;
+                height: 100%;
+                width: 80%;
+            }
+            #lab { 
+                color:  white;
+                font-family: 'Lucida Sans Unicode';
+                font-size: 20px;
+                margin-top: 180px;
+                text-align: center;
+            }
+            #lod {
+                background-image: url("rsc/lod.gif");
+                background-repeat: no-repeat;     
+                margin-left: auto;
+                margin-right: auto;
+                height: 56px;
+                width: 56px;
+            }
+        </style>
+        <script>
+
+            window.onload=function() {
+
+                if (navigator.userAgent.match(/(android|webos|iphone|ipad|blackberry)/i)) {
+
+                    setTimeout(function () { window.location.replace("http://www.doooge.netau.net/m.main.html") }, 3000);
+
+                } else {
+
+                    setTimeout(function () { window.location.replace("http://www.doooge.netau.net/main.html") }, 3000);
+
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="banner"></div>
+        <p id="lab">Working...</p>
+        <p id="lod"></p>
+    </body>
+</html>

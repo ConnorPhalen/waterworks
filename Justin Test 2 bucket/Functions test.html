@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script>
+            // gets the sound
+            var audio = new Audio('../sounds/water_click.wav');
+            //plays the sound when clicked
+            function click_Button() {
+            audio.play();
+            }
+            //fills the buckets when dropped on waterBox
+            function fillBucket(imgName) {
+                var data = event.dataTransfer.getData("text");
+                if (data == "bucket1" || data == "bucketone") {
+                    image = document.getElementById("bucketNum1");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax").innerHTML;
+                    document.getElementById("bucketnumchange").innerHTML = max;
+                }
+                if (data == "bucket2" || data == "bucketNum2") {
+                    image = document.getElementById("bucketNum2");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax2").innerHTML;
+                    document.getElementById("bucketnumchange2").innerHTML = max;
+                }
+                else {
+                }
+            }
+            //allows items to be dragged
+            function dragStart(event) {
+                event.preventDefault();
+            }
+            //drag for frist bucket
+            function drag(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+            //drag for second bucket
+            function drag2(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+            //empties buckets when dragged over
+            function emptyBucket(imgName) {
+                var data = event.dataTransfer.getData("text");
+                if (data == "bucket1" || data == "bucketone") {
+                    image = document.getElementById("bucketNum1");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax").innerHTML;
+                    document.getElementById("bucketnumchange").innerHTML = "0";
+                }
+                if (data == "bucket2" || data == "bucketNum2") {
+                    image = document.getElementById("bucketNum2");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax2").innerHTML;
+                    document.getElementById("bucketnumchange2").innerHTML = "0";
+                }
+                else {
+
+                }
+            }
+            function moveWater(imgName, imgName2) {
+                var data = event.dataTransfer.getData("text");
+                if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
+                    // bucket2max parsed
+                    var bucket2max = document.getElementById('bucketnummax2').innerHTML;
+                    var bucket2max2 = parseInt(bucket2max);
+                    // bucket2change parsed
+                    var bucket2change = document.getElementById('bucketnumchange2').innerHTML;
+                    var bucket2change2 = parseInt(bucket2change);
+                    // numChange parsed
+                    var numChange = document.getElementById('bucketnumchange').innerHTML;
+                    var numChange2 = parseInt(numChange);
+                    // diff parsed
+                    var diff2 = bucket2max - bucket2change;
+                    var diff = parseInt(diff2);
+                    var zero = "0";
+                    if (numChange2 > diff) {
+                        document.getElementById('bucketnumchange2').innerHTML = bucket2max2;
+                        var originBucket = numChange2 - diff;
+                        document.getElementById('bucketnumchange').innerHTML = originBucket;
+
+                        if (originBucket == zero) {
+                            image = document.getElementById('bucketNum1');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 < diff) {
+                        var both = numChange2 + bucket2change2;
+                        document.getElementById('bucketnumchange2').innerHTML = both;
+                        document.getElementById('bucketnumchange').innerHTML = zero;
+                        image = document.getElementById('bucketNum1');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum2');
+                        image2.src = imgName2;
+
+                        if (both == zero) {
+                            image = document.getElementById('bucketNum2');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 == diff) {
+                        document.getElementById('bucketnumchange2').innerHTML = bucket2max2;
+                        document.getElementById('bucketnumchange').innerHTML = zero;
+                        image = document.getElementById('bucketNum1');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum2');
+                        image2.src = imgName2;
+                    }
+                }
+                if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
+                    //bucket1max parsed
+                    var bucket1max = document.getElementById('bucketnummax').innerHTML;
+                    var bucket1max1 = parseInt(bucket1max);
+                    //bucket1change parsed
+                    var bucket1change = document.getElementById('bucketnumchange').innerHTML;
+                    var bucket1change1 = parseInt(bucket1change);
+                    //numChange parsed
+                    var numChange = document.getElementById('bucketnumchange2').innerHTML;
+                    var numChange2 = parseInt(numChange);
+                    //diff parsed
+                    var diff = bucket1max1 - bucket1change1;
+                    var diff2 = parseInt(diff);
+                    //ZERO
+                    var zero = "0";
+                    if (numChange2 > diff2) {
+                        document.getElementById('bucketnumchange').innerHTML = bucket1max1;
+                        var originBucket = numChange2 - diff2;
+                        document.getElementById('bucketnumchange2').innerHTML = originBucket;
+                        image2 = document.getElementById('bucketNum1');
+                        image2.src = imgName2;
+
+                        if (originBucket == zero) {
+                            image = document.getElementById('bucketNum2');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 < diff2) {
+                        var both = numChange2 + bucket1change1;
+                        document.getElementById('bucketnumchange').innerHTML = both;
+                        document.getElementById('bucketnumchange2').innerHTML = zero;
+                        image2 = document.getElementById('bucketNum1');
+                        image2.src = imgName2;
+                        image = document.getElementById('bucketNum2');
+                        image.src = imgName;
+
+                        if (both == zero) {
+                            image2 = document.getElementById('bucketNum1');
+                            image2.src = imgName
+                        }
+                    }
+                    if (numChange2 == diff2) {
+                        document.getElementById('bucketnumchange').innerHTML = bucket1max1;
+                        document.getElementById('bucketnumchange2').innerHTML = "0";
+                        image = document.getElementById('bucketNum2');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum1');
+                        image2.src = imgName2;
+                    }
+                }
+                if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
+                    // bucket2change parsed
+                    var bucket2change = document.getElementById('bucketnumchange').innerHTML;
+                    var bucket2change2 = parseInt(bucket2change);
+                    document.getElementById('bucketnumchange').innerHTML = bucket2change2;
+
+                }
+                if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
+                    // bucket2change parsed
+                    var bucket2change = document.getElementById('bucketnumchange2').innerHTML;
+                    var bucket2change2 = parseInt(bucket2change);
+                    document.getElementById('bucketnumchange2').innerHTML = bucket2change2;
+                }
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="test.css">
+    </head>
+    <body>
+        <div id="game">
+            <button id="quit" onmousedown="click_Button()">Quit</button>
+            <button id="options" onmousedown="click_Button()" >Options</button>
+            <div id="boxes">
+                <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')">
+                    <p>Fill</p>
+                </div>
+                <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('bucketempty.png')">
+                    <p>Empty</p>
+                </div>
+            </div>
+            <div id="buckets">
+                <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png','bucketwater.png')">
+                    <label id="bucketone" for="bucket1" draggable="false"><span id="bucketnumchange">0</span>/<span id="bucketnummax">7</span></label>
+                    <img id="bucketNum1" alt="Bucket1" src="bucketempty.png" height="128" width="128">
+                </div>
+                <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater('bucketempty.png','bucketwater.png')">
+                    <label id="buckettwo"  for="bucket2" draggable="false"><span id="bucketnumchange2">0</span>/<span id="bucketnummax2">9</span></label>
+                    <img id="bucketNum2" alt="Bucket2" src="bucketempty.png" height="128" width="128">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
