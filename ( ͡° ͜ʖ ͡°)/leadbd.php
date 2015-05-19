@@ -34,6 +34,8 @@
 
                     $targ = $line;
 
+                    $name = substr($line, 0, strpos($line, ';'));
+
                 }
 
             }  
@@ -41,7 +43,7 @@
         }
         array_push($bad, $targ);
 
-        file_put_contents("ldb.txt", "$token\t $lead \n", FILE_APPEND);  
+        file_put_contents("ldb.txt", "$token)\t $name\t -\t $lead points \n", FILE_APPEND);  
 
         $token++;
 
