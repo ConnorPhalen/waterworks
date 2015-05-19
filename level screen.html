@@ -23,7 +23,7 @@ var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
-    if(testCollision('batman', 'gateImg')){
+    if(testCollision('wave', 'gateImg')){
         clearInterval(mainTimer);
      }
 }
@@ -40,15 +40,15 @@ function timeAdd(){
     loseCheck();
     // Tests for checking if there is a antX, then run the collision code and delete them if true.
     if(document.getElementById('ant1') !== null){
-        antCollision('batman', 'ant1');
+        antCollision('wave', 'ant1');
     }
 }
 
 // Grabs the picture ID, and its style value of left, and adds x px.
 function move() {
-    batman = document.getElementById("batman").style.left;
-	batman = (parseInt(batman)+ waveMovement + "px");
-	document.getElementById("batman").style.left = batman;
+    wave = document.getElementById("wave").style.left;
+	wave = (parseInt(wave)+ waveMovement + "px");
+	document.getElementById("wave").style.left = wave;
 }
 
 // Page loads, then starts a timer that moves and increments values with a delay of timerDelay.
@@ -306,12 +306,12 @@ function testCollision(objectA, objectB){
         </div>
         <div id="tunnel">
             <div id="timer">
-                <img id="batman" src="artwork/wave_1.png" alt="Wave" style="position: absolute;left: 10px;top:30px;width: 400px; height: 75px;">
+                <img id="wave" src="artwork/wave_1.png" alt="Wave" style="position: absolute;left: 10px;top:30px;width: 400px; height: 75px;">
                 <div id="stickmen">
                     <img src="artwork/ants.png" id="ant1" alt="Ant" style="position: absolute;left: 600px;top:30px;width: 600px; height: 80px;">
                 </div>
                 <div id="gate">
-                    <img id="gateImg" src="artwork/gate.png" alt="Batman!" style="position: absolute;left: 1150px;top:30px;width: 80px; height: 80px;">
+                    <img id="gateImg" src="artwork/gate.png" alt="Gate" style="position: absolute;left: 1150px;top:30px;width: 80px; height: 80px;">
                 </div>
             </div>
         </div>
