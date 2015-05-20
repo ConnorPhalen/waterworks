@@ -85,12 +85,11 @@ function antCollision(wave, ant) {
 }
 
 function scoreCounter(){
-    playerTurns++;
-
-    var buck1 = document.getElementById("bucketnumchange").innerHTML;
-    var buck2 = document.getElementById("bucketnumchange2").innerHTML;
-    var buck1max = document.getElementById("bucketnummax").innerHTML;
-    var buck2max = document.getElementById("bucketnummax2").innerHTML;
+    
+    var buck1 = parseInt(document.getElementById("bucketnumchange").innerHTML);
+    var buck2 = parseInt(document.getElementById("bucketnumchange2").innerHTML);
+    var buck1max = parseInt(document.getElementById("bucketnummax").innerHTML);
+    var buck2max = parseInt(document.getElementById("bucketnummax2").innerHTML);
 
     var trythis = buck1 + buck2;
     var trythiscomp = buck1max + buck2max;
@@ -99,13 +98,15 @@ function scoreCounter(){
 
         case 0:
 
-            playerTurns -= 1;
-
             break; 
 
-        case trythis == trythiscomp:
+        case trythiscomp:
 
-            playerTurns -= 1;
+            break;
+
+        default:
+
+            playerTurns++;
 
             break;
 
