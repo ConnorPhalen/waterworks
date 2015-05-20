@@ -147,7 +147,7 @@ body {
 #tunnel {
     width:  98%;
     height: 15%;
-    
+    background-image: url('tunnelBack.png');
     border: 2px solid black;
     position: absolute;
     bottom: 0px;
