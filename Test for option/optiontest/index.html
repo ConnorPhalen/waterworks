@@ -7,15 +7,24 @@
     <style>
         body {
             height: 100px;
-            background: lightblue;
-        }
+			background: url('images/Background.jpg') no-repeat left top;
+			background-size: 100%;
+			height: 100%;
+			width: 100%;
+			z-index: -1;
+			background-repeat: no-repeat;
+			top: 0;
+			left: 0;
+			position: fixed;
+		}
         
         #player {
             width: 300px;
             height: 54px;
             position: relative;
             margin: 0 auto;
-            top: 200px;
+            top: 80px;
+			left: 80px;
             background: url('images/volume-background1.png') no-repeat left top;
         }
         
@@ -46,7 +55,7 @@
         }
         
         #player p {
-            color: blue;
+            color: yellow;
             position: absolute;
             top: -10px;
             left: -150px;
@@ -65,7 +74,7 @@
         #music {
             position: absolute;
             left: -40px;
-            top: 13px;
+            top: 15px;
             margin: 0 auto;
             height: 15px;
             width: 300px;
@@ -89,13 +98,7 @@
             margin-top: -8px;
         }
         
-        #milk1 p {
-            color: blue;
-            position: absolute;
-            top: 70px;
-            left: -150px;
-            font-size: 20px;
-        }
+        
         
         #btn_back {
             background-color: darkblue;
@@ -113,7 +116,7 @@
             margin-right: 2px;
             padding-top: 13px;
             padding-bottom: 13px;
-            width: 110px;
+            width: 220px;
         }
         
         #btn_back:hover {
@@ -127,25 +130,48 @@
         #nav_wrapper {
             margin-top: 28%;
             position: fixed;
-            right: 680px;
-            bottom: 230px;
+            right: 34.5%;
+            bottom: 23%;
+			
         }
         
 		#nav_wrapper p {
 			
 			margin-top:10px;
-			left: -130px;
+			left: -105px;
+			top: -130px;
+			
 		}
         h1 {
             position: absolute;
             font-size: 3em;
-            top: -150px;
-            left: 0px;
+            top: -200%;
+            left: -6%;
             font-weight: bold;
-            color: blue;
+            color: yellow; 
+			
         }
         
-      
+      #rectangle {
+			background-color: #3366CC;
+            border-radius: 10%;
+            border-top: 3px solid lightblue;
+            border-bottom: 3px solid lightblue;
+            border-left: 3px solid lightblue;
+            border-right: 3px solid lightblue;
+			padding-top: 10px;
+            padding-bottom: 10px;
+			padding-right: 10px;
+			padding-left: 10px;
+			width: 40%;
+			height: 55%;
+			position: relative;
+			top: 20%;
+			left: 45%;
+			
+			
+	  
+	  }
     </style>
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
@@ -154,7 +180,7 @@
 </head>
 
 <body>
-	
+	<div id="rectangle">
     <div id="player">
         <h1>Options</h1>
 		<div>
@@ -167,10 +193,14 @@
 		</div>
 		<div id="nav_wrapper">
 			<p>
-				<button id="btn_back"  onmousedown="click_Button()" type=button onClick="parent.location='http://www.doooge.netau.net/main.html'" value='Back'>Back</button>
-					
+				<button id="btn_back"  onmousedown="click_Button()" type=button onClick="parent.location='http://www.doooge.netau.net/main.html'" value='Back'>Back to Menu</button>
+				<button id="btn_back"  onmousedown="click_Button()" type=button onClick="parent.location='http://www.doooge.netau.net/main.html'" value='Back'>Back to Play</button>	
 			</p>
 		</div>
+	</div>
+	</div>
+	<div id="imgage">
+		<img id="myImage" src="images/volume.png" alt="Volume knob" onclick="sound()" style="width:100px;height:100px" >
 	</div>
 </body>
 </html>
