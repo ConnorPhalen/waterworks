@@ -84,16 +84,20 @@ function antCollision(wave, ant) {
     }
 }
 
+// Checks the values of the buckets, and adds turns if they pass the specififed cases.
 function scoreCounter(){
     
+    // Sets some variables to help keep the code cleaner.
     var buck1 = parseInt(document.getElementById("bucketnumchange").innerHTML);
     var buck2 = parseInt(document.getElementById("bucketnumchange2").innerHTML);
     var buck1max = parseInt(document.getElementById("bucketnummax").innerHTML);
     var buck2max = parseInt(document.getElementById("bucketnummax2").innerHTML);
 
+    // Sets variables to get the values of turns that do not count towards the total.
     var trythis = buck1 + buck2;
     var trythiscomp = buck1max + buck2max;
 
+    // By default, get add a turn, but if turn exception, do not increment.
     switch(trythis) {
 
         case 0:
@@ -112,6 +116,7 @@ function scoreCounter(){
 
     }
 
+    // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
     document.getElementById("scoreDisplay").innerHTML = "Score Reduction: " + time;
 }
