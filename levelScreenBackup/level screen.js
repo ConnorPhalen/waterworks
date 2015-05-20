@@ -86,6 +86,8 @@ function antCollision(wave, ant) {
 
 function scoreCounter(){
     playerTurns++;
+    
+
     /*if (document.getElementById("bucketnumchange").innerHTML == 0 || document.getElementById("bucketnumchange2").innerHTML == 0) {
         playerTurns -= 1;
     }*/
