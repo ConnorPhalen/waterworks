@@ -77,13 +77,13 @@ function click_Button() {
 var check = 0;
 function sound () {
 	if (check == 0) {
-		setVolume(1);
+		//setVolume(1);
 		
 		setMusic(1);
 		check = 1;
 		document.getElementById("myImage").src="images/volume.png";
 	} else {
-		setVolume(0);
+		//setVolume(0);
 		
 		setMusic(0);
 		check = 0;
