@@ -86,9 +86,31 @@ function antCollision(wave, ant) {
 
 function scoreCounter(){
     playerTurns++;
-    /*if (document.getElementById("bucketnumchange").innerHTML == 0 || document.getElementById("bucketnumchange2").innerHTML == 0) {
-        playerTurns -= 1;
-    }*/
+
+    var buck1 = document.getElementById("bucketnumchange").innerHTML;
+    var buck2 = document.getElementById("bucketnumchange2").innerHTML;
+    var buck1max = document.getElementById("bucketnummax").innerHTML;
+    var buck2max = document.getElementById("bucketnummax2").innerHTML;
+
+    var trythis = buck1 + buck2;
+    var trythiscomp = buck1max + buck2max;
+
+    switch(trythis) {
+
+        case 0:
+
+            playerTurns -= 1;
+
+            break; 
+
+        case trythis == trythiscomp:
+
+            playerTurns -= 1;
+
+            break;
+
+    }
+
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
     document.getElementById("scoreDisplay").innerHTML = "Score Reduction: " + time;
 }
