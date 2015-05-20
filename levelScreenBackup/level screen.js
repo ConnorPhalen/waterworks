@@ -197,6 +197,7 @@ function testCollision(objectA, objectB){
                     var diff2 = bucket2max - bucket2change;
                     var diff = parseInt(diff2);
                     var zero = "0";
+                    // if( document.getElementById('bucketnumchange').innerHTML == 0 || document.getElementById('bucketnumchange').innerHTML == document.getElementById('bucketnummax').innerHTML)
                     if (numChange2 > diff) {
                         document.getElementById('bucketnumchange2').innerHTML = bucket2max2;
                         var originBucket = numChange2 - diff;
