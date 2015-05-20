@@ -73,6 +73,7 @@ function click_Button() {
     audio.play();
 }
 
+// set up turn on/off by pictures (OPITON 2 FOR OPTION)
 var check = 0;
 function sound () {
 	if (check == 0) {
