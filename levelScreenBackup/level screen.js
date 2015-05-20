@@ -14,6 +14,8 @@ var timerDelay = 33;
 var waveMovement = 4;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 var playerTurns = 0;
+var SCORE_MAX = 789;
+var TURNS_MAX = 5;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -84,13 +86,51 @@ function antCollision(wave, ant) {
     }
 }
 
+// Checks the values of the buckets, and adds turns if they pass the specififed cases.
 function scoreCounter(){
-    playerTurns++;
-    /*if (document.getElementById("bucketnumchange").innerHTML == 0 || document.getElementById("bucketnumchange2").innerHTML == 0) {
-        playerTurns -= 1;
-    }*/
+    
+    // Sets some variables to help keep the code cleaner.
+    var buck1 = parseInt(document.getElementById("bucketnumchange").innerHTML);
+    var buck2 = parseInt(document.getElementById("bucketnumchange2").innerHTML);
+    var buck1max = parseInt(document.getElementById("bucketnummax").innerHTML);
+    var buck2max = parseInt(document.getElementById("bucketnummax2").innerHTML);
+
+    // Sets variables to get the values of turns that do not count towards the total.
+    var trythis = buck1 + buck2;
+    var trythiscomp = buck1max + buck2max;
+
+    // By default, get add a turn, but if turn exception, do not increment.
+    switch(trythis) {
+
+        case 0:
+
+            break; 
+
+        case trythiscomp:
+
+            break;
+
+        case trythiscomp - buck1max:
+
+            break;
+
+        case trythiscomp - buck2max:
+
+            break;
+
+        default:
+
+            playerTurns++;
+
+            break;
+
+    }
+
+    // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
-    document.getElementById("scoreDisplay").innerHTML = "Score Reduction: " + time;
+    document.getElementById("scoreDisplay").innerHTML = "Score: " + (SCORE_MAX - time);
+    //if(playerTurns > TURNS_MAX){
+        //document.getElementById("scoreDisplay").innerHTML = "Score: " + (SCORE_MAX - 100)    }
 }
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
