@@ -2,7 +2,7 @@ body {
     background-color: lightblue;
 }
 #game {
-    background-image: url("Background.jpg");
+    background: url("Background.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     border: 6px inset lightyellow;
