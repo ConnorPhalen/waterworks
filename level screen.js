@@ -13,6 +13,7 @@ var TIMEOVERFLOW_MAX = 2;
 var timerDelay = 33;
 var waveMovement = 4;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
+var playerTurns = 0;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -71,6 +72,7 @@ function move() {
 
 // Function to test out the "wave" and stickman collisions. If they do collide, the stickman will delete itself.
 function antCollision(wave, ant) {
+    scoreCounter();
     waveID = wave;
     antID = ant;
     if(testCollision(waveID, antID)){
@@ -79,6 +81,12 @@ function antCollision(wave, ant) {
             antID.parentNode.removeChild(antID);
         }
     }
+}
+
+function scoreCounter(){
+    playerTurns++;
+    document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
+    document.getElementById("scoreDisplay").innerHTML = "Score Reduction: " + time;
 }
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
