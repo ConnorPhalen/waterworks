@@ -300,7 +300,7 @@ function testCollision(objectA, objectB){
                     var tankChange1 = parseInt(bucket1Change);
                     var total2 = tank2Amount + tankChange1;
                     var total1 = parseInt(total2);
-                    document.getElementById('tank').innerHTML = total;
+                    document.getElementById('tank').innerHTML = bucket1Change;
                     document.getElementById("bucketnumchange").innerHTML = "0";
                 }
                 if (data == "bucket2" || data == "bucketNum2") {
@@ -361,7 +361,7 @@ function testCollision(objectA, objectB){
                     <img src="artwork/ants.png" id="ant1" alt="Ant" style="position: absolute;left: 600px;top:30px;width: 600px; height: 80px;">
                 </div>
                 <div id="gate">
-                    <img id="gateImg" src="artwork/gate.png" alt="Gate" style="position: absolute;left: 1250px;top:-1px;width: 60px; height: 120px;">
+                    <img id="gateImg" src="artwork/gate.png" alt="Gate">
                 </div>
             </div>
         </div>
