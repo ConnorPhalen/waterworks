@@ -85,8 +85,7 @@ function antCollision(wave, ant) {
 }
 
 function scoreCounter(){
-    playerTurns++;
-
+    
     var buck1 = parseInt(document.getElementById("bucketnumchange").innerHTML);
     var buck2 = parseInt(document.getElementById("bucketnumchange2").innerHTML);
     var buck1max = parseInt(document.getElementById("bucketnummax").innerHTML);
@@ -99,13 +98,15 @@ function scoreCounter(){
 
         case 0:
 
-            playerTurns -= 1;
-
             break; 
 
         case trythiscomp:
 
-            playerTurns -= 1;
+            break;
+
+        default:
+
+            playerTurns++;
 
             break;
 
