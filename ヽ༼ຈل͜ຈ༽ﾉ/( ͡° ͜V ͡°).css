@@ -14,54 +14,60 @@ body {
     border-style: solid;
 }
 #buckets {
-    float: right;
-    display: inline;
     clear: both;
+    display: inline;
+    font-size: 90%;
     position: absolute;
-    top: 40%;
-    left: 50%;
-    width: 500px;
+    top: 45%;
+    left: 45%;
 }
 #bucket1 {
-    width: 128px;
-    height: 128px;
     float: left;
-    margin-right: 50px;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum1 {
+    height: 120%;
+    width: 100%;
 }
 #bucket2 {
-    width: 128px;
-    height: 128px;
     float: left;
-    margin-right: 50px;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum2 {
+    height: 120%;
+    width: 100%;
 }
 #bucket3 {
-    width: 128px;
-    height: 128px;
-    float:  left;
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum3 {
+    height: 120%;
+    width: 100%;
 }
 #bucketone {
-    font-size: 30px;
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 5%;
     position: absolute;
-    width: 128px;
-    height:  64px;
-    text-align: center;
-    padding-top: 64px;
 }
 #buckettwo {
-    font-size: 30px;
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 5%;
     position: absolute;
-    width: 128px;
-    height:  64px;
-    text-align: center;
-    padding-top: 64px;
 }
 #bucketthree {
-    font-size: 30px;
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 4%;
     position: absolute;
-    width: 128px;
-    height:  64px;
-    text-align: center;
-    padding-top: 64px;
 }
 #waterBox {
     border: solid;
