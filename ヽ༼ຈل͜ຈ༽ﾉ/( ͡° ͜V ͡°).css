@@ -1,0 +1,147 @@
+body {
+    
+}
+#game {
+    background-image: url("Background.jpg");
+    background-size: 100%;
+    width: 80%;
+    height: 80%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    position: fixed;
+    border-style: solid;
+}
+#buckets {
+    clear: both;
+    display: inline;
+    font-size: 90%;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+#bucket1 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum1 {
+    height: 120%;
+    width: 100%;
+}
+#bucket2 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum2 {
+    height: 120%;
+    width: 100%;
+}
+#bucket3 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum3 {
+    height: 120%;
+    width: 100%;
+}
+#bucketone {
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
+#buckettwo {
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
+#bucketthree {
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 4%;
+    position: absolute;
+}
+#waterBox {
+    border: solid;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 10%;
+    top: 37%;
+}
+#drainBox {
+    border: solid;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 29%;
+    top: 72%;
+}
+#boxes {
+    float: left;
+}
+#quit{
+    position: absolute;
+     background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 3%;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;  
+   
+}
+#quit:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 145%;
+    font-weight: bold;
+}
+#options{
+    position: absolute;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 85%;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;    
+}
+#options:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 145%;
+    font-weight: bold;
+}
