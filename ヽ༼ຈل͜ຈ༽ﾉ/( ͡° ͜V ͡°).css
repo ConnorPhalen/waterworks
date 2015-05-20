@@ -1,0 +1,144 @@
+body {
+    background-color: lightblue;
+}
+#game {
+    background: url("Background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 6px inset lightyellow;
+    position: fixed;
+    top: 8%;
+    left: 10%;
+    height: 80%;
+    width: 80%;
+}
+#buckets {
+    clear: both;
+    display: inline;
+    font-size: 90%;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+#bucket1 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum1 {
+    height: 120%;
+    width: 100%;
+}
+#bucket2 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum2 {
+    height: 120%;
+    width: 100%;
+}
+#bucket3 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum3 {
+    height: 120%;
+    width: 100%;
+}
+#bucketone {
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
+#buckettwo {
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
+#bucketthree {
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 4%;
+    position: absolute;
+}
+#waterBox {
+    border: 2px dashed black;
+    text-align: center;
+    width: 6.5%;
+    height: 13%;
+    position: fixed;
+    top: 38.5%;
+    left: 18.5%;
+}
+#drainBox {
+    border: 2px dashed black;
+    text-align: center;
+    width: 6.4%;
+    height: 10%;
+    position: absolute;
+    left: 29%;
+    top: 66.5%;
+}
+#boxes {
+    float: left;
+}
+#quit{
+    position: fixed;
+    top: 11%;
+    left: 12%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;  
+   
+}
+#quit:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 130%;
+    font-weight: bold;
+}
+#options{
+    position: fixed;
+    top: 11%;
+    right: 11%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;    
+}
+#options:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 130%;
+    font-weight: bold;
+}
