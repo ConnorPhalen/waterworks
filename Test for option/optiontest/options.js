@@ -32,7 +32,7 @@ $(document).ready(function() {
     var mySound = document.createElement('audio');
     $('#player').append(mySound);
     mySound.id = "mySound";
-    playAudio('audio/ViewSource', 1);
+    playAudio('audio/ryan_mod_hov', 1);
 });
 
 
@@ -72,3 +72,21 @@ var audio = new Audio('audio/water_click.wav');
 function click_Button() {
     audio.play();
 }
+
+var check = 0;
+function sound () {
+	if (check == 0) {
+		setVolume(1);
+		
+		setMusic(1);
+		check = 1;
+		document.getElementById("myImage").src="images/volume.png";
+	} else {
+		setVolume(0);
+		
+		setMusic(0);
+		check = 0;
+		document.getElementById("myImage").src="images/muted.png";
+	} 	 
+}
+
