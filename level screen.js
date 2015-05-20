@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title></title>
-        <script>
-      // gets the sound
+ // gets the sound
             var audio = new Audio('sounds/water_click.wav');
             //plays the sound when clicked
             function click_Button() {
@@ -20,10 +13,11 @@ var TIMEOVERFLOW_MAX = 2;
 var timerDelay = 33;
 var waveMovement = 4;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
+var playerTurns = 0;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
-    if(testCollision('batman', 'gateImg')){
+    if(testCollision('wave', 'gateImg')){
         clearInterval(mainTimer);
      }
 }
@@ -38,29 +32,32 @@ function timeAdd(){
         move();
     }
     loseCheck();
-    // Tests for checking if there is a stickmanX, then run the collision code and delete them if true.
-    if(document.getElementById('stickman1') !== null){
-        stickmanCollision('batman', 'stickman1');
+    // Tests for checking if there is a antX, then run the collision code and delete them if true.
+    if(document.getElementById('ant1') !== null){
+        antCollision('wave', 'ant1');
     }
-    if(document.getElementById('stickman2') !== null){
-        stickmanCollision('batman', 'stickman2');
+    if(document.getElementById('ant2') !== null){
+        antCollision('wave', 'ant2');
     }
-    if(document.getElementById('stickman3') !== null){
-        stickmanCollision('batman', 'stickman3');
+    if(document.getElementById('ant3') !== null){
+        antCollision('wave', 'ant3');
     }
-    if(document.getElementById('stickman4') !== null){
-        stickmanCollision('batman', 'stickman4');
+    if(document.getElementById('ant4') !== null){
+        antCollision('wave', 'ant4');
     }
-    if(document.getElementById('stickman5') !== null){
-        stickmanCollision('batman', 'stickman5');
+    if(document.getElementById('ant5') !== null){
+        antCollision('wave', 'ant5');
+    }
+    if(document.getElementById('ant6') !== null){
+        antCollision('wave', 'ant6');
     }
 }
 
 // Grabs the picture ID, and its style value of left, and adds x px.
 function move() {
-    batman = document.getElementById("batman").style.left;
-	batman = (parseInt(batman)+ waveMovement + "px");
-	document.getElementById("batman").style.left = batman;
+    wave = document.getElementById("wave").style.left;
+	wave = (parseInt(wave)+ waveMovement + "px");
+	document.getElementById("wave").style.left = wave;
 }
 
 // Page loads, then starts a timer that moves and increments values with a delay of timerDelay.
@@ -74,15 +71,22 @@ function move() {
 }*/
 
 // Function to test out the "wave" and stickman collisions. If they do collide, the stickman will delete itself.
-function stickmanCollision(wave, stickman) {
+function antCollision(wave, ant) {
+    scoreCounter();
     waveID = wave;
-    stickmanID = stickman;
-    if(testCollision(waveID, stickmanID)){
-        stickmanID = document.getElementById(stickman);
-        if (stickmanID.parentNode) {
-            stickmanID.parentNode.removeChild(stickmanID);
+    antID = ant;
+    if(testCollision(waveID, antID)){
+        antID = document.getElementById(ant);
+        if (antID.parentNode) {
+            antID.parentNode.removeChild(antID);
         }
     }
+}
+
+function scoreCounter(){
+    playerTurns++;
+    document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
+    document.getElementById("scoreDisplay").innerHTML = "Score Reduction: " + time;
 }
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
@@ -284,90 +288,7 @@ function testCollision(objectA, objectB){
                     document.getElementById('bucketnumchange2').innerHTML = bucket2change2;
                 }
             }
-            function fillTank(imgName){
-                var tankAmount = document.getElementById("tank").innerHTML;
-                var tankAmount1 = parseInt(tankAmount);
-                document.getElementById('tank').innerHTML = tankAmount1;
-                var data = event.dataTransfer.getData("text");
+           /* function fillTank(){
                 
                 
-                if (data == "bucket1" || data == "bucketone") {
-                    image = document.getElementById("bucketNum1");
-                    image.src = imgName;
-                    var tank2 = document.getElementById('tank').innerHTML;
-                    var tank2Amount = parseInt(tank2);
-                    var bucket1Change = document.getElementById('bucketnumchange').innerHTML;
-                    var tankChange1 = parseInt(bucket1Change);
-                    var total2 = tank2Amount + tankChange1;
-                    var total1 = parseInt(total2);
-                    document.getElementById('tank').innerHTML = bucket1Change;
-                    document.getElementById("bucketnumchange").innerHTML = "0";
-                }
-                if (data == "bucket2" || data == "bucketNum2") {
-                    image = document.getElementById("bucketNum2");
-                    image.src = imgName;
-                    var tank2 = document.getElementById('tank').innerHTML;
-                    var tank2Amount = parseInt(tank2);
-                    var bucket2Change = document.getElementById('bucketnumchange2').innerHTML;
-                    var bucketChange2 = parseInt(bucket2Change);
-                    var total2 = tank2Amount + bucketChange2;
-                    var total = parseInt(total2);
-                    document.getElementById('tank').innerHTML = total;
-                    document.getElementById("bucketnumchange2").innerHTML = "0";
-                }
-                else {
-
-                }
-                
-            }
-        </script>
-        <title>First Level</title>
-        <script src="level%20screen.js"></script>
-        <link rel="stylesheet" type="text/css" href="test.css">
-    </head>
-    <body>
-        <button id="quit" onclick="main.html'" onmousedown="click_Button()">Quit</button>
-        <div id="scoreBox">
-           <p id="turnDisplay"></p>
-           <p id="scoreDisplay"></p>
-        </div>
-        <button id="options" onclick="/Test%20for%20option/optiontest/options.html" onmousedown="click_Button()" >options</button>
-        <div id="boxes">
-            <!--got this to work-->
-            <div id="hose" ondragover="dragStart(event)" ondrop="fillBucket('rsc/bucketwater.png')">
-            <p>hose also fills</p></div>
-            <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('rsc/bucketwater.png')">
-                <p>Fill</p>
-            </div>
-            <!--works-->
-            <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('rsc/bucketempty.png')">
-                <p>Empty</p>
-            </div>
-        </div>
-        <div id="buckets">
-            <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater('rsc/bucketempty.png', 'rsc/bucketwater.png')">
-                <label id="bucketone" for="bucket1"><span id="bucketnumchange">0</span>/<span id="bucketnummax">7</span></label>
-                <img id="bucketNum1" alt="Bucket1" src="rsc/bucketempty.png" height="128" width="128">
-            </div>
-            <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater('rsc/bucketempty.png', 'rsc/bucketwater.png')">
-                <label id="buckettwo"  for="bucket2"><span id="bucketnumchange2">0</span>/<span id="bucketnummax2">9</span></label>
-                <img id="bucketNum2" alt="Bucket2" src="rsc/bucketempty.png" height="128" width="128">
-            </div>
-        </div>
-        <div id="tunnel">
-            <div id="timer">
-                <img id="wave" src="artwork/wave_1.png" alt="Wave" style="position: absolute;left: 10px;top:30px;width: 400px; height: 75px;">
-                <div id="stickmen">
-                    <img src="artwork/ants.png" id="ant1" alt="Ant" style="position: absolute;left: 600px;top:30px;width: 600px; height: 80px;">
-                </div>
-                <div id="gate">
-                    <img id="gateImg" src="artwork/gate.png" alt="Gate">
-                </div>
-            </div>
-        </div>
-
-                    <div id="tankToFill" ondragover="dragStart(event)" ondrop="fillTank('rsc/bucketempty.png')">
-                    <label id="tank" for="tankToFill"><span id="tank">0</span></label></div>
-            <div id="tankAlreadyFull"><span id="fillTo">18</span></div>
-    </body>
-</html>
+            }*/

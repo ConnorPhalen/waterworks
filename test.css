@@ -3,6 +3,8 @@ body {
     background-size: 100%;
     height: 100%;
     width: 100%;
+    max-height: 640px;
+    max-width: 1200px;
     z-index: -1;
     background-repeat: no-repeat;
     top: 0;
@@ -21,10 +23,8 @@ body {
     color: lightblue;
     font-family: 'Arial Black';
     font-size: 25px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 10%;
-    margin-right: 20px;
+    margin-left: 5%;
+    margin-right: 20%;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 40px;
@@ -50,10 +50,8 @@ body {
     color: lightblue;
     font-family: 'Arial Black';
     font-size: 25px;
-    margin-top: 20px;
-    margin-bottom: 20px;
     margin-left: 85%;
-    margin-right: 20px;
+    margin-right: 20%;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 40px;
@@ -76,8 +74,8 @@ body {
     width: 300px;
 }
 #bucket1 {
-    width: 128px;
-    height: 128px;
+    width: 42%;
+    height: 42%;
     float: left;
 }
 #bucket2 {
@@ -88,7 +86,7 @@ body {
 #bucketone {
     font-size: 30px;
     position: absolute;
-    width: 128px;
+    width: 42%;
     height:  64px;
     text-align: center;
     padding-top: 64px;
@@ -103,7 +101,7 @@ body {
 }
 #hose{
     border: solid;
-    width:150px;
+    width:10%;
     height: 100px;
     position: absolute;
     top: 15%;
@@ -111,8 +109,8 @@ body {
 }
 #waterBox {
     border: solid;
-    width: 100px;
-    height: 250px;
+    width: 8%;
+    height: 50%;
     position: absolute;
     left: 10%;
     top: 20%;
@@ -120,8 +118,8 @@ body {
 }
 #drainBox {
     border: solid;
-    width: 100px;
-    height: 100px;
+    width: 8%;
+    height: 15%;
     position: absolute;
     left: 10%;
     top: 72%;
@@ -131,42 +129,43 @@ body {
 }
 #tankToFill{
     border: solid;
-    width: 60px;
-    height: 200px;
+    width: 5%;
+    height: 30%;
     position: absolute;
     right: 10%;
-    top: 60%;
+    top: 50%;
 }
 #tankAlreadyFull{
     border: solid;
     background-color: aqua;
-    width: 60px;
-    height: 200px;
+    width: 5%;
+    height: 30%;
     position: absolute;
     right: 4%;
-    top: 62%;
+    top: 52%;
 }
 #tunnel {
     width:  98%;
     height: 15%;
-    background-color: #ff6a00;
+    background-image: url('tunnelBack.png');
     border: 2px solid black;
     position: absolute;
     bottom: 0px;
 }
 
-#batman{
-    position: absolute;
-    left: 10px;
-    top:30px;
-    width: 100px;
-    height: 50px;
-}
-
 #gateImg{
     position: absolute;
-    left: 750px;
-    top:30px;
-    width: 80px; 
-    height: 80px;
+    right: 0%;
+    top:0%;
+    width: 8%; 
+    height: 100%;
+}
+
+#scoreBox{
+    position:  absolute;
+    left:  45%;
+    width:  25%;
+    height:  15%;
+    border: 2px solid black;
+    background-color: #fff;
 }
