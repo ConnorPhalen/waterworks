@@ -103,7 +103,7 @@ function scoreCounter(){
 
             break; 
 
-        case trythis == trythiscomp:
+        case trythiscomp:
 
             playerTurns -= 1;
 
