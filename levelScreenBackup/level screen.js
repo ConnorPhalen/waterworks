@@ -108,6 +108,14 @@ function scoreCounter(){
 
             break;
 
+        case trythiscomp - buck1max:
+
+            break;
+
+        case trythiscomp - buck2max:
+
+            break;
+
         default:
 
             playerTurns++;
