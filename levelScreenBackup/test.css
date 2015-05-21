@@ -170,7 +170,7 @@ body {
     background-color: #fff;
 }
 
-#loseScreen{
+#endScreen{
     position:  absolute;
     width:  75%;
     left:  10%;
@@ -185,10 +185,17 @@ body {
     position: absolute;
     left:  100px;
     bottom: 0px;
+    font-size: 200%;
 }
 
 #antTunnel{
     position: absolute;
     bottom:  -120px;
     z-index: 2;
+}
+
+#gameEndDisplay{
+    font-size: 500%;
+    font-weight: bold;
+    top:  0px;
 }
