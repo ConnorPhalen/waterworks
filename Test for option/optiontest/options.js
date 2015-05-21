@@ -73,21 +73,20 @@ function click_Button() {
     audio.play();
 }
 
-// set up turn on/off by pictures (OPITON 2 FOR OPTION)
 var check = 0;
 function sound () {
 	if (check == 0) {
-		//setVolume(1);
+		setVolume(1);
 		
 		setMusic(1);
 		check = 1;
-		document.getElementById("myImage").src="images/volume.png";
+		document.getElementById("myImage").src="images/volume1.png";
 	} else {
-		//setVolume(0);
+		setVolume(0);
 		
 		setMusic(0);
 		check = 0;
-		document.getElementById("myImage").src="images/muted.png";
+		document.getElementById("myImage").src="images/mute1.png";
 	} 	 
 }
 
