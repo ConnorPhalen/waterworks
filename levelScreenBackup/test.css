@@ -1,5 +1,5 @@
 body {
-        background-image: url("artwork/level_back.png");
+        background-image: url("../artwork/grassy_level_back.png");
     background-size: 100%;
     height: 100%;
     width: 100%;
@@ -183,4 +183,9 @@ body {
 #displayScore{
     position: absolute;
     left:  100px;
+}
+
+#antTunnel{
+    position: absolute;
+    bottom:  -120px;
 }
