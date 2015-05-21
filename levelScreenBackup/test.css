@@ -188,4 +188,5 @@ body {
 #antTunnel{
     position: absolute;
     bottom:  -120px;
+    z-index: 2;
 }
