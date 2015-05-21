@@ -146,7 +146,7 @@ function gameOver(){
     finalScoreDisplay.id = 'displayScore';
 
     // Creates a text node to write out the info, and attaches it to the paragraph element.
-    var scoreShow = document.createTextNode("Final Score: " + scoreStart);
+    var scoreShow = document.createTextNode("Final Score: " + scoreStart + "." + "Turns Used: " + playerTurns + ".");
     finalScoreDisplay.appendChild(scoreShow); 
 
     // Attaches the new elements together and then puts them on the document body to display.
