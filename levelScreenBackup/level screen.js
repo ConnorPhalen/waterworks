@@ -146,7 +146,7 @@ function gameOver(){
     finalScoreDisplay.id = 'displayScore';
 
     // Creates a text node to write out the info, and attaches it to the paragraph element.
-    var scoreShow = document.createTextNode("Final Score: " + scoreStart + "." + "Turns Used: " + playerTurns + ".");
+    var scoreShow = document.createTextNode("Final Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".");
     finalScoreDisplay.appendChild(scoreShow); 
 
     // Attaches the new elements together and then puts them on the document body to display.
@@ -155,6 +155,33 @@ function gameOver(){
 
     // Clears the wave timer to get rid of the wave movement.
     clearInterval(mainTimer);
+
+    // Changes the src of the wave so it stops the .gif animation.
+    document.getElementById('wave').src = "../artwork/long_wave_1.png";
+}
+
+function gameWin(){
+     // Creates the new Div that will show and hold the final scores.
+    var gameOverDiv = document.createElement("div");
+    gameOverDiv.id = 'loseScreen';
+
+    // Creates a paragraph element to hold and move the score valeus around.
+    var finalScoreDisplay = document.createElement("p");
+    finalScoreDisplay.id = 'displayScore';
+
+    // Creates a text node to write out the info, and attaches it to the paragraph element.
+    var scoreShow = document.createTextNode("Final Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".");
+    finalScoreDisplay.appendChild(scoreShow); 
+
+    // Attaches the new elements together and then puts them on the document body to display.
+    gameOverDiv.appendChild(finalScoreDisplay);
+    document.body.appendChild(gameOverDiv);
+
+    // Clears the wave timer to get rid of the wave movement.
+    clearInterval(mainTimer);
+
+    // Changes the src of the wave so it stops the .gif animation.
+    document.getElementById('wave').src = "../artwork/long_wave_1.png";
 }
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
