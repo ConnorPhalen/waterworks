@@ -1,5 +1,6 @@
 body {
     background-color: aqua;
+    z-index: 2;
 }
 #gameBox{
     background: url("../artwork/level_back.png");
@@ -10,7 +11,8 @@ body {
     top: 8%;
     left: 10%;
     height: 80%;
-    width: 80%;   
+    width: 80%;  
+    z-index: 2;
 }
 #quit{
     position: fixed;
@@ -165,7 +167,15 @@ body {
     bottom: 0%;
     position: absolute;
 }
-
+#tunnelImg{
+  position: absolute;
+    width: 100%;
+    height: 50%;
+    
+    bottom: -1%;
+    z-index: 1;
+    
+}
 #gateImg{
     position: absolute;
     right: 0%;
@@ -178,7 +188,7 @@ body {
     position:  absolute;
     left:  45%;
     width:  25%;
-    font-size: 80%
+    font-size: 80%;
     height:  15%;
     border: 2px solid black;
     background-color: #fff;
@@ -188,4 +198,47 @@ body {
 }
 #scoreDisplay{
    font-size:80%;
+}
+#timer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#wave{
+    position: absolute;
+    
+}
+#ants{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#ant1{
+    margin-left: 10%;
+    height: 80%;
+    width: 10%;
+}
+#ant2{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant3{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant4{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant5{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant6{
+    height: 80%;
+    width: 10%;
 }
