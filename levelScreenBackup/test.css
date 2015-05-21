@@ -1,5 +1,5 @@
 body {
-        background-image: url("artwork/level_back.png");
+        background-image: url("../artwork/grassy_level_back.png");
     background-size: 100%;
     height: 100%;
     width: 100%;
@@ -168,4 +168,25 @@ body {
     height:  15%;
     border: 2px solid black;
     background-color: #fff;
+}
+
+#loseScreen{
+    position:  absolute;
+    width:  50%;
+    left:  25%;
+    height:  50%;
+    top: 25%;
+    border: 4em solid #E8981E;
+    background-color:  #FAB54C;
+}
+
+#displayScore{
+    position: absolute;
+    left:  100px;
+}
+
+#antTunnel{
+    position: absolute;
+    bottom:  -120px;
+    z-index: 2;
 }

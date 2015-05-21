@@ -1,0 +1,244 @@
+body {
+    background-color: aqua;
+    z-index: 2;
+}
+#gameBox{
+    background: url("../artwork/level_back.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: 6px inset lightyellow;
+    position: fixed;
+    top: 8%;
+    left: 10%;
+    height: 80%;
+    width: 80%;  
+    z-index: 2;
+}
+#quit{
+    position: fixed;
+    top: 11%;
+    left: 12%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;  
+   
+}
+#quit:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+#options{
+    position: fixed;
+    top: 11%;
+    right: 11%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;    
+}
+#options:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+#buckets {
+    clear: both;
+    display: inline;
+    font-size: 90%;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+#bucket1 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum1 {
+    height: 120%;
+    width: 100%;
+}
+#bucket2 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum2 {
+    height: 120%;
+    width: 100%;
+}
+#bucketone {
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
+#buckettwo {
+    height: 100%;
+    width: 100%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
+#boxes {
+    float: left;
+    font-size: 90%;
+    height: 75%;
+    width:15%;
+    bottom: 15%;
+    top: 15%;
+    left:0%;
+    position: absolute;
+}
+#hose{
+    border: solid;
+    width:100%;
+    height: 20%;
+}
+#waterBox {
+    float:right;
+    border: solid;
+    width: 50%;
+    height: 50%;
+    background-color: aquamarine;
+}
+#drainBox {
+    padding-top: 5%;
+    float: right;
+    border: solid;
+    width: 50%;
+    height: 15%;
+}
+#tanks{
+    position: absolute;
+    right: 0%;
+    bottom: 16%;
+    height: 50%;
+    width: 10%;
+}
+#tankToFill{
+    border: solid;
+    width: 40%;
+    height: 50%;
+    bottom: 0%;
+    position: absolute;
+    
+}
+#tankAlreadyFull{
+    border: solid;
+    background-color: aqua;
+    width: 40%;
+    height: 50%;
+    bottom: 0%;
+    left: 50%;
+    position: absolute;
+}
+#tunnel {
+    width:  100%;
+    height: 15%;
+    border: 2px solid black;
+    bottom: 0%;
+    position: absolute;
+}
+#tunnelImg{
+  position: absolute;
+    width: 100%;
+    height: 50%;
+    
+    bottom: -1%;
+    z-index: 1;
+    
+}
+#gateImg{
+    position: absolute;
+    right: 0%;
+    top:0%;
+    width: 8%; 
+    height: 100%;
+}
+
+#scoreBox{
+    position:  absolute;
+    left:  45%;
+    width:  25%;
+    font-size: 80%;
+    height:  15%;
+    border: 2px solid black;
+    background-color: #fff;
+}
+#turnDisplay{
+    font-size:80%;
+}
+#scoreDisplay{
+   font-size:80%;
+}
+#timer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#wave{
+    position: absolute;
+    
+}
+#ants{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#ant1{
+    margin-left: 10%;
+    height: 80%;
+    width: 10%;
+}
+#ant2{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant3{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant4{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant5{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant6{
+    height: 80%;
+    width: 10%;
+}
