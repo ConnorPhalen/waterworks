@@ -1,5 +1,6 @@
 body {
     background-color: aqua;
+    z-index: 2;
 }
 #gameBox{
     background: url("../artwork/level_back.png");
@@ -10,7 +11,8 @@ body {
     top: 8%;
     left: 10%;
     height: 80%;
-    width: 80%;   
+    width: 80%;  
+    z-index: 2;
 }
 #quit{
     position: fixed;
@@ -105,41 +107,57 @@ body {
     padding-left: 5%;
     position: absolute;
 }
-#boxes {
+
+#hose{
+    width:15%;
+    height: 20%;
     float: left;
     font-size: 90%;
-    height: 75%;
-    width:15%;
-    bottom: 15%;
     top: 15%;
     left:0%;
     position: absolute;
+    z-index: 1;
 }
-#hose{
-    border: solid;
-    width:100%;
-    height: 20%;
+#hoseImg{
+    width: 100%;
+    height: 100%;
 }
 #waterBox {
-    float:right;
-    border: solid;
-    width: 50%;
-    height: 50%;
-    background-color: aquamarine;
+    width: 8%;
+    height: 65%;
+    margin-right: 32%;
+    z-index: -1
+            float: left;
+    font-size: 90%;
+    top: 28%;
+    left:6%;
+    position: absolute;
+    
+}
+#waterFall{
+    width: 100%;
+    height:100%;
+    padding-bottom: 5%;
 }
 #drainBox {
+        float: left;
+    font-size: 90%;
+    width:20%;
+    height: 15%;
+    bottom: 0%;
+    left:0%;
+    position: absolute;
     padding-top: 5%;
     float: right;
-    border: solid;
-    width: 50%;
-    height: 15%;
+    border: dotted;
+    z-index: 3;
 }
 #tanks{
     position: absolute;
     right: 0%;
-    bottom: 16%;
+    bottom: 20%;
     height: 50%;
-    width: 10%;
+    width: 20%;
 }
 #tankToFill{
     border: solid;
@@ -159,16 +177,28 @@ body {
     position: absolute;
 }
 #tunnel {
-    width:  100%;
-    height: 15%;
+    width:  98%;
+    height: 17%;
     border: 2px solid black;
     bottom: 0%;
     position: absolute;
 }
-
+#tunnelImg{
+  position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0%;
+    z-index:1 ;
+    
+}
+#tunnelBackground{
+   position: absolute;
+    width: 101.7%;
+    height: 100%;
+}
 #gateImg{
     position: absolute;
-    right: 0%;
+    right: -2%;
     top:0%;
     width: 8%; 
     height: 100%;
@@ -178,7 +208,7 @@ body {
     position:  absolute;
     left:  45%;
     width:  25%;
-    font-size: 80%
+    font-size: 80%;
     height:  15%;
     border: 2px solid black;
     background-color: #fff;
@@ -188,4 +218,47 @@ body {
 }
 #scoreDisplay{
    font-size:80%;
+}
+#timer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#wave{
+    position: absolute;
+    
+}
+#ants{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+#ant1{
+    margin-left: 10%;
+    height: 80%;
+    width: 10%;
+}
+#ant2{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant3{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant4{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant5{
+    margin-left: 5%;
+    height: 80%;
+    width: 10%;
+}
+#ant6{
+    height: 80%;
+    width: 10%;
 }

@@ -118,3 +118,21 @@ body {
     font-size: 150%;
     font-weight: bold;
 }
+#endBucket {
+    border-style: solid;
+    width: 80px;
+    height: 160px;
+    position: absolute;
+    top: 34.5%;
+    left: 82.5%;
+    
+}
+#endBucketone {
+    font-size: 30px;
+    position: absolute;
+    width: 80px;
+    height:  100px;
+    text-align: center;
+    padding-top: 60px;
+    color: #fff;
+}

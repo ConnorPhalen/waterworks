@@ -146,9 +146,17 @@ body {
 #tunnel {
     width:  98%;
     height: 15%;
+<<<<<<< HEAD
+    background-image: url("tunnelBack.png");
+    border: 2px solid black;
+    position: absolute;
+    bottom: 0px;
+    z-index: 100;
+=======
     border: 2px solid black;
     position: fixed;
     bottom: 5%;
+>>>>>>> 4daf5862f1ed7a5f473deb304b629ed9668976d9
 }
 
 #gateImg{
