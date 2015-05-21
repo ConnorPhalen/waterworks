@@ -5,12 +5,11 @@ body {
     background: url("Background.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    border: 6px inset lightyellow;
     position: fixed;
-    top: 8%;
-    left: 10%;
-    height: 80%;
-    width: 80%;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
 }
 #buckets {
     clear: both;
@@ -74,8 +73,8 @@ body {
     width: 6.5%;
     height: 13%;
     position: fixed;
-    top: 38.5%;
-    left: 18.5%;
+    top: 36.5%;
+    left: 10.5%;
 }
 #drainBox {
     border: 2px dashed black;
@@ -91,8 +90,8 @@ body {
 }
 #quit{
     position: fixed;
-    top: 11%;
-    left: 12%;
+    top: 2.5%;
+    right: 2.5%;
     background-color: darkblue;
     border-radius: 11%;
     border-top: 3px solid blue;
@@ -103,39 +102,13 @@ body {
     color: lightblue;
     font-family: 'Arial Black';
     font-size: 99%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
     padding-left: 2%;
     padding-right: 2%;  
    
 }
 #quit:hover {
-    border: 3px solid yellow;
-    color: yellow;
-    cursor: pointer;  
-    font-size: 130%;
-    font-weight: bold;
-}
-#options{
-    position: fixed;
-    top: 11%;
-    right: 11%;
-    background-color: darkblue;
-    border-radius: 11%;
-    border-top: 3px solid blue;
-    border-bottom: 3px solid black;
-    border-left: 3px solid blue;
-    border-right: 3px solid black;
-    box-shadow: 5px 5px 15px #888888;
-    color: lightblue;
-    font-family: 'Arial Black';
-    font-size: 99%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 2%;
-    padding-right: 2%;    
-}
-#options:hover {
     border: 3px solid yellow;
     color: yellow;
     cursor: pointer;  
