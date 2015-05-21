@@ -30,14 +30,16 @@
                 width: 100%;
             }
 
-            #player {
-            width: 300px;
-            height: 54px;
+            #player1 {
+            width: 250px;
+            height: 45px;
             position: relative;
+            display: inline;
             margin: 0 auto;
-            top: -10px;
-			left: -150px;
-            background: url('volume-background1.png') no-repeat left top;
+            top: 6px;
+			left: 450px;
+            
+            
         }
         
         #volume {
@@ -45,25 +47,26 @@
             left: -40px;
             top: 13px;
             margin: 0 auto;
+            display: inline;
             height: 15px;
-            width: 300px;
+            width: 250px;
             background: url('volume-empty.png') no-repeat left top;
         }
         
         #volume .ui-slider-range-min {
-            height: 15px;
-            width: 300px;
+            height: 13px;
+            width: 250px;
             position: absolute;
             background: url('volume-full.png') no-repeat left top;
         }
         
         #volume .ui-slider-handle {
-            width: 38px;
-            height: 39px;
+            width: 27px;
+            height: 28px;
             background: url('volume-knob.png') no-repeat left top;
             position: absolute;
-            margin-left: -15px;
-            margin-top: -8px;
+            margin-left: -13px;
+            margin-top: -5px;
         }
         
         #player p {
@@ -72,47 +75,52 @@
             top: -10px;
             left: -150px;
             font-size: 20px;
+            display: inline;
         }
-        
+        #player1 p{
+                top: -13px;
+            }
         #fa {
-            width: 300px;
-            height: 54px;
+            width: 260px;
+            height: 45px;
             position: relative;
             margin: 0 auto;
-            top: 30px;
-            background: url('volume-background1.png') no-repeat left top;
+            top: 3px;
+            left: 230px;
+           
         }
         
         #music {
             position: absolute;
-            left: -40px;
+            left: -55px;
             top: 15px;
+            display:  inline;
             margin: 0 auto;
-            height: 15px;
-            width: 300px;
+            height: 13px;
+            width: 250px;
             background: url('volume-empty.png') no-repeat left top;
         }
         
         #music .ui-slider-range-min {
-            height: 15px;
-            width: 300px;
+            height: 13px;
+            width: 250px;
             position: absolute;
             background: url('volume-full.png') no-repeat left top;
         }
         
         #music .ui-slider-handle {
-            width: 38px;
-            height: 39px;
+            width: 27px;
+            height: 28px;
             background: url('volume-knob.png');
             background-repeat: no-repeat;
             position: absolute;
-            margin-left: -15px;
-            margin-top: -8px;
+            margin-left: -13px;
+            margin-top: -5px;
         }
         #sound {
                 top: -50%;
-                
             }
+         
             @keyframes flash {
                 0% {
                     background-position: 200% 45%;
@@ -133,7 +141,7 @@
         <iframe id="fram_g" src="Functions test.html"></iframe>
       
         <div id="player">
-		<div>
+		<div id="player1">
 			<p>Volume</p>
 			<div id="volume"></div>
 		</div>
