@@ -29,6 +29,90 @@
                 height: 90%;
                 width: 100%;
             }
+
+            #player {
+            width: 300px;
+            height: 54px;
+            position: relative;
+            margin: 0 auto;
+            top: -10px;
+			left: -150px;
+            background: url('volume-background1.png') no-repeat left top;
+        }
+        
+        #volume {
+            position: absolute;
+            left: -40px;
+            top: 13px;
+            margin: 0 auto;
+            height: 15px;
+            width: 300px;
+            background: url('volume-empty.png') no-repeat left top;
+        }
+        
+        #volume .ui-slider-range-min {
+            height: 15px;
+            width: 300px;
+            position: absolute;
+            background: url('volume-full.png') no-repeat left top;
+        }
+        
+        #volume .ui-slider-handle {
+            width: 38px;
+            height: 39px;
+            background: url('volume-knob.png') no-repeat left top;
+            position: absolute;
+            margin-left: -15px;
+            margin-top: -8px;
+        }
+        
+        #player p {
+            color: #FFCC00;
+            position: absolute;
+            top: -10px;
+            left: -150px;
+            font-size: 20px;
+        }
+        
+        #fa {
+            width: 300px;
+            height: 54px;
+            position: relative;
+            margin: 0 auto;
+            top: 30px;
+            background: url('volume-background1.png') no-repeat left top;
+        }
+        
+        #music {
+            position: absolute;
+            left: -40px;
+            top: 15px;
+            margin: 0 auto;
+            height: 15px;
+            width: 300px;
+            background: url('volume-empty.png') no-repeat left top;
+        }
+        
+        #music .ui-slider-range-min {
+            height: 15px;
+            width: 300px;
+            position: absolute;
+            background: url('volume-full.png') no-repeat left top;
+        }
+        
+        #music .ui-slider-handle {
+            width: 38px;
+            height: 39px;
+            background: url('volume-knob.png');
+            background-repeat: no-repeat;
+            position: absolute;
+            margin-left: -15px;
+            margin-top: -8px;
+        }
+        #sound {
+                top: -50%;
+                
+            }
             @keyframes flash {
                 0% {
                     background-position: 200% 45%;
@@ -39,9 +123,24 @@
                 }
             }
         </style>
+         </style>
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+    <script type="text/javascript" src="options.js"></script>
     </head>
     <body>
         <div id="site_wrap"></div>
         <iframe id="fram_g" src="Functions test.html"></iframe>
+      
+        <div id="player">
+		<div>
+			<p>Volume</p>
+			<div id="volume"></div>
+		</div>
+		<div id="fa">
+			<p>Music</p>
+			<div id="music"></div>
+		</div>
+        </div>
     </body>
 </html>
