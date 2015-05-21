@@ -126,7 +126,7 @@ body {
     width: 8%;
     height: 65%;
     margin-right: 32%;
-    z-index: -1
+    z-index: ;
     float: left;
     top: 28%;
     left:5%;
@@ -137,6 +137,7 @@ body {
     width: 100%;
     height:100%;
     padding-bottom: 5%;
+    z-index: -2;
 }
 #drainBox {
         float: left;
@@ -154,25 +155,32 @@ body {
 #tanks{
     position: absolute;
     right: 0%;
-    bottom: 20%;
-    height: 50%;
-    width: 20%;
+    bottom: 14%;
+    height: 40%;
+    width: 15%;
+    z-index: 2;
+}
+#tanker{
+    height: 100%;
+    width: 100%;
 }
 #tankToFill{
     border: solid;
     width: 40%;
-    height: 50%;
-    bottom: 0%;
+    height: 80%;
+    bottom: 20%;
+    left: %;
+    text-align: center;
     position: absolute;
     
 }
 #tankAlreadyFull{
     border: solid;
-    background-color: aqua;
     width: 40%;
-    height: 50%;
-    bottom: 0%;
-    left: 50%;
+    height: 80%;
+    bottom: 20%;
+    left: 60%;
+    text-align: center;
     position: absolute;
 }
 #tunnel {
@@ -182,14 +190,20 @@ body {
     bottom: 0%;
     position: absolute;
 }
-#tunnelImg{
+tunnelImg{
   position: absolute;
     width: 100%;
     height: 50%;
-    bottom: 0%;
-    z-index:1 ;
-    
+    bottom: 0%;    
 }
+#tunnelImage{
+ position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0%;
+    z-index:1;   
+}
+
 #tunnelBackground{
    position: absolute;
     width: 101.7%;
