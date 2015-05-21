@@ -18,6 +18,8 @@
                 left: 0px;
                 height: 10%;
                 width: 100%;
+                animation-name: flash;
+                animation-duration: 2s;
             }
             #fram_g {
                 border-style: none;
@@ -26,6 +28,15 @@
                 left: 0px; 
                 height: 90%;
                 width: 100%;
+            }
+            @keyframes flash {
+                0% {
+                    background-position: 200% 45%;
+                    
+                }
+                100% {
+                    background-position: 5% 45%;
+                }
             }
         </style>
     </head>
