@@ -170,23 +170,32 @@ body {
     background-color: #fff;
 }
 
-#loseScreen{
+#endScreen{
     position:  absolute;
-    width:  50%;
-    left:  25%;
-    height:  50%;
-    top: 25%;
+    width:  75%;
+    left:  10%;
+    height:  65%;
+    top: 10%;
     border: 4em solid #E8981E;
     background-color:  #FAB54C;
+    z-index: 5;
 }
 
 #displayScore{
     position: absolute;
     left:  100px;
+    bottom: 0px;
+    font-size: 200%;
 }
 
 #antTunnel{
     position: absolute;
     bottom:  -120px;
     z-index: 2;
+}
+
+#gameEndDisplay{
+    font-size: 500%;
+    font-weight: bold;
+    top:  0px;
 }
