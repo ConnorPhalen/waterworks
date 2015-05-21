@@ -14,8 +14,9 @@ var timerDelay = 33;
 var waveMovement = 4;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 var playerTurns = 0;
-var SCORE_MAX = 789;
-var TURNS_MAX = 5;
+var scoreStart = 1000;
+var TURNS_MAX = 0;
+var scoreReduction = 100;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -110,14 +111,6 @@ function scoreCounter(){
 
             break;
 
-        case trythiscomp - buck1max:
-
-            break;
-
-        case trythiscomp - buck2max:
-
-            break;
-
         default:
 
             playerTurns++;
@@ -128,9 +121,15 @@ function scoreCounter(){
 
     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
-    document.getElementById("scoreDisplay").innerHTML = "Score: " + (SCORE_MAX - time);
-    //if(playerTurns > TURNS_MAX){
-        //document.getElementById("scoreDisplay").innerHTML = "Score: " + (SCORE_MAX - 100)    }
+
+    if(playerTurns > TURNS_MAX){
+        scoreStart -= scoreReduction;
+        document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+    }
+    if(scoreStart < 1){
+        alert("gameOver();");
+        
+    }
 }
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
