@@ -22,6 +22,7 @@ var scoreReduction = 100;
 function loseCheck(){
     if(testCollision('wave', 'gateImg')){
         clearInterval(mainTimer);
+        gameOver();
      }
 }
 
@@ -122,14 +123,38 @@ function scoreCounter(){
     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
 
+    // If player turns are above the max, then start to take away points with other turns.
     if(playerTurns > TURNS_MAX){
         scoreStart -= scoreReduction;
         document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
     }
+    // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
-        alert("gameOver();");
+        gameOver();
         
     }
+}
+
+// Creates a new div on the screen to display the users end score and other values.
+function gameOver(){
+    // Creates the new Div that will show and hold the final scores.
+    var gameOverDiv = document.createElement("div");
+    gameOverDiv.id = 'loseScreen';
+
+    // Creates a paragraph element to hold and move the score valeus around.
+    var finalScoreDisplay = document.createElement("p");
+    finalScoreDisplay.id = 'displayScore';
+
+    // Creates a text node to write out the info, and attaches it to the paragraph element.
+    var scoreShow = document.createTextNode("Final Score: " + scoreStart);
+    finalScoreDisplay.appendChild(scoreShow); 
+
+    // Attaches the new elements together and then puts them on the document body to display.
+    gameOverDiv.appendChild(finalScoreDisplay);
+    document.body.appendChild(gameOverDiv);
+
+    // Clears the wave timer to get rid of the wave movement.
+    clearInterval(mainTimer);
 }
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.

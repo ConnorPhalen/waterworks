@@ -169,3 +169,18 @@ body {
     border: 2px solid black;
     background-color: #fff;
 }
+
+#loseScreen{
+    position:  absolute;
+    width:  50%;
+    left:  25%;
+    height:  50%;
+    top: 25%;
+    border: 4em solid #E8981E;
+    background-color:  #FAB54C;
+}
+
+#displayScore{
+    position: absolute;
+    left:  100px;
+}
