@@ -15,7 +15,7 @@ $(document).ready(function() {
     var mySound = document.createElement('audio');
     $('#player').append(mySound);
     mySound.id = "mySound";
-    playAudio('audio/ryan_mod_hov', 1);
+    playAudio('audio/bg_msc', 1);
 });
 
 
