@@ -595,7 +595,6 @@ function testCollision(objectA, objectB){
 function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                 var data = event.dataTransfer.getData("text");
                 var zero = "0";
-                scoreCounterTank();
 
                 if ((data == "bucket1" || data == "bucketone" || data == "bucketnumchange" || data == "bucketnummax") && (event.target.id == "endBucket" || event.target.id == "endBucketone" || event.target.id == "bucketnumchangeend")) {
                     // parse the changing number of end bucket
@@ -836,7 +835,6 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 image.src = imgName2;
                                 image2 = document.getElementById('tanker');
                                 image2.src = tank2;
-                                scoreCounterTank();
                             }
                         }
                     }
