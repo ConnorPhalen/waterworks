@@ -161,6 +161,12 @@ body {
     height: 100%;
 }
 
+
+
+
+
+
+
 #scoreBox{
     position:  absolute;
     left:  45%;
@@ -198,4 +204,12 @@ body {
     font-size: 500%;
     font-weight: bold;
     top:  0px;
+}
+
+#starDisplay{
+    
+}
+
+#starImage{
+    
 }

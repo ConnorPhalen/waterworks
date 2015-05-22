@@ -88,6 +88,16 @@ function antCollision(wave, ant) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 // Checks the values of the buckets, and adds turns if they pass the specififed cases.
 function scoreCounter(){
     
@@ -173,6 +183,23 @@ function gameWin(){
     gameOverDisplay.id = 'gameEndDisplay';
     gameOverDisplay.innerHTML = "YOU WIN, M8!";
 
+    // Creates a Division to hold the star image.
+    var starDisplay = document.createElement("div");
+    starDisplay.id = 'starDisplay';
+
+    // Creates the element for the star image, and checks to see how many stars the user should have.
+    var starImage = document.createElement("img");
+    starImage.id = "starImage";
+    if (playerTurns > 3) {
+        if (playerTurns < 7) {
+            starImage.src = "../artwork/long_wave_1.png";
+        }else{
+            starImage.src = "../artwork/long_wave_2.png";
+        }
+    }else{
+        starImage.src = "../artwork/long_wave_3.png";
+    }
+
     // Creates a paragraph element to hold and move the score valeus around.
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.id = 'displayScore';
@@ -182,7 +209,9 @@ function gameWin(){
     finalScoreDisplay.appendChild(scoreShow); 
 
     // Attaches the new elements together and then puts them on the document body to display.
+    starDisplay.appendChild(starImage);
     gameOverDiv.appendChild(finalScoreDisplay);
+    gameOverDiv.appendChild(starDisplay);
     document.body.appendChild(gameOverDiv);
 
     // Clears the wave timer to get rid of the wave movement.
@@ -191,6 +220,18 @@ function gameWin(){
     // Changes the src of the wave so it stops the .gif animation.
     document.getElementById('wave').src = "../artwork/long_wave_1.png";
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
 function testCollision(objectA, objectB){
