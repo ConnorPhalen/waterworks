@@ -125,20 +125,13 @@ body {
 #tanks{
     position: absolute;
     right: 0%;
-<<<<<<< HEAD
-    bottom: 20%;
-    height: 50%;
-    width: 20%;
-=======
     bottom: 12%;
     height: 40%;
     width: 15%;
-    z-index: 2;
 }
 #tanker{
     height: 100%;
     width: 100%;
->>>>>>> d174652dee43e7c20ba68b5a54a0e8509da89b37
 }
 #tankToFill{
     border: solid;
