@@ -203,6 +203,33 @@ function scoreCounterTank2(){
      }
  }
 
+// For third bucket.
+function scoreCounterTank3(){
+    
+    var buck3 = parseInt(document.getElementById("bucketnumchange3").innerHTML);
+    var tank = parseInt(document.getElementById("bucketnumchangeend").innerHTML);
+
+    switch(buck3){
+
+        case 0:
+            break;
+
+        default:
+            playerTurns++;
+            scoreStart -= scoreReduction;
+            document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+    }
+ 
+     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
+     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
+ 
+     // If score is zero or lower, call gameOver();
+     if(scoreStart < 1){
+         gameOver();
+         
+     }
+ }
+
 // Creates a new div on the screen to display the users end score and other values.
 function gameOver(){
     
