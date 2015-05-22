@@ -131,6 +131,8 @@ function scoreCounter(){
         default:
 
             playerTurns++;
+            scoreStart -= scoreReduction;
+            document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
 
             break;
 
@@ -138,10 +140,6 @@ function scoreCounter(){
 
     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
-
-    // Takes away a bit of scroe for each turn the player takes.
-        scoreStart -= scoreReduction;
-        document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
 
     // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
@@ -152,14 +150,15 @@ function scoreCounter(){
 
 //
 function scoreCounterTank(){
-    playerTurns++;
+    
+
+    // Takes away a bit of score for each turn the player takes.
+        playerTurns++;
+        scoreStart -= scoreReduction;
+        document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
 
     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
-
-    // Takes away a bit of scroe for each turn the player takes.
-        scoreStart -= scoreReduction;
-        document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
 
     // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
@@ -170,50 +169,118 @@ function scoreCounterTank(){
 
 // Creates a new div on the screen to display the users end score and other values.
 function gameOver(){
+    
+    //creates the quit button
+    var button = document.createElement("BUTTON");
+    var buttonText = document.createTextNode("Quit");
+    button.id = "winQuit";
+    
+    //creates the restart button
+    var buttonRestart = document.createElement("BUTTON");
+    var buttonText1 = document.createTextNode("restart");
+    buttonRestart.id = "restart";
+    
+    //creates the quit button
+    var continueButton = document.createElement("BUTTON");
+    var continueButtonText = document.createTextNode("continue");
+    continueButton.id = "continues";
+    
+    
+    
     // Creates the new Div that will show and hold the final scores.
     var gameOverDiv = document.createElement("div");
     gameOverDiv.id = 'endScreen';
-
+    
     // Creates a paragraph element to hold the game over message.
     var gameOverDisplay = document.createElement("p");
     gameOverDisplay.id = 'gameEndDisplay';
     gameOverDisplay.innerHTML = "GAME OVER, FOOLS!";
+    
+    var starDisplay = document.createElement("div");
+    starDisplay.id = 'starDisplay';
+    
+     var winQuit = document.createElement("div");
+    winQuit.id = 'winQuit';
+    
+    var restart = document.createElement("div");
+    restart.id = 'restart';
+    
+    var continues = document.createElement("div");
+    continues.id = 'continues';
+    
+    
 
     // Creates a paragraph element to hold the score values around.
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.id = 'displayScore';
     finalScoreDisplay.innerHTML = "Final Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".";
-
+    
     // Attaches the new elements together and then puts them on the document body to display.
+    winQuit.appendChild(button);
+    button.appendChild(buttonText);
+    gameOverDiv.appendChild(winQuit);
+    
+    restart.appendChild(buttonRestart);
+    buttonRestart.appendChild(buttonText1);
+    gameOverDiv.appendChild(restart);
+    
+    continues.appendChild(continueButton);
+    continueButton.appendChild(continueButtonText);
+    gameOverDiv.appendChild(continues);
+    
     gameOverDiv.appendChild(finalScoreDisplay);
     gameOverDiv.appendChild(gameOverDisplay);
     document.body.appendChild(gameOverDiv);
-
+    
+    
     // Clears the wave timer to get rid of the wave movement.
     clearInterval(mainTimer);
 
     // Changes the src of the wave so it stops the .gif animation.
-    document.getElementById('wave').src = "artwork/long_wave_1.png";
+    document.getElementById('wave').src = "artwork/wave_2.png";
+    
+    while(5<100){
+        winQuit=onclick(alert('HelloWorld'));
+    }
 }
 
 
+
+
 function gameWin(){
-        // Creates the element for the star image, and checks to see how many stars the user should have.
+    
+    //creates the quit button
+    /*var button = document.createElement("BUTTON");
+    var buttonText = document.createTextNode("Quit");
+    button.id = "winQuit";
+    
+    //creates the restart button
+    var buttonRestart = document.createElement("BUTTON");
+    var buttonText1 = document.createTextNode("restart");
+    buttonRestart.id = "restart";
+    
+    //creates the continue button
+    var continueButton = document.createElement("BUTTON");
+    var continueButtonText = document.createTextNode("continue");
+    continueButton.id = "continues";
+    */
+    // Creates the element for the star image, and checks to see how many stars the user should have.
     var starImage = document.createElement("img");
     starImage.id = "starImage";
-    if (playerTurns > turnsLowest) {
-        if (playerTurns < turnsMax) {
-            starImage.src = "artwork/star.png";
+    
+        if (playerTurns < turnsLowest) {
+            starImage.src = "artwork/3stars.png";
+        }else if(playerTurns < turnsMax && playerTurns > turnsLowest){
+            starImage.src = "artwork/3stars1empty.png";
         }else{
-            starImage.src = "artwork/star.png";
-        }
-    }else{
-        starImage.src = "artwork/star.png";
+        starImage.src = "artwork/3star2empty.png";
     }
         // Creates the new Div that will show and hold the final scores.
     var gameOverDiv = document.createElement("div");
     gameOverDiv.id = 'endScreen';
 
+    
+    
     // Creates a paragraph element to hold the game over message.
     var gameOverDisplay = document.createElement("p");
     gameOverDisplay.id = 'gameEndDisplay';
@@ -221,16 +288,39 @@ function gameWin(){
 
     var starDisplay = document.createElement("div");
     starDisplay.id = 'starDisplay';
+    /*
+    var winQuit = document.createElement("div");
+    winQuit.id = 'winQuit';
     
+    var restart = document.createElement("div");
+    restart.id = 'restart';
+    
+    var continues = document.createElement("div");
+    continues.id = 'continues';
+    */
     // Creates a paragraph element to hold the score values around.
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.id = 'displayScore';
     finalScoreDisplay.innerHTML = "Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".";
     // Attaches the new elements together and then puts them on the document body to display.
     starDisplay.appendChild(starImage);
+    /*
+    winQuit.appendChild(button);
+    button.appendChild(buttonText);
+    gameOverDiv.appendChild(winQuit);
+    
+    restart.appendChild(buttonRestart);
+    buttonRestart.appendChild(buttonText1);
+    gameOverDiv.appendChild(restart);
+    
+    continues.appendChild(continueButton);
+    continueButton.appendChild(continueButtonText);
+    gameOverDiv.appendChild(continues);*/
+    
     gameOverDiv.appendChild(finalScoreDisplay);
     gameOverDiv.appendChild(gameOverDisplay);
     document.body.appendChild(gameOverDiv);
+    
      gameOverDiv.appendChild(starDisplay);
     
     // Clears the wave timer to get rid of the wave movement.
@@ -240,18 +330,7 @@ function gameWin(){
     document.getElementById('wave').src = "artwork/long_wave_1.png";
 
     // Creates a Division to hold the star image.
-
-
 }
-
-
-
-
-
-
-
-
-
 
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
