@@ -84,13 +84,13 @@
 
                 }
 
+                signal();
+
             }
 
             function minLength() {
 
-                var target = document.getElementById("username");
-
-                if (target.value.length >= 3) {
+                if (document.getElementById("username").value.length >= 3) {
 
                     return true
                 }
