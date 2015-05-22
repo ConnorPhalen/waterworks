@@ -18,6 +18,8 @@ var scoreStart = 1000;
 var turnsLowest = 3;
 var turnsMax = 7;
 var scoreReduction = 100;
+var tankMax = parseInt(document.getElementById('fillTo').innerHTML);
+var tankCurrent = 0;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -267,6 +269,14 @@ function testCollision(objectA, objectB){
     }
 }
 //-------------------- End Collision code.
+
+//
+function winCheck(){
+    tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
+    if(parseInt(tankMax) == parseInt(tankCurrent)){
+        gameWin();
+    }
+}
 
 
 
