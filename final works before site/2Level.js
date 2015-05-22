@@ -243,7 +243,7 @@ function gameOver(){
                                                 })
     buttonRestart.addEventListener("click", function() {
         audio.play();
-        window.location.replace("1Level.html") 
+        window.location.replace("2Level.html") 
     
     })
     
@@ -340,10 +340,10 @@ function gameWin(){
         window.location.replace("../index.html") })
     buttonRestart.addEventListener("click", function() {
         audio.play();
-        window.location.replace("1Level.html") })
+        window.location.replace("2Level.html") })
     continueButton.addEventListener("click", function() {
         audio.play();
-        window.location.replace("2Level.html") })
+        window.location.replace("3Level.html") })
 }
 
 
