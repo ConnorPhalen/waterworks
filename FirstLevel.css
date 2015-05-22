@@ -125,6 +125,7 @@ body {
     float: right;
     border: dotted;
     z-index: 3;
+    text-align: center;
 }
 #tanks{
     position: absolute;
