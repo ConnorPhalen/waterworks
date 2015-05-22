@@ -3,7 +3,7 @@ body {
     z-index: 1;
 }
 #gameBox{
-    background: url("../artwork/level_back_tutorial.png");
+    background: url("../artwork/level_back.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
