@@ -10,7 +10,7 @@
 // Just sets up some initial variables.
 var time = 0;
 var timeOverflow = 0;
-var TIMEOVERFLOW_MAX = 12;
+var TIMEOVERFLOW_MAX = 18;
 var timerDelay = 33;
 var waveMovement = 1;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
@@ -841,7 +841,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 document.getElementById('bucketnumchange').innerHTML = bucketMax;
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
-                                scoreCounter();
+                                //scoreCounter();
                                 if (newSum > tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank3;
@@ -1037,7 +1037,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 image.src = imgName2;
                                 image2 = document.getElementById('tanker');
                                 image2.src = tank2;
-                                scoreCounterTank();
+                                
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;

@@ -10,14 +10,14 @@
 // Just sets up some initial variables.
 var time = 0;
 var timeOverflow = 0;
-var TIMEOVERFLOW_MAX = 12;
+var TIMEOVERFLOW_MAX = 22;
 var timerDelay = 33;
 var waveMovement = 1;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 var playerTurns = 0;
 var scoreStart = 1000;
 var turnsLowest = 6;
-var turnsMax = 14;
+var turnsMax = 20;
 var scoreReduction = 100;
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -841,7 +841,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 document.getElementById('bucketnumchange').innerHTML = bucketMax;
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
-                                scoreCounter();
+                                //scoreCounter();
                                 if (newSum > tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank3;
@@ -1037,7 +1037,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 image.src = imgName2;
                                 image2 = document.getElementById('tanker');
                                 image2.src = tank2;
-                                scoreCounterTank();
+                                
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
