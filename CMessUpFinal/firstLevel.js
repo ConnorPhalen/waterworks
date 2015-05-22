@@ -18,6 +18,8 @@ var scoreStart = 1000;
 var turnsLowest = 3;
 var turnsMax = 7;
 var scoreReduction = 100;
+var tankMax = parseInt(document.getElementById('fillTo').innerHTML);
+var tankCurrent = 0;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -130,6 +132,24 @@ function scoreCounter(){
             break;
 
     }
+
+    // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
+    document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
+
+    // Takes away a bit of scroe for each turn the player takes.
+        scoreStart -= scoreReduction;
+        document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+
+    // If score is zero or lower, call gameOver();
+    if(scoreStart < 1){
+        gameWin();
+        
+    }
+}
+
+//
+function scoreCounterTank(){
+    playerTurns++;
 
     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
@@ -449,6 +469,7 @@ function testCollision(objectA, objectB){
             function fillTank(imgName, imgName2) {
                 var data = event.dataTransfer.getData("text");
                 var zero = "0";
+                scoreCounterTank();
 
                 if ((data == "bucket1" || data == "bucketone" || data == "bucketnumchange" || data == "bucketnummax") && (event.target.id == "endBucket" || event.target.id == "endBucketone" || event.target.id == "bucketnumchangeend")) {
                     // parse the changing number of end bucket
@@ -575,7 +596,7 @@ function testCollision(objectA, objectB){
                                 document.getElementById('bucketnumchange3').innerHTML = bucketMax;
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
-                                scoreCounter();
+                                scoreCounterTank();
                             }
                             if (newSum == zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
@@ -583,7 +604,7 @@ function testCollision(objectA, objectB){
                                 document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
-                                scoreCounter();
+                                scoreCounterTank();
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
@@ -591,7 +612,7 @@ function testCollision(objectA, objectB){
                                 document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
-                                scoreCounter();
+                                scoreCounterTank();
                             }
                         }
                     }
