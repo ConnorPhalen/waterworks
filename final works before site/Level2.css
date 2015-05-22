@@ -317,7 +317,7 @@ ant6{
 
 #starImage{
     position: absolute;
-    top: 20%;
+    top: 17%;
     left: 20%;
     height: 60%;
     width: 60%;
@@ -407,7 +407,8 @@ ant6{
 #endScreen{
     position:  absolute;
     width:  75%;
-    left:  0%;
+    left:  9%;
+    right: 9%;
     height:  50%;
     top: 10%;
     border: 4em solid #E8981E;
