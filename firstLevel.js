@@ -152,13 +152,13 @@ function scoreCounter(){
 function scoreCounterTank(){
     
 
-    // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
-    document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
-
     // Takes away a bit of score for each turn the player takes.
         playerTurns++;
         scoreStart -= scoreReduction;
         document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+
+    // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
+    document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
 
     // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
