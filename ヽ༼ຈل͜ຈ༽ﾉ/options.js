@@ -1,17 +1,5 @@
 $(document).ready(function() {
 
-    $("#volume").slider({
-        min: 0,
-        max: 100,
-        value: 0,
-        range: "min",
-        animate: true,
-        slide: function(event, ui) {
-            setVolume((ui.value) / 100);
-        }
-
-    });
-
     $("#music").slider({
         min: 0,
         max: 100,
@@ -23,11 +11,6 @@ $(document).ready(function() {
         }
 
     });
-
-    var myMedia = document.createElement('audio');
-    $('#player').append(myMedia);
-    myMedia.id = "myMedia";
-    playAudio('audio/bg_msc', 0);
 
     var mySound = document.createElement('audio');
     $('#player').append(mySound);
@@ -54,11 +37,6 @@ function playAudio(fileName, musicFlag) {
             mySound.play();
         }
     }
-}
-
-function setVolume(volume) {
-    var music = document.getElementById('myMedia');
-    music.volume = volume;
 }
 
 function setMusic(volume) {
