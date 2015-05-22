@@ -17,7 +17,7 @@ var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 var playerTurns = 0;
 var scoreStart = 1000;
 var turnsLowest = 3;
-var turnsMax = 7;
+var turnsMax = 10;
 var scoreReduction = 100;
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -243,7 +243,7 @@ function gameOver(){
                                                 })
     buttonRestart.addEventListener("click", function() {
         audio.play();
-        window.location.replace("2Level.html") 
+        window.location.replace("3Level.html") 
     
     })
     
@@ -340,10 +340,10 @@ function gameWin(){
         window.location.replace("../index.html") })
     buttonRestart.addEventListener("click", function() {
         audio.play();
-        window.location.replace("2Level.html") })
+        window.location.replace("3Level.html") })
     continueButton.addEventListener("click", function() {
         audio.play();
-        window.location.replace("3Level.html") })
+        window.location.replace("4Level.html") })
 }
 
 
@@ -403,6 +403,12 @@ function testCollision(objectA, objectB){
                     var max = document.getElementById("bucketnummax2").innerHTML;
                     document.getElementById("bucketnumchange2").innerHTML = max;
                 }
+               if (data == "bucket3" || data == "bucketNum3") {
+                    image = document.getElementById("bucketNum3");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax3").innerHTML;
+                    document.getElementById("bucketnumchange3").innerHTML = max;
+                }
                 else {
                 }
             }
@@ -416,6 +422,10 @@ function testCollision(objectA, objectB){
             }
             //drag for second bucket
             function drag2(event) {
+                event.dataTransfer.setData("text", event.target.id);
+            }
+            //drag for third bucket
+            function drag3(event) {
                 event.dataTransfer.setData("text", event.target.id);
             }
             //empties buckets when dragged over
@@ -434,6 +444,13 @@ function testCollision(objectA, objectB){
                     image.src = imgName;
                     var max = document.getElementById("bucketnummax2").innerHTML;
                     document.getElementById("bucketnumchange2").innerHTML = "0";
+                }
+                 if (data == "bucket3" || data == "bucketNum3") {
+                     scoreCounter();
+                    image = document.getElementById("bucketNum3");
+                    image.src = imgName;
+                    var max = document.getElementById("bucketnummax3").innerHTML;
+                    document.getElementById("bucketnumchange3").innerHTML = "0";
                 }
                 else {
 
@@ -489,6 +506,66 @@ function testCollision(objectA, objectB){
                         scoreCounter();
                     }
                 }
+                
+                
+                
+                
+                
+                
+                if ((data == "bucket1" || data == "bucketone" || data == "bucketnumchange" || data == "bucketnummax") && (event.target.id == "bucket3" || event.target.id == "bucketthree" || event.target.id == "bucketnumchange3" || event.target.id == "bucketnummax3")) {
+                    // bucket2max parsed
+                    var bucket3max = document.getElementById('bucketnummax3').innerHTML;
+                    var bucket3max3 = parseInt(bucket3max);
+                    // bucket2change parsed
+                    var bucket3change = document.getElementById('bucketnumchange3').innerHTML;
+                    var bucket3change3 = parseInt(bucket3change);
+                    // numChange parsed
+                    var numChange = document.getElementById('bucketnumchange').innerHTML;
+                    var numChange2 = parseInt(numChange);
+                    // diff parsed
+                    var diff2 = bucket3max - bucket3change;
+                    var diff = parseInt(diff2);
+                    var zero = "0";
+                    if (numChange2 > diff) {
+                        document.getElementById('bucketnumchange3').innerHTML = bucket3max3;
+                        var originBucket = numChange2 - diff;
+                        document.getElementById('bucketnumchange').innerHTML = originBucket;
+                        scoreCounter();
+                        if (originBucket == zero) {
+                            image = document.getElementById('bucketNum1');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 < diff) {
+                        var both = numChange2 + bucket3change3;
+                        document.getElementById('bucketnumchange3').innerHTML = both;
+                        document.getElementById('bucketnumchange').innerHTML = zero;
+                        image = document.getElementById('bucketNum1');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum3');
+                        image2.src = imgName2;
+                        scoreCounter();
+                        if (both == zero) {
+                            image = document.getElementById('bucketNum3');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 == diff) {
+                        document.getElementById('bucketnumchange3').innerHTML = bucket3max3;
+                        document.getElementById('bucketnumchange').innerHTML = zero;
+                        image = document.getElementById('bucketNum1');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum3');
+                        image2.src = imgName2;
+                        scoreCounter();
+                    }
+                }
+                
+                
+                
+                
+                
+                
                 if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
                     //bucket1max parsed
                     var bucket1max = document.getElementById('bucketnummax').innerHTML;
@@ -540,6 +617,168 @@ function testCollision(objectA, objectB){
                         scoreCounter();
                     }
                 }
+                
+                
+                
+                 if ((data == "bucket2" || data == "buckettwo" || data == "bucketnumchange2" || data == "bucketnummax2") && (event.target.id == "bucket3" || event.target.id == "bucketthree" || event.target.id == "bucketnumchange3" || event.target.id == "bucketnummax3")) {
+                    // bucket2max parsed
+                    var bucket3max = document.getElementById('bucketnummax3').innerHTML;
+                    var bucket3max3 = parseInt(bucket3max);
+                    // bucket2change parsed
+                    var bucket3change = document.getElementById('bucketnumchange3').innerHTML;
+                    var bucket3change3 = parseInt(bucket3change);
+                    // numChange parsed
+                    var numChange = document.getElementById('bucketnumchange2').innerHTML;
+                    var numChange2 = parseInt(numChange);
+                    // diff parsed
+                    var diff2 = bucket3max - bucket3change;
+                    var diff = parseInt(diff2);
+                    var zero = "0";
+                    if (numChange2 > diff) {
+                        document.getElementById('bucketnumchange3').innerHTML = bucket3max3;
+                        var originBucket = numChange2 - diff;
+                        document.getElementById('bucketnumchange2').innerHTML = originBucket;
+                        scoreCounter();
+                        if (originBucket == zero) {
+                            image = document.getElementById('bucketNum2');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 < diff) {
+                        var both = numChange2 + bucket3change3;
+                        document.getElementById('bucketnumchange3').innerHTML = both;
+                        document.getElementById('bucketnumchange2').innerHTML = zero;
+                        image = document.getElementById('bucketNum2');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum3');
+                        image2.src = imgName2;
+                        scoreCounter();
+                        if (both == zero) {
+                            image = document.getElementById('bucketNum3');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 == diff) {
+                        document.getElementById('bucketnumchange3').innerHTML = bucket3max3;
+                        document.getElementById('bucketnumchange2').innerHTML = zero;
+                        image = document.getElementById('bucketNum2');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum3');
+                        image2.src = imgName2;
+                        scoreCounter();
+                    }
+                } 
+                
+                
+                
+                   if ((data == "bucket3" || data == "bucketthree" || data == "bucektnumchange3" || data == "bucketnummax3") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
+                    //bucket1max parsed
+                    var bucket1max = document.getElementById('bucketnummax').innerHTML;
+                    var bucket1max1 = parseInt(bucket1max);
+                    //bucket1change parsed
+                    var bucket1change = document.getElementById('bucketnumchange').innerHTML;
+                    var bucket1change1 = parseInt(bucket1change);
+                    //numChange parsed
+                    var numChange = document.getElementById('bucketnumchange3').innerHTML;
+                    var numChange2 = parseInt(numChange);
+                    //diff parsed
+                    var diff = bucket1max1 - bucket1change1;
+                    var diff2 = parseInt(diff);
+                    //ZERO
+                    var zero = "0";
+                    if (numChange2 > diff2) {
+                        document.getElementById('bucketnumchange').innerHTML = bucket1max1;
+                        var originBucket = numChange2 - diff2;
+                        document.getElementById('bucketnumchange3').innerHTML = originBucket;
+                        image2 = document.getElementById('bucketNum1');
+                        image2.src = imgName2;
+                        scoreCounter();
+                        if (originBucket == zero) {
+                            image = document.getElementById('bucketNum3');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 < diff2) {
+                        var both = numChange2 + bucket1change1;
+                        document.getElementById('bucketnumchange').innerHTML = both;
+                        document.getElementById('bucketnumchange3').innerHTML = zero;
+                        image2 = document.getElementById('bucketNum1');
+                        image2.src = imgName2;
+                        image = document.getElementById('bucketNum3');
+                        image.src = imgName;
+                        scoreCounter();
+                        if (both == zero) {
+                            image2 = document.getElementById('bucketNum1');
+                            image2.src = imgName
+                        }
+                    }
+                    if (numChange2 == diff2) {
+                        document.getElementById('bucketnumchange').innerHTML = bucket1max1;
+                        document.getElementById('bucketnumchange3').innerHTML = "0";
+                        image = document.getElementById('bucketNum3');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum1');
+                        image2.src = imgName2;
+                        scoreCounter();
+                    }
+                }
+                
+                
+                
+                 if ((data == "bucket3" || data == "bucketthree" || data == "bucektnumchange3" || data == "bucketnummax3") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
+                    // bucket2max parsed
+                    var bucket2max = document.getElementById('bucketnummax2').innerHTML;
+                    var bucket2max2 = parseInt(bucket2max);
+                    // bucket2change parsed
+                    var bucket2change = document.getElementById('bucketnumchange2').innerHTML;
+                    var bucket2change2 = parseInt(bucket2change);
+                    // numChange parsed
+                    var numChange = document.getElementById('bucketnumchange3').innerHTML;
+                    var numChange2 = parseInt(numChange);
+                    // diff parsed
+                    var diff2 = bucket2max - bucket2change;
+                    var diff = parseInt(diff2);
+                    var zero = "0";
+                    if (numChange2 > diff) {
+                        document.getElementById('bucketnumchange2').innerHTML = bucket2max2;
+                        var originBucket = numChange2 - diff;
+                        document.getElementById('bucketnumchange3').innerHTML = originBucket;
+                        image = document.getElementById('bucketNum2')
+                        image.src = imgName2;
+                        scoreCounter();
+                        if (originBucket == zero) {
+                            image = document.getElementById('bucketNum3');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 < diff) {
+                        var both = numChange2 + bucket2change2;
+                        document.getElementById('bucketnumchange2').innerHTML = both;
+                        document.getElementById('bucketnumchange3').innerHTML = zero;
+                        image = document.getElementById('bucketNum3');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum2');
+                        image2.src = imgName2;
+                        scoreCounter();
+                        if (both == zero) {
+                            image = document.getElementById('bucketNum2');
+                            image.src = imgName;
+                        }
+                    }
+                    if (numChange2 == diff) {
+                        document.getElementById('bucketnumchange2').innerHTML = bucket2max2;
+                        document.getElementById('bucketnumchange3').innerHTML = zero;
+                        image = document.getElementById('bucketNum3');
+                        image.src = imgName;
+                        image2 = document.getElementById('bucketNum2');
+                        image2.src = imgName2;
+                        scoreCounter();
+                    }
+                }
+                
+                
+                
+                
                 if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
                     // bucket2change parsed
                     var bucket2change = document.getElementById('bucketnumchange').innerHTML;
@@ -553,7 +792,20 @@ function testCollision(objectA, objectB){
                     var bucket2change2 = parseInt(bucket2change);
                     document.getElementById('bucketnumchange2').innerHTML = bucket2change2;
                 }
+                    if ((data == "bucket3" || data == "bucketthree" || data == "bucektnumchange3" || data == "bucketnummax3") && (event.target.id == "bucket3" || event.target.id == "bucketthree" || event.target.id == "bucketnumchange3" || event.target.id == "bucketnummax3")) {
+                    // bucket2change parsed
+                    var bucket3change = document.getElementById('bucketnumchange3').innerHTML;
+                    var bucket3change3 = parseInt(bucket3change);
+                    document.getElementById('bucketnumchange3').innerHTML = bucket3change3;
+                }
             }
+
+
+
+
+
+
+
 
 
 //fill tank function-----------------------------------------------------------------------------------------------------------------------------------------
@@ -612,7 +864,6 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 image.src = imgName2;
                                 image2 = document.getElementById('tanker');
                                 image2.src = tank2;
-                                scoreCounter();
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
@@ -795,7 +1046,6 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 image.src = imgName2;
                                 image2 = document.getElementById('tanker');
                                 image2.src = tank2;
-                                scoreCounterTank();
                             }
                         }
                     }
