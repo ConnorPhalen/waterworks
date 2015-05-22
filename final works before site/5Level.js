@@ -16,8 +16,8 @@ var waveMovement = 1;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 var playerTurns = 0;
 var scoreStart = 1000;
-var turnsLowest = 3;
-var turnsMax = 10;
+var turnsLowest = 4;
+var turnsMax = 8;
 var scoreReduction = 100;
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -243,7 +243,7 @@ function gameOver(){
                                                 })
     buttonRestart.addEventListener("click", function() {
         audio.play();
-        window.location.replace("3Level.html") 
+        window.location.replace("5Level.html") 
     
     })
     
@@ -340,10 +340,10 @@ function gameWin(){
         window.location.replace("../index.html") })
     buttonRestart.addEventListener("click", function() {
         audio.play();
-        window.location.replace("3Level.html") })
+        window.location.replace("5Level.html") })
     continueButton.addEventListener("click", function() {
         audio.play();
-        window.location.replace("4Level.html") })
+        window.location.replace("6Level.html") })
 }
 
 
