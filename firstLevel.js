@@ -143,7 +143,7 @@ function scoreCounter(){
 
     // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
-        gameWin();
+        gameOver();
         
     }
 }
@@ -171,33 +171,26 @@ function scoreCounterTank(){
 function gameOver(){
     
     //creates the quit button
-    var button = document.createElement("BUTTON");
+   var button = document.createElement("BUTTON");
     var buttonText = document.createTextNode("Quit");
     button.id = "winQuit";
     
     //creates the restart button
     var buttonRestart = document.createElement("BUTTON");
     var buttonText1 = document.createTextNode("restart");
-    buttonRestart.id = "restart";
-    
-    //creates the quit button
-    var continueButton = document.createElement("BUTTON");
-    var continueButtonText = document.createTextNode("continue");
-    continueButton.id = "continues";
-    
-    
+    buttonRestart.id = "restart";    
     
     // Creates the new Div that will show and hold the final scores.
     var gameOverDiv = document.createElement("div");
     gameOverDiv.id = 'endScreen';
     
+        var starDisplay = document.createElement("div");
+    starDisplay.id = 'starDisplay';
+    
     // Creates a paragraph element to hold the game over message.
     var gameOverDisplay = document.createElement("p");
     gameOverDisplay.id = 'gameEndDisplay';
     gameOverDisplay.innerHTML = "GAME OVER, FOOLS!";
-    
-    var starDisplay = document.createElement("div");
-    starDisplay.id = 'starDisplay';
     
      var winQuit = document.createElement("div");
     winQuit.id = 'winQuit';
@@ -205,11 +198,15 @@ function gameOver(){
     var restart = document.createElement("div");
     restart.id = 'restart';
     
-    var continues = document.createElement("div");
-    continues.id = 'continues';
     
+        var starImage = document.createElement("img");
+    starImage.id = "starImage";
     
+    starImage.src = "artwork/3emptystar.png";
 
+        var starDisplay = document.createElement("div");
+    starDisplay.id = 'starDisplay';
+    
     // Creates a paragraph element to hold the score values around.
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.id = 'displayScore';
@@ -224,13 +221,10 @@ function gameOver(){
     buttonRestart.appendChild(buttonText1);
     gameOverDiv.appendChild(restart);
     
-    continues.appendChild(continueButton);
-    continueButton.appendChild(continueButtonText);
-    gameOverDiv.appendChild(continues);
-    
     gameOverDiv.appendChild(finalScoreDisplay);
     gameOverDiv.appendChild(gameOverDisplay);
     document.body.appendChild(gameOverDiv);
+     gameOverDiv.appendChild(starDisplay);
     
     
     // Clears the wave timer to get rid of the wave movement.
@@ -239,9 +233,10 @@ function gameOver(){
     // Changes the src of the wave so it stops the .gif animation.
     document.getElementById('wave').src = "artwork/wave_2.png";
     
-    while(5<100){
-        winQuit=onclick(alert('HelloWorld'));
-    }
+    
+    button.addEventListener("click", function() { window.location.replace("index.html") })
+    buttonRestart.addEventListener("click", function() { window.location.replace("firstLevel.html") })
+    
 }
 
 
@@ -250,7 +245,7 @@ function gameOver(){
 function gameWin(){
     
     //creates the quit button
-    /*var button = document.createElement("BUTTON");
+    var button = document.createElement("BUTTON");
     var buttonText = document.createTextNode("Quit");
     button.id = "winQuit";
     
@@ -263,7 +258,7 @@ function gameWin(){
     var continueButton = document.createElement("BUTTON");
     var continueButtonText = document.createTextNode("continue");
     continueButton.id = "continues";
-    */
+    
     // Creates the element for the star image, and checks to see how many stars the user should have.
     var starImage = document.createElement("img");
     starImage.id = "starImage";
@@ -288,7 +283,7 @@ function gameWin(){
 
     var starDisplay = document.createElement("div");
     starDisplay.id = 'starDisplay';
-    /*
+    
     var winQuit = document.createElement("div");
     winQuit.id = 'winQuit';
     
@@ -297,14 +292,14 @@ function gameWin(){
     
     var continues = document.createElement("div");
     continues.id = 'continues';
-    */
+    
     // Creates a paragraph element to hold the score values around.
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.id = 'displayScore';
     finalScoreDisplay.innerHTML = "Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".";
     // Attaches the new elements together and then puts them on the document body to display.
     starDisplay.appendChild(starImage);
-    /*
+    
     winQuit.appendChild(button);
     button.appendChild(buttonText);
     gameOverDiv.appendChild(winQuit);
@@ -315,7 +310,7 @@ function gameWin(){
     
     continues.appendChild(continueButton);
     continueButton.appendChild(continueButtonText);
-    gameOverDiv.appendChild(continues);*/
+    gameOverDiv.appendChild(continues);
     
     gameOverDiv.appendChild(finalScoreDisplay);
     gameOverDiv.appendChild(gameOverDisplay);
@@ -330,7 +325,12 @@ function gameWin(){
     document.getElementById('wave').src = "artwork/long_wave_1.png";
 
     // Creates a Division to hold the star image.
+    button.addEventListener("click", function() { window.location.replace("index.html") })
+    buttonRestart.addEventListener("click", function() { window.location.replace("firstLevel.html") })
+    continueButton.addEventListener("click", function() { window.location.replace("2Level.html") })
 }
+
+
 
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
@@ -538,8 +538,10 @@ function testCollision(objectA, objectB){
                     document.getElementById('bucketnumchange2').innerHTML = bucket2change2;
                 }
             }
-            
-            function fillTank(imgName, imgName2) {
+
+
+//fill tank function-----------------------------------------------------------------------------------------------------------------------------------------
+function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                 var data = event.dataTransfer.getData("text");
                 var zero = "0";
                 scoreCounterTank();
@@ -554,6 +556,9 @@ function testCollision(objectA, objectB){
                     // parse max of bucket 1
                     var bucket1Max = document.getElementById('bucketnummax').innerHTML;
                     var bucketMax = parseInt(bucket1Max);
+                    // parse tanker max 
+                    var tankermax1 = document.getElementById('fillTo').innerHTML;
+                    var tankermax = parseInt(tankermax1);
                     // create the total for end bucket
                     var total = tankAmount + bucketChange;
                     if (bucketChange == zero) {
@@ -569,21 +574,31 @@ function testCollision(objectA, objectB){
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
                                 scoreCounter();
+                                if (newSum > tankermax) {
+                                    image2 = document.getElementById('tanker');
+                                    image2.src = tank3;
+                                }
+                                if (newSum < tankermax) {
+                                    image2 = document.getElementById('tanker');
+                                    image2.src = tank4;
+                                }
                             }
                             if (newSum == zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange').innerHTML = tankAmount;
-                                document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
+                                image2 = document.getElementById('tanker');
+                                image2.src = tank2;
                                 scoreCounter();
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange').innerHTML = tankAmount;
-                                document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
+                                image2 = document.getElementById('tanker');
+                                image2.src = tank2;
                                 scoreCounter();
                             }
                         }
@@ -593,7 +608,23 @@ function testCollision(objectA, objectB){
                         document.getElementById('bucketnumchange').innerHTML = zero;
                         image = document.getElementById('bucketNum1');
                         image.src = imgName;
-                        document.getElementById('endBucket').style.backgroundColor = 'LightBlue';
+                        if (total > tankermax) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank3;
+                        }
+                        if (total < tankermax) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank4;
+                        }
+                        if (total == tankermax) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank1;
+                        }
+                        if (total == zero) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank2;
+                        }
+                        
                     }
                 }
                 if ((data == "bucket2" || data == "buckettwo" || data == "bucketnumchange2" || data == "bucketnummax2") && (event.target.id == "endBucket" || event.target.id == "endBucketone" || event.target.id == "bucketnumchangeend")) {
@@ -606,6 +637,9 @@ function testCollision(objectA, objectB){
                     // parse max of bucket 2
                     var bucket2Max = document.getElementById('bucketnummax2').innerHTML;
                     var bucketMax = parseInt(bucket2Max);
+                    // parse tanker max 
+                    var tankermax1 = document.getElementById('fillTo').innerHTML;
+                    var tankermax = parseInt(tankermax1);
                     // create the total for end bucket
                     var total = tankAmount + bucketChange;
                     if (bucketChange == zero) {
@@ -620,20 +654,30 @@ function testCollision(objectA, objectB){
                                 document.getElementById('bucketnumchange2').innerHTML = bucketMax;
                                 image = document.getElementById('bucketNum2');
                                 image.src = imgName2;
+                                if (newSum > tankermax) {
+                                    image2 = document.getElementById('tanker');
+                                    image2.src = tank3;
+                                }
+                                if (newSum < tankermax) {
+                                    image2 = document.getElementById('tanker');
+                                    image2.src = tank4;
+                                }
                             }
                             if (newSum == zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange2').innerHTML = tankAmount;
-                                document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum2');
                                 image.src = imgName2;
+                                image2 = document.getElementById('tanker');
+                                image2.src = tank2;
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange2').innerHTML = tankAmount;
-                                document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum2');
                                 image.src = imgName2;
+                                image2 = document.getElementById('tanker');
+                                image2.src = tank2;
                             }
                         }
                     }
@@ -642,7 +686,22 @@ function testCollision(objectA, objectB){
                         document.getElementById('bucketnumchange2').innerHTML = zero;
                         image = document.getElementById('bucketNum2');
                         image.src = imgName;
-                        document.getElementById('endBucket').style.backgroundColor = 'LightBlue';
+                        if (total > tankermax) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank3;
+                        }
+                        if (total < tankermax) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank4;
+                        }
+                        if (total == tankermax) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank1;
+                        }
+                        if (total == zero) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank2;
+                        }
                     }
                 }
                 if ((data == "bucket3" || data == "bucketthree" || data == "bucektnumchange3" || data == "bucketnummax3") && (event.target.id == "endBucket" || event.target.id == "endBucketone" || event.target.id == "bucketnumchangeend")) {
@@ -655,6 +714,9 @@ function testCollision(objectA, objectB){
                     // parse max of bucket 3
                     var bucket3Max = document.getElementById('bucketnummax3').innerHTML;
                     var bucketMax = parseInt(bucket3Max);
+                    // parse tanker max 
+                    var tankermax1 = document.getElementById('fillTo').innerHTML;
+                    var tankermax = parseInt(tankermax1);
                     // create the total for end bucket
                     var total = tankAmount + bucketChange;
                     if (bucketChange == zero) {
@@ -670,21 +732,31 @@ function testCollision(objectA, objectB){
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
                                 scoreCounterTank();
+                                if (newSum > tankermax) {
+                                    image2 = document.getElementById('tanker');
+                                    image2.src = tank3;
+                                }
+                                if (newSum < tankermax) {
+                                    image2 = document.getElementById('tanker');
+                                    image2.src = tank4;
+                                }
                             }
                             if (newSum == zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange3').innerHTML = tankAmount;
-                                document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
+                                image2 = document.getElementById('tanker');
+                                image2.src = tank2;
                                 scoreCounterTank();
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange3').innerHTML = tankAmount;
-                                document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
+                                image2 = document.getElementById('tanker');
+                                image2.src = tank2;
                                 scoreCounterTank();
                             }
                         }
@@ -694,7 +766,22 @@ function testCollision(objectA, objectB){
                         document.getElementById('bucketnumchange3').innerHTML = zero;
                         image = document.getElementById('bucketNum3');
                         image.src = imgName;
-                        document.getElementById('endBucket').style.backgroundColor = 'LightBlue';
+                        if (total > tankermax) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank3;
+                        }
+                        if (total < tankermax) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank4;
+                        }
+                        if (total == tankermax) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank1;
+                        }
+                        if (total == zero) {
+                            image2 = document.getElementById('tanker');
+                            image2.src = tank2;
+                        }
                     }
                 }
                 winCheck();
