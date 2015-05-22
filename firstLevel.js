@@ -215,7 +215,7 @@ function gameOver(){
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.id = 'displayScore';
     finalScoreDisplay.innerHTML = "Final Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".";
-
+    
     // Attaches the new elements together and then puts them on the document body to display.
     winQuit.appendChild(button);
     button.appendChild(buttonText);
@@ -238,7 +238,11 @@ function gameOver(){
     clearInterval(mainTimer);
 
     // Changes the src of the wave so it stops the .gif animation.
-    document.getElementById('wave').src = "artwork/long_wave_1.png";
+    document.getElementById('wave').src = "artwork/wave_2.png";
+    
+    while(5<100){
+        winQuit=onclick(alert('HelloWorld'));
+    }
 }
 
 
@@ -247,7 +251,7 @@ function gameOver(){
 function gameWin(){
     
     //creates the quit button
-    var button = document.createElement("BUTTON");
+    /*var button = document.createElement("BUTTON");
     var buttonText = document.createTextNode("Quit");
     button.id = "winQuit";
     
@@ -256,11 +260,11 @@ function gameWin(){
     var buttonText1 = document.createTextNode("restart");
     buttonRestart.id = "restart";
     
-    //creates the quit button
+    //creates the continue button
     var continueButton = document.createElement("BUTTON");
     var continueButtonText = document.createTextNode("continue");
     continueButton.id = "continues";
-    
+    */
     // Creates the element for the star image, and checks to see how many stars the user should have.
     var starImage = document.createElement("img");
     starImage.id = "starImage";
@@ -285,7 +289,7 @@ function gameWin(){
 
     var starDisplay = document.createElement("div");
     starDisplay.id = 'starDisplay';
-    
+    /*
     var winQuit = document.createElement("div");
     winQuit.id = 'winQuit';
     
@@ -294,14 +298,14 @@ function gameWin(){
     
     var continues = document.createElement("div");
     continues.id = 'continues';
-    
+    */
     // Creates a paragraph element to hold the score values around.
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.id = 'displayScore';
     finalScoreDisplay.innerHTML = "Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".";
     // Attaches the new elements together and then puts them on the document body to display.
     starDisplay.appendChild(starImage);
-    
+    /*
     winQuit.appendChild(button);
     button.appendChild(buttonText);
     gameOverDiv.appendChild(winQuit);
@@ -312,7 +316,7 @@ function gameWin(){
     
     continues.appendChild(continueButton);
     continueButton.appendChild(continueButtonText);
-    gameOverDiv.appendChild(continues);
+    gameOverDiv.appendChild(continues);*/
     
     gameOverDiv.appendChild(finalScoreDisplay);
     gameOverDiv.appendChild(gameOverDisplay);
@@ -327,15 +331,7 @@ function gameWin(){
     document.getElementById('wave').src = "artwork/long_wave_1.png";
 
     // Creates a Division to hold the star image.
-    while(0<100){
-        
-        winQuit.onclick=index.html;
-
-        restart=firstLevel.html;
-
-    }
 }
-
 
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.

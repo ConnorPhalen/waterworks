@@ -301,7 +301,9 @@ ant6{
 
 
 
-
+#gameOverDiv{
+    z-index: 5;
+}
 #gameEndDisplay{
     position: absolute;
     font-size: 500%;
@@ -309,6 +311,7 @@ ant6{
     top:  0%;
     left: 5%;
     text-align: center;
+    z-index: 3;
 }
 
 #starDisplay{
@@ -323,7 +326,7 @@ ant6{
     width: 60%;
 }
 #winQuit{
-     position: fixed;
+    position: fixed;
     top: 75%;
     right: 21%;
     background-color: darkblue;
@@ -366,6 +369,7 @@ ant6{
     padding-bottom: 1%;
     padding-left: 2%;
     padding-right: 2%;
+    z-index: 10;
 }
 
 #restart:hover{
@@ -394,6 +398,7 @@ ant6{
     padding-bottom: 1%;
     padding-left: 2%;
     padding-right: 2%;
+    z-index:-1 ;
 }
 
 #continues:hover{
@@ -408,6 +413,7 @@ ant6{
     position: absolute;
     top: 10%;
     left: 2%;
+    z-index: 2;
 }
 
 #displayScore{
