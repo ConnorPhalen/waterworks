@@ -278,7 +278,7 @@ function gameOver(){
                                                 })
     buttonRestart.addEventListener("click", function() {
         audio.play();
-        window.location.replace("2Level.html") 
+        window.location.replace("1Level.html") 
     
     })
     
@@ -375,10 +375,10 @@ function gameWin(){
         window.top.location.href = "http://waterworksgame.herobo.com/" })
     buttonRestart.addEventListener("click", function() {
         audio.play();
-        window.location.replace("2Level.html") })
+        window.location.replace("1Level.html") })
     continueButton.addEventListener("click", function() {
         audio.play();
-        window.location.replace("3Level.html") })
+        window.location.replace("2Level.html") })
 }
 
 
