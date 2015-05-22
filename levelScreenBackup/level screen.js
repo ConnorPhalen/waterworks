@@ -15,7 +15,8 @@ var waveMovement = 4;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 var playerTurns = 0;
 var scoreStart = 1000;
-var TURNS_MAX = 0;
+var turnsLowest = 3;
+var turnsMax = 7;
 var scoreReduction = 100;
 
 // Checks to see if time has reached its max limit.
@@ -133,14 +134,13 @@ function scoreCounter(){
     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
 
-    // If player turns are above the max, then start to take away points with other turns.
-    if(playerTurns > TURNS_MAX){
+    // Takes away a bit of scroe for each turn the player takes.
         scoreStart -= scoreReduction;
         document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
-    }
+
     // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
-        gameOver();
+        gameWin();
         
     }
 }
@@ -190,8 +190,8 @@ function gameWin(){
     // Creates the element for the star image, and checks to see how many stars the user should have.
     var starImage = document.createElement("img");
     starImage.id = "starImage";
-    if (playerTurns > 3) {
-        if (playerTurns < 7) {
+    if (playerTurns > turnsLowest) {
+        if (playerTurns < turnsMax) {
             starImage.src = "../artwork/long_wave_1.png";
         }else{
             starImage.src = "../artwork/long_wave_2.png";
