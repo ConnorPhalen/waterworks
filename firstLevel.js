@@ -586,6 +586,7 @@ function testCollision(objectA, objectB){
                                 if (newSum == tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank1;
+                                    document.getElementById('endBucketone').style.right = "30%";
                                     gameWin();
                                 }
                             }
@@ -625,6 +626,7 @@ function testCollision(objectA, objectB){
                         if (total == tankermax) {
                             image2 = document.getElementById('tanker');
                             image2.src = tank1;
+                            document.getElementById('endBucketone').style.right = "30%";
                             gameWin();
                         }
                         if (total == zero) {
@@ -672,6 +674,7 @@ function testCollision(objectA, objectB){
                                 if (newSum == tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank1;
+                                    document.getElementById('endBucketone').style.right = "30%";
                                     gameWin();
                                 }
                             }
@@ -709,6 +712,7 @@ function testCollision(objectA, objectB){
                         if (total == tankermax) {
                             image2 = document.getElementById('tanker');
                             image2.src = tank1;
+                            document.getElementById('endBucketone').style.right = "30%";
                             gameWin();
                         }
                         if (total == zero) {
@@ -756,6 +760,7 @@ function testCollision(objectA, objectB){
                                 if (newSum == tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank1;
+                                    document.getElementById('endBucketone').style.right = "30%";
                                     gameWin();
                                 }
                             }
@@ -795,6 +800,7 @@ function testCollision(objectA, objectB){
                         if (total == tankermax) {
                             image2 = document.getElementById('tanker');
                             image2.src = tank1;
+                            document.getElementById('endBucketone').style.right = "30%";
                             gameWin();
                         }
                         if (total == zero) {
