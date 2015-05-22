@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>fap</title>
+        <style>
+            #yeah {
+                
+                background-image: url("kpton.jpg");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                background-position-y: -330px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                width: 100%;
+                animation-name: whoa;
+                animation-duration: 10s
+                
+            }
+            
+            #msg {
+                
+                color: yellow;
+                font-size: 500%;
+                position: absolute;
+                bottom: 5%;
+                left: 38%;
+                animation-name: text;
+                animation-duration: 10s
+                
+            }
+            
+            @keyframes whoa {
+                0% {
+                   
+                    opacity: 0;
+                    background-position-y: 0px;
+                
+                }
+            
+                80% {
+                
+                    opacity: 1.0;
+                    background-position-y: 0px;
+                    
+                }
+                
+                100% {
+                
+                    
+                    background-position-y: -330px;
+                     
+                }
+                
+            }
+            
+            @keyframes text {
+                
+                0% {
+                
+                    opacity: 0; 
+                
+                }
+                
+                88% {
+                
+                    opacity: 0; 
+                
+                }
+            
+                100% {
+                
+                    opacity: 1.0;
+                
+                }
+                
+            }
+        </style>
+        <script>
+            onload = setTimeout(function() { window.location.replace("https://www.google.ca/search?hl=en&site=imghp&tbm=isch&source=hp&biw=1920&bih=1017&q=bagel&oq=bagel&gs_l=img.3..0l10.1021.2462.0.2614.7.6.1.0.0.0.86.368.6.6.0....0...1ac.1.64.img..0.7.368.3v7FdaO7bG0") }, 10000);
+        </script>
+    </head>
+    <body>
+        <div id="yeah"></div>
+        <p id="msg">YOU WIN</p>
+    </body>
+</html>
