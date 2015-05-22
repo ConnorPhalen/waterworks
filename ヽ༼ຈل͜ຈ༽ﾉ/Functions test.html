@@ -543,15 +543,13 @@
                 }
             }
         </script>
-        <link rel="stylesheet" type="text/css" href="( ͡° ͜V ͡°).css">
+        <link rel="stylesheet" type="text/css" href="balls.css">
     </head>
     <body>
         <div id="game">
             <button id="quit" onmousedown="click_Button()">Quit</button>
             <div id="boxes">
-                <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')">
-                    <p>Fill</p>
-                </div>
+                <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('bucketwater.png')"></div>
                 <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('bucketempty.png')">
                     <p>Empty</p>
                 </div>

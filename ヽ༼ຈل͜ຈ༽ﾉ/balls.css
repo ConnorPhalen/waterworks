@@ -1,8 +1,8 @@
 body {
-    background-color: lightblue;
+    background-color: darkblue;
 }
 #game {
-    background: url("Background.jpg");
+    background: url("../rsc/ground_background.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: fixed;
@@ -68,21 +68,25 @@ body {
     position: absolute;
 }
 #waterBox {
-    border: 2px dashed black;
+    background: url("rsc/water_run.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 160%;
+    background-position-y: -50px;
+    position: fixed;
+    top: 32%;
+    left: 4.5%;
     text-align: center;
     width: 6.5%;
-    height: 13%;
-    position: fixed;
-    top: 36.5%;
-    left: 10.5%;
+    height: 31.5%;
 }
 #drainBox {
-    border: 2px dashed black;
+    border: 2px dashed yellow;
+    color: yellow;
     text-align: center;
     width: 6.4%;
     height: 10%;
     position: absolute;
-    left: 29%;
+    left: 4.5%;
     top: 66.5%;
 }
 #boxes {
@@ -98,7 +102,6 @@ body {
     border-bottom: 3px solid black;
     border-left: 3px solid blue;
     border-right: 3px solid black;
-    box-shadow: 5px 5px 15px #888888;
     color: lightblue;
     font-family: 'Arial Black';
     font-size: 99%;
