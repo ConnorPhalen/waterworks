@@ -148,24 +148,60 @@ function scoreCounter(){
     }
 }
 
-//
-function scoreCounterTank(){
+// For second bucket.
+function scoreCounterTank1(){
     
+    var buck1 = parseInt(document.getElementById("bucketnumchange").innerHTML);
+    var tank = parseInt(document.getElementById("bucketnumchangeend").innerHTML);
 
-    // Takes away a bit of score for each turn the player takes.
-        playerTurns++;
-        scoreStart -= scoreReduction;
-        document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+    switch(buck1){
 
-    // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
-    document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
+        case 0:
+            break;
 
-    // If score is zero or lower, call gameOver();
-    if(scoreStart < 1){
-        gameOver();
-        
+        default:
+            playerTurns++;
+            scoreStart -= scoreReduction;
+            document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
     }
-}
+ 
+     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
+     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
+ 
+     // If score is zero or lower, call gameOver();
+     if(scoreStart < 1){
+         gameOver();
+         
+     }
+ }
+
+// For second bucket.
+function scoreCounterTank2(){
+    
+    var buck2 = parseInt(document.getElementById("bucketnumchange2").innerHTML);
+    var tank = parseInt(document.getElementById("bucketnumchangeend").innerHTML);
+
+    switch(buck2){
+
+        case 0:
+            break;
+
+        default:
+            playerTurns++;
+            scoreStart -= scoreReduction;
+            document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+    }
+ 
+     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
+     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
+ 
+     // If score is zero or lower, call gameOver();
+     if(scoreStart < 1){
+         gameOver();
+         
+     }
+ }
+ 
 
 // Creates a new div on the screen to display the users end score and other values.
 function gameOver(){
@@ -584,11 +620,11 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                         if (tankAmount > zero) {
                             var newSum = tankAmount - bucketMax;
                             if (newSum > zero) {
+                                scoreCounterTank1();
                                 document.getElementById('bucketnumchangeend').innerHTML = newSum;
                                 document.getElementById('bucketnumchange').innerHTML = bucketMax;
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
-                                scoreCounter();
                                 if (newSum > tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank3;
@@ -605,6 +641,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 }
                             }
                             if (newSum == zero) {
+                                scoreCounterTank1();
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange').innerHTML = tankAmount;
                                 image = document.getElementById('bucketNum1');
@@ -613,17 +650,18 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 image2.src = tank2;
                             }
                             if (newSum < zero) {
+                                scoreCounterTank1();
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange').innerHTML = tankAmount;
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
                                 image2 = document.getElementById('tanker');
                                 image2.src = tank2;
-                                scoreCounter();
                             }
                         }
                     }
                     if (bucketChange > zero) {
+                        scoreCounterTank1();
                         document.getElementById('bucketnumchangeend').innerHTML = total;
                         document.getElementById('bucketnumchange').innerHTML = zero;
                         image = document.getElementById('bucketNum1');
@@ -672,6 +710,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                         if (tankAmount > zero) {
                             var newSum = tankAmount - bucketMax;
                             if (newSum > zero) {
+                                scoreCounterTank2();
                                 document.getElementById('bucketnumchangeend').innerHTML = newSum;
                                 document.getElementById('bucketnumchange2').innerHTML = bucketMax;
                                 image = document.getElementById('bucketNum2');
@@ -692,6 +731,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 }
                             }
                             if (newSum == zero) {
+                                scoreCounterTank2();
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange2').innerHTML = tankAmount;
                                 image = document.getElementById('bucketNum2');
@@ -700,6 +740,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 image2.src = tank2;
                             }
                             if (newSum < zero) {
+                                scoreCounterTank2();
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange2').innerHTML = tankAmount;
                                 image = document.getElementById('bucketNum2');
@@ -710,6 +751,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                         }
                     }
                     if (bucketChange > zero) {
+                        scoreCounterTank2();
                         document.getElementById('bucketnumchangeend').innerHTML = total;
                         document.getElementById('bucketnumchange2').innerHTML = zero;
                         image = document.getElementById('bucketNum2');
@@ -757,11 +799,11 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                         if (tankAmount > zero) {
                             var newSum = tankAmount - bucketMax;
                             if (newSum > zero) {
+                                scoreCounterTank3();
                                 document.getElementById('bucketnumchangeend').innerHTML = newSum;
                                 document.getElementById('bucketnumchange3').innerHTML = bucketMax;
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
-                                scoreCounterTank();
                                 if (newSum > tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank3;
@@ -778,6 +820,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 }
                             }
                             if (newSum == zero) {
+                                scoreCounterTank3();
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange3').innerHTML = tankAmount;
                                 image = document.getElementById('bucketNum3');
@@ -786,6 +829,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 image2.src = tank2;
                             }
                             if (newSum < zero) {
+                                scoreCounterTank3();
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
                                 document.getElementById('bucketnumchange3').innerHTML = tankAmount;
                                 image = document.getElementById('bucketNum3');
@@ -797,6 +841,7 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                         }
                     }
                     if (bucketChange > zero) {
+                        scoreCounterTank3();
                         document.getElementById('bucketnumchangeend').innerHTML = total;
                         document.getElementById('bucketnumchange3').innerHTML = zero;
                         image = document.getElementById('bucketNum3');
