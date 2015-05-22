@@ -18,8 +18,6 @@ var scoreStart = 1000;
 var turnsLowest = 3;
 var turnsMax = 7;
 var scoreReduction = 100;
-var tankMax = parseInt(document.getElementById('fillTo').innerHTML);
-var tankCurrent = 0;
 // Checks to see if time has reached its max limit.
 function loseCheck(){
     if(testCollision('wave', 'gateImg')){
@@ -29,8 +27,7 @@ function loseCheck(){
 }
 
 function winCheck(){
-    var tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
-    if(parseInt(tankMax) == parseInt(tankCurrent)){
+    if(parseInt(document.getElementById('fillTo').innerHTML) == parseInt(document.getElementById('bucketnumchangeend').innerHTML)){
         gameWin();
     }
 }
@@ -201,54 +198,51 @@ function gameOver(){
 
 
 function gameWin(){
-     // Creates the new Div that will show and hold the final scores.
-    var gameOverDiv = document.createElement("div");
-    gameOverDiv.id = 'endScreen';
-
-     // Creates a paragraph element to hold the game over message.
-    var gameOverDisplay = document.createElement("p");
-    gameOverDisplay.id = 'gameEndDisplay';
-    gameOverDisplay.innerHTML = "YOU WIN, M8!";
-
-    // Creates a Division to hold the star image.
-    var starDisplay = document.createElement("div");
-    starDisplay.id = 'starDisplay';
-
-    // Creates the element for the star image, and checks to see how many stars the user should have.
+        // Creates the element for the star image, and checks to see how many stars the user should have.
     var starImage = document.createElement("img");
     starImage.id = "starImage";
     if (playerTurns > turnsLowest) {
         if (playerTurns < turnsMax) {
-            starImage.src = "artwork/long_wave_1.png";
+            starImage.src = "artwork/star.png";
         }else{
-            starImage.src = "artwork/long_wave_2.png";
+            starImage.src = "artwork/star.png";
         }
     }else{
-        starImage.src = "artwork/long_wave_3.png";
+        starImage.src = "artwork/star.png";
     }
+        // Creates the new Div that will show and hold the final scores.
+    var gameOverDiv = document.createElement("div");
+    gameOverDiv.id = 'endScreen';
 
-    // Creates a paragraph element to hold and move the score valeus around.
+    // Creates a paragraph element to hold the game over message.
+    var gameOverDisplay = document.createElement("p");
+    gameOverDisplay.id = 'gameEndDisplay';
+    gameOverDisplay.innerHTML = "YOU WIN M8";
+
+    var starDisplay = document.createElement("div");
+    starDisplay.id = 'starDisplay';
+    
+    // Creates a paragraph element to hold the score values around.
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.id = 'displayScore';
-
-    // Creates a text node to write out the info, and attaches it to the paragraph element.
-    var scoreShow = document.createTextNode("Final Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".");
-    finalScoreDisplay.appendChild(scoreShow); 
-
+    finalScoreDisplay.innerHTML = "Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".";
     // Attaches the new elements together and then puts them on the document body to display.
     starDisplay.appendChild(starImage);
     gameOverDiv.appendChild(finalScoreDisplay);
-    gameOverDiv.appendChild(starDisplay);
+    gameOverDiv.appendChild(gameOverDisplay);
     document.body.appendChild(gameOverDiv);
-
+     gameOverDiv.appendChild(starDisplay);
+    
     // Clears the wave timer to get rid of the wave movement.
     clearInterval(mainTimer);
 
     // Changes the src of the wave so it stops the .gif animation.
     document.getElementById('wave').src = "artwork/long_wave_1.png";
+
+    // Creates a Division to hold the star image.
+
+
 }
-
-
 
 
 
@@ -272,7 +266,7 @@ function testCollision(objectA, objectB){
     bID = document.getElementById(objectB).style;
 
     // Checks to see if the X position (from left of screen) is within the width of the second image.
-    if((parseInt(bID.left) - parseInt(aID.width)) - 1 < parseInt(aID.left) && parseInt(aID.left) < ((parseInt(bID.left) + parseInt(bID.width)) + 1)){
+    if((parseInt(bID.left) - parseInt(aID.width)) + 10 < parseInt(aID.left) && parseInt(aID.left) < ((parseInt(bID.left) + parseInt(bID.width)) + 1)){
         collideX = true;
     }else{
         collideX = false;

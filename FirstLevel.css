@@ -176,7 +176,7 @@ tunnelImg{
     width: 100%;
     height: 25%;
     bottom: 0%;
-    z-index:1;   
+    z-index:2;   
 }
 
 #tunnelBackground{
@@ -258,4 +258,54 @@ ant6{
     height: 80%;
     width: 10%;
     margin-left: 5%;
+}
+
+
+
+
+#scoreBox{
+    position:  absolute;
+    left:  45%;
+    width:  25%;
+    height:  15%;
+    border: 2px solid black;
+    background-color: #fff;
+}
+
+#endScreen{
+    position:  absolute;
+    width:  75%;
+    left:  10%;
+    height:  65%;
+    top: 10%;
+    border: 4em solid #E8981E;
+    background-color:  #FAB54C;
+    z-index: 5;
+}
+
+#displayScore{
+    position: absolute;
+    left:  100px;
+    bottom: 0px;
+    font-size: 200%;
+}
+
+#antTunnel{
+    position: absolute;
+    bottom:  -120px;
+    z-index: 2;
+}
+
+#gameEndDisplay{
+    font-size: 500%;
+    font-weight: bold;
+    top:  0px;
+}
+
+#starDisplay{
+    
+}
+
+#starImage{
+    
 }
