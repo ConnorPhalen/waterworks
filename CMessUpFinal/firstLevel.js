@@ -187,13 +187,7 @@ function gameOver(){
     clearInterval(mainTimer);
 
     // Changes the src of the wave so it stops the .gif animation.
-    document.getElementById('wave').src = "artwork/long_wave_1.png";
-}
-
-function winCheck(){
-    if(parseInt(document.getElementById('bucketnumchangeend').innerHTML) == parseInt(document.getElementById('fillTo').innerHTML)){
-        gameWin();
-    }
+    document.getElementById('wave').src = "../artwork/long_wave_1.png";
 }
 
 function gameWin(){
@@ -215,12 +209,12 @@ function gameWin(){
     starImage.id = "starImage";
     if (playerTurns > turnsLowest) {
         if (playerTurns < turnsMax) {
-            starImage.src = "artwork/long_wave_1.png";
+            starImage.src = "../artwork/long_wave_1.png";
         }else{
-            starImage.src = "artwork/long_wave_2.png";
+            starImage.src = "../artwork/long_wave_2.png";
         }
     }else{
-        starImage.src = "artwork/long_wave_3.png";
+        starImage.src = "../artwork/long_wave_3.png";
     }
 
     // Creates a paragraph element to hold and move the score valeus around.
@@ -241,7 +235,7 @@ function gameWin(){
     clearInterval(mainTimer);
 
     // Changes the src of the wave so it stops the .gif animation.
-    document.getElementById('wave').src = "artwork/long_wave_1.png";
+    document.getElementById('wave').src = "../artwork/long_wave_1.png";
 }
 
 
