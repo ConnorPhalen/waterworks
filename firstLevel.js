@@ -266,13 +266,13 @@ function gameWin(){
     starImage.id = "starImage";
     
     if (playerTurns > turnsLowest) {
-        if (playerTurns < turnsMax) {
-            starImage.src = "artwork/star.png";
-        }else{
-            starImage.src = "artwork/star.png";
+        if (playerTurns < turnsLowest) {
+            starImage.src = "artwork/3stars.png";
+        }else if(playerTurns<turnsMax){
+            starImage.src = "artwork/3stars1empty.png";
         }
     }else{
-        starImage.src = "artwork/smilestar.png";
+        starImage.src = "artwork/3star2empty.png";
     }
         // Creates the new Div that will show and hold the final scores.
     var gameOverDiv = document.createElement("div");
@@ -329,15 +329,14 @@ function gameWin(){
     document.getElementById('wave').src = "artwork/long_wave_1.png";
 
     // Creates a Division to hold the star image.
+    while(0<100){
+        
+        winQuit.onclick=index.html;
+
+        restart=firstLevel.html;
+
+    }
 }
-
-
-
-
-
-
-
-
 
 
 
