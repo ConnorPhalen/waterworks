@@ -10,7 +10,7 @@
 // Just sets up some initial variables.
 var time = 0;
 var timeOverflow = 0;
-var TIMEOVERFLOW_MAX = 16;
+var TIMEOVERFLOW_MAX = 12;
 var timerDelay = 33;
 var waveMovement = 1;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
