@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Level 11</title>
+        <script src="11Level.js"></script>
+        <link rel="stylesheet" type="text/css" href="3PlusLevel.css">
+    </head>
+    <body>
+        <div id="gameBox">
+        <button id="quit" onmousedown="click_Button() ">Quit</button>
+        <div id="scoreBox">
+            <div id="screen"></div>
+           <p id="turnDisplay">Turns Used: 0</p>
+           <p id="scoreDisplay">Score: 1000</p>
+        </div>
+            <!--got this to work-->
+            <div id="hose" ondragover="dragStart(event)" ondrop="fillBucket('../artwork/bucketwater.png')">
+            <img src="../artwork/hose.png" id="hoseImg" height="162" width="218"></div>
+            <div id="waterBox" ondragover="dragStart(event)" ondrop="fillBucket('../artwork/bucketwater.png')">
+            <img src="../artwork/water_run.gif" id="waterFall" height="192" width="97">
+            </div>
+            <!--works-->
+            <div id="drainBox" ondragover="dragStart(event)" ondrop="emptyBucket('../artwork/bucketempty.png')">
+                <p>Empty</p>
+            </div>
+        <div id="buckets">
+            <div id="bucket1" draggable="true" ondragstart="drag(event)" ondragover="dragStart(event)" ondrop="moveWater('../artwork/bucketempty.png', '../artwork/bucketwater.png')">
+                <label id="bucketone" for="bucket1"><span id="bucketnumchange">0</span>/<span id="bucketnummax">7</span></label>
+                <img id="bucketNum1" alt="Bucket1" src="../artwork/bucketempty.png" height="128" width="128">
+            </div>
+            <div id="bucket2" draggable="true" ondragstart="drag2(event)" ondragover="dragStart(event)" ondrop="moveWater('../artwork/bucketempty.png', '../artwork/bucketwater.png')">
+                <label id="buckettwo"  for="bucket2"><span id="bucketnumchange2">0</span>/<span id="bucketnummax2">17</span></label>
+                <img id="bucketNum2" alt="Bucket2" src="../artwork/bucketempty.png" height="128" width="128">
+            </div>
+            <div id="bucket3" draggable="true" ondragstart="drag3(event)" ondragover="dragStart(event)" ondrop="moveWater('../artwork/bucketempty.png','../artwork/bucketwater.png')">
+                    <label id="bucketthree"  for="bucket3" draggable="false"><span id="bucketnumchange3">0</span>/<span id="bucketnummax3">13</span></label>
+                    <img id="bucketNum3" alt="Bucket3" src="../artwork/bucketempty.png" height="128" width="128">
+                </div>
+        </div>
+<img src=../artwork/ant_tunnel.png id="tunnelImage" width="1280px" height="357">
+        <div id="tunnel"> <img src=../ArtWork/ant_tunnel_back.png id="tunnelBackground" width="1280" height="268">
+            <div id="timer">
+                <img id="wave" src="../artwork/long_wave.gif" alt="Wave" width= "400px" height= "75px" style="position: absolute; left: -80%; height: 100%; width: 100%; z-index: 1; top:0%;"><!---100%-->
+
+                <div id="ants">
+                    <img src="../artwork/ant_1.png" id="ant1" alt="Ant1" width= "136px"; height= "86px" style="position: absolute; left: 30%; height: 80%; width: 10%; top:0%;">
+                    <img src="../artwork/ant_2.png" id="ant2" alt="Ant2" width= "127px" height= "69px" style="position: absolute; left: 55%; height: 80%; width: 10%; top:0%;">
+                    <img src="../artwork/ant_3.png" id="ant3" alt="Ant3" width= "104px" height= "75px" style="position: absolute; left: 40%; height: 80%; width: 10%; top:0%;">
+                    <img src="../artwork/ant_4.png" id="ant4" alt="Ant4" width= "116px" height= "89px" style=" position: absolute; left: 65%; height: 80%; width: 10%; top:0%;">
+                    <img src="../artwork/ant_1.png" id="ant5" alt="Ant5" width = "136px" height= "86px" style="position: absolute; left: 80%; height: 80%; width: 10%; top:0%;">
+                    <img src="../artwork/ant_3.png" id="ant6" alt="Ant6" width= "104px" height= "75px" style="position: absolute; height: 80%; width: 10%; left: 87%; top:0%;">
+                </div>
+                <div id="gate">
+                    <img id="gateImg" src="../artwork/gate.png" alt="Gate" style="position: absolute; left: 94%; top:0%; width: 8%; height: 100%; top:0%;">
+                </div>
+            </div>
+            </div>
+
+                <div id="tanks">
+                    <img src="../artwork/lever_left_modified.png" id ="tanker" height="235" width="169">
+                    <div id="endBucket" ondragover="dragStart(event)" ondrop="fillTank('../artwork/bucketempty.png', '../artwork/bucketwater.png', '../artwork/even_modified.png', '../artwork/full_left_modified.png', '../artwork/heavy_right_modified.png', '../artwork/light_right_modified.png')">
+                    <label id="endBucketone" for="endBucket"><span id="bucketnumchangeend">0</span></label></div>
+            <div id="tankAlreadyFull"><span id="fillTo">5</span></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,440 @@
+body {
+    background-color: aqua;
+    z-index: 1;
+}
+#gameBox{
+    background: url("../artwork/level_back_with_tunnel.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    position: fixed;
+    top: 10%;
+    left: 0%;
+    height: 80%;
+    width: 90%;  
+    z-index: +2;
+}
+
+#quit{
+    position: fixed;
+    top: 11%;
+    right: 15%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;    
+}
+#quit:hover {
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+#buckets {
+    clear: both;
+    display: inline;
+    font-size: 90%;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+#bucket1 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum1 {
+    height: 120%;
+    width: 100%;
+}
+#bucket2 {
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum2 {
+    height: 120%;
+    width: 100%;
+}
+#bucketone {
+    height: 50%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
+#buckettwo {
+    height: 50%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
+#bucket3{
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum3{
+    height: 120%;
+    width: 100%;
+}
+#bucketthree{
+    height: 50%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
+#hose{
+    width:15%;
+    height: 20%;
+    float: left;
+    font-size: 90%;
+    top: 15%;
+    left:0%;
+    position: absolute;
+    z-index: 1;
+}
+#hoseImg{
+    width: 100%;
+    height: 100%;
+}
+#waterBox {
+    width: 8%;
+    height: 65%;
+    margin-right: 32%;
+    z-index: ;
+    float: left;
+    top: 28%;
+    left:5%;
+    position: absolute;
+    
+}
+#waterFall{
+    width: 100%;
+    height:100%;
+    padding-bottom: 5%;
+    z-index: -2;
+}
+#drainBox {
+        float: left;
+    font-size: 100%;
+    width:20%;
+    height: 12%;
+    bottom: 0%;
+    left:0%;
+    position: absolute;
+    padding-top: 5%;
+    float: right;
+    z-index: 3;
+    text-align: center;
+}
+#tanks{
+    position: absolute;
+    right: 0%;
+    bottom: 12%;
+    height: 40%;
+    width: 15%;
+    z-index: 2;
+}
+#tanker{
+    height: 100%;
+    width: 100%;
+}
+#tankAlreadyFull{
+    width: 40%;
+    height: 80%;
+    bottom: 20%;
+    text-align: center;
+    position: absolute;
+}
+#endBucket {
+    width: 40%;
+    height: 70%;
+    bottom: 30%;
+    left: 55%;
+    text-align: center;
+    position: absolute;
+}
+#endBucketone {
+    font-size: 80%;
+    position: absolute;
+    bottom: 26%;
+    right: 42%;
+    height: 40%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 6%;
+    color: #fff;
+}
+#fillTo {
+    font-size: 80%;
+    position: absolute;
+    bottom: 26%;
+    right: 39%;
+    height: 40%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 6%;
+    color: #fff;
+}
+#tunnel {
+    width:  98%;
+    height: 17%;
+    border: 2px solid black;
+    bottom: 0%;
+    position: absolute;
+}
+tunnelImg{
+  position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0%;    
+}
+#tunnelImage{
+ position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0%;
+    z-index:2;   
+}
+
+#tunnelBackground{
+   position: absolute;
+    width: 101.7%;
+    height: 100%;
+}
+gateImg{
+    position: absolute;
+    right: -2%;
+    top:0%;
+    width: 8%; 
+    height: 100%;
+}
+#scoreBox{
+    position:  absolute;
+    left:  45%;
+    width:  25%;
+    height:  15%;
+    font-size: 90%;
+}
+#turnDisplay {
+    color: #fff;
+    float:  left;
+    font-size:90%;
+}
+#scoreDisplay {
+    color:  #fff;
+    float: left;
+    font-size:90%;
+    padding-left: 15%;
+}#timer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+wave{
+    position: absolute;
+    left: -75%;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+#ants{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+ant1{
+    position: absolute;
+    margin-left: 30%;
+    height: 80%;
+    width: 10%;
+}
+ant2{
+    position: absolute;
+    margin-left: 55%;
+    height: 80%;
+    width: 10%;
+}
+ant3{
+    position: absolute;
+    margin-left: 40%;
+    height: 80%;
+    width: 10%;
+}
+ant4{
+    position: absolute;
+    margin-left: 65%;
+    height: 80%;
+    width: 10%;
+}
+ant5{
+    position: absolute;
+    margin-left: 80%;
+    height: 80%;
+    width: 10%;
+}
+ant6{
+    height: 80%;
+    width: 10%;
+    margin-left: 5%;
+}
+
+#displayScore{
+    position: absolute;
+    left:  100px;
+    bottom: 0px;
+    font-size: 200%;
+}
+
+#antTunnel{
+    position: absolute;
+    bottom:  -120px;
+    z-index: 2;
+}
+
+
+
+
+
+
+#gameOverDiv{
+    z-index: 5;
+}
+#gameEndDisplay{
+    position: absolute;
+    font-size: 400%;
+    font-weight: bold;
+    top:  -15%;
+    left: 5%;
+    height: 40%;
+    width: 80%;
+    text-align: center;
+    z-index: 3;
+}
+
+#starDisplay{
+    
+}
+
+#starImage{
+    position: absolute;
+    top: 17%;
+    left: 20%;
+    height: 60%;
+    width: 60%;
+}
+#winQuit{
+    position: fixed;
+    top: 58%;
+    right: 21%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#winQuit:hover{
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+#restart{
+    position: fixed;
+    top: 58%;
+    right: 30%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#restart:hover{
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#continues{
+        position: fixed;
+    top: 58%;
+    right: 40%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    z-index:-1 ;
+}
+
+#continues:hover{
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+#endScreen{
+    position:  absolute;
+    width:  75%;
+    left:  9%;
+    right: 9%;
+    height:  50%;
+    top: 10%;
+    border: 4em solid #E8981E;
+    background-color:  #FAB54C;
+    z-index: 2;
+}
+
+
+
+#displayScore{
+    z-index: 1;
+    left: 0%;
+    
+}

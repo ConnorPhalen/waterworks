@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Water Works</title>
+        <style>
+            
+            body {
+                
+                background-color: darkblue;
+                
+            }
+            
+            #mbar {
+                
+                background-image: url("artwork/splash.png");
+                background-position: 5% 45%;
+                background-repeat: no-repeat;
+                background-size: 10% 70%;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                height: 10%;
+                width: 100%;
+                animation-name: fin;
+                animation-duration: 5s;
+                
+            }
+            
+            #fram_g {
+                
+                border-style: none;
+                position: fixed;
+                top: 10%;
+                left: 0px; 
+                height: 90%;
+                width: 100%;
+                
+            }
+        
+            #music {
+                
+                background: url('artwork/volume-empty.png') no-repeat;
+                background-size: 100% 100%;
+                display: inline;
+                position: absolute;
+                top: 15%;
+                height: 11%;
+                width: 80%;
+                
+            }
+        
+            #music .ui-slider-range-min {
+                
+                background: url('artwork/volume-full.png') no-repeat;
+                background-size: 100% 100%;
+                height: 100%;
+                
+            }
+        
+            #music .ui-slider-handle {
+                
+                background: url('artwork/volume-knob.png');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                margin-left: -8%;
+                position: absolute;
+                top: -44%;
+                width: 18%;
+                height: 250%;
+                
+            }
+            
+            #player {
+                
+                position: fixed;
+                top: 3%;
+                right: 0px;
+                height: 10%;
+                width: 10%;
+                
+            }
+            
+            @keyframes fin {
+                
+                0% {
+                
+                    opacity: 0.01;
+                    
+                }
+            
+                60% {
+                
+                    opacity: 0.01;
+                    
+                }
+            
+                100% {
+                
+                    opacity: 1;
+                    
+                }
+            
+            }
+            
+        </style>
+	    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	    <script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+        <script type="text/javascript" src="options.js"></script>
+        <script>
+
+            onload = function () {
+
+                if (window.location.href.match(/usn=/)) {
+
+                    var url = window.location.href;
+                    var name = url.split('=');
+
+                    alert("Welcome to Water Works, " + name[1] + "!");
+
+                } else {
+                    
+                    window.location.replace("http://www.waterworksgame.herobo.com");
+
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="mbar"></div>
+        <div id="player"><div id="music"></div></div>
+        <iframe id="fram_g" src="rsc/1Level.html"></iframe>
+    </body>
+</html>
