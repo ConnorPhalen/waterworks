@@ -278,17 +278,6 @@ ant6{
     margin-left: 5%;
 }
 
-#endScreen{
-    position:  absolute;
-    width:  75%;
-    left:  10%;
-    height:  65%;
-    top: 10%;
-    border: 4em solid #E8981E;
-    background-color:  #FAB54C;
-    z-index: 5;
-}
-
 #displayScore{
     position: absolute;
     left:  100px;
@@ -312,10 +301,12 @@ ant6{
 }
 #gameEndDisplay{
     position: absolute;
-    font-size: 500%;
+    font-size: 400%;
     font-weight: bold;
-    top:  0%;
+    top:  -15%;
     left: 5%;
+    height: 40%;
+    width: 80%;
     text-align: center;
     z-index: 3;
 }
@@ -333,7 +324,7 @@ ant6{
 }
 #winQuit{
     position: fixed;
-    top: 75%;
+    top: 58%;
     right: 21%;
     background-color: darkblue;
     border-radius: 11%;
@@ -359,7 +350,7 @@ ant6{
 }
 #restart{
     position: fixed;
-    top: 75%;
+    top: 58%;
     right: 30%;
     background-color: darkblue;
     border-radius: 11%;
@@ -387,7 +378,7 @@ ant6{
 
 #continues{
         position: fixed;
-    top: 75%;
+    top: 58%;
     right: 40%;
     background-color: darkblue;
     border-radius: 11%;
@@ -413,13 +404,18 @@ ant6{
     font-size: 100%;
     font-weight: bold;
 }
-
 #endScreen{
-    position: absolute;
+    position:  absolute;
+    width:  75%;
+    left:  0%;
+    height:  50%;
     top: 10%;
-    left: 2%;
+    border: 4em solid #E8981E;
+    background-color:  #FAB54C;
     z-index: 2;
 }
+
+
 
 #displayScore{
     z-index: 1;
