@@ -9,7 +9,7 @@
     </head>
     <body>
         <div id="gameBox">
-        <button id="quit" onclick="index.html" onmousedown="click_Button()">Quit</button>
+        <button id="quit" onclick="window.location.href='index.html'" onmousedown="click_Button()">Quit</button>
         <div id="scoreBox">
             <div id="screen"></div>
            <p id="turnDisplay">Turns Used: 0</p>
@@ -35,16 +35,13 @@
                 <img id="bucketNum2" alt="Bucket2" src="artwork/bucketempty.png" height="128" width="128">
             </div>
         </div>
-            <!--<button id="winQuit" onclick="'window.location.href='index.html'" onmousedown="click_Button()">Quit</button>
-            <button id="restart" onclick="alert('HelloWorld')" onmousedown="click_Button()">restart</button>
-            <button id="continues"onclick="secondLevel.html" onmousedown="click_Button()">continue</button>-->
 <img src=artwork/ant_tunnel.png id="tunnelImage" width="1280px" height="357">
         <div id="tunnel"> <img src=ArtWork/ant_tunnel_back.png id="tunnelBackground" width="1280" height="268">
             <div id="timer">
-                <img id="wave" src="artwork/long_wave.gif" alt="Wave" width= "400px" height= "75px" style="position: absolute; left: -80%; height: 100%; width: 100%; z-index: 1; top:0%;"><!---100%-->
+                <img id="wave" src="artwork/long_wave.gif" alt="Wave" width= "400px" height= "75px" style="position: absolute; left: -100%; height: 100%; width: 100%; z-index: 1; top:0%;">
 
                 <div id="ants">
-                    <img src="artwork/ant_1.png" id="ant1" alt="Ant1" width= "136px"; height= "86px" style="position: absolute; left: 30%; height: 80%; width: 10%; top:0%;">
+                    <img src="artwork/ant_1.png" id="ant1" alt="Ant1" width= "136px" height= "86px" style="position: absolute; left: 30%; height: 80%; width: 10%; top:0%;">
                     <img src="artwork/ant_2.png" id="ant2" alt="Ant2" width= "127px" height= "69px" style="position: absolute; left: 55%; height: 80%; width: 10%; top:0%;">
                     <img src="artwork/ant_3.png" id="ant3" alt="Ant3" width= "104px" height= "75px" style="position: absolute; left: 40%; height: 80%; width: 10%; top:0%;">
                     <img src="artwork/ant_4.png" id="ant4" alt="Ant4" width= "116px" height= "89px" style=" position: absolute; left: 65%; height: 80%; width: 10%; top:0%;">
@@ -61,7 +58,7 @@
                     <img src="artwork/lever_left_modified.png" id ="tanker" height="235" width="169">
                     <div id="endBucket" ondragover="dragStart(event)" ondrop="fillTank('artwork/bucketempty.png', 'artwork/bucketwater.png', 'artwork/even_modified.png', 'artwork/full_left_modified.png', 'artwork/heavy_right_modified.png', 'artwork/light_right_modified.png')">
                     <label id="endBucketone" for="endBucket"><span id="bucketnumchangeend">0</span></label></div>
-            <div id="tankAlreadyFull"><span id="fillTo">8</span></div>
+                    <div id="tankAlreadyFull"><span id="fillTo">8</span></div>
             </div>
         </div>
     </body>

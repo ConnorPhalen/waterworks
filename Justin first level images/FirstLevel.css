@@ -139,43 +139,6 @@ body {
     height: 100%;
     width: 100%;
 }
-#tankAlreadyFull{
-    width: 40%;
-    height: 80%;
-    bottom: 20%;
-    text-align: center;
-    position: absolute;
-}
-#endBucket {
-    width: 40%;
-    height: 70%;
-    bottom: 30%;
-    left: 55%;
-    text-align: center;
-    position: absolute;
-}
-#endBucketone {
-    font-size: 80%;
-    position: absolute;
-    bottom: 26%;
-    right: 42%;
-    height: 40%;
-    width: 10%;
-    padding-top: 7.5%;
-    padding-left: 6%;
-    color: #fff;
-}
-#fillTo {
-    font-size: 80%;
-    position: absolute;
-    bottom: 26%;
-    right: 39%;
-    height: 40%;
-    width: 10%;
-    padding-top: 7.5%;
-    padding-left: 6%;
-    color: #fff;
-}
 #tunnel {
     width:  98%;
     height: 17%;
@@ -208,6 +171,22 @@ gateImg{
     top:0%;
     width: 8%; 
     height: 100%;
+}
+
+#scoreBox{
+    position:  absolute;
+    left:  45%;
+    width:  25%;
+    font-size: 90%;
+    height:  15%;
+    border: 2px solid black;
+    background-color: #fff;
+}
+#turnDisplay{
+    font-size:80%;
+}
+#scoreDisplay{
+   font-size:80%;
 }
 #timer{
     position: absolute;
@@ -270,19 +249,10 @@ ant6{
     left:  45%;
     width:  25%;
     height:  15%;
-    font-size: 90%;
+    border: 2px solid black;
+    background-color: #fff;
 }
-#turnDisplay {
-    color: #fff;
-    float:  left;
-    font-size:90%;
-}
-#scoreDisplay {
-    color:  #fff;
-    float: left;
-    font-size:90%;
-    padding-left: 15%;
-}
+
 #endScreen{
     position:  absolute;
     width:  75%;
@@ -307,22 +277,10 @@ ant6{
     z-index: 2;
 }
 
-
-
-
-
-
-#gameOverDiv{
-    z-index: 5;
-}
 #gameEndDisplay{
-    position: absolute;
     font-size: 500%;
     font-weight: bold;
-    top:  0%;
-    left: 5%;
-    text-align: center;
-    z-index: 3;
+    top:  0px;
 }
 
 #starDisplay{
@@ -330,105 +288,43 @@ ant6{
 }
 
 #starImage{
-    position: absolute;
-    top: 20%;
-    left: 20%;
-    height: 60%;
-    width: 60%;
-}
-#winQuit{
-    position: fixed;
-    top: 75%;
-    right: 21%;
-    background-color: darkblue;
-    border-radius: 11%;
-    border-top: 3px solid blue;
-    border-bottom: 3px solid black;
-    border-left: 3px solid blue;
-    border-right: 3px solid black;
-    box-shadow: 5px 5px 15px #888888;
-    color: lightblue;
-    font-family: 'Arial Black';
-    font-size: 99%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 2%;
-    padding-right: 2%;
-}
-#winQuit:hover{
-    border: 3px solid yellow;
-    color: yellow;
-    cursor: pointer;  
-    font-size: 100%;
-    font-weight: bold;
-}
-#restart{
-    position: fixed;
-    top: 75%;
-    right: 30%;
-    background-color: darkblue;
-    border-radius: 11%;
-    border-top: 3px solid blue;
-    border-bottom: 3px solid black;
-    border-left: 3px solid blue;
-    border-right: 3px solid black;
-    box-shadow: 5px 5px 15px #888888;
-    color: lightblue;
-    font-family: 'Arial Black';
-    font-size: 99%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 2%;
-    padding-right: 2%;
-    z-index: 10;
-}
-
-#restart:hover{
-    border: 3px solid yellow;
-    color: yellow;
-    cursor: pointer;  
-    font-size: 100%;
-    font-weight: bold;
-}
-
-#continues{
-        position: fixed;
-    top: 75%;
-    right: 40%;
-    background-color: darkblue;
-    border-radius: 11%;
-    border-top: 3px solid blue;
-    border-bottom: 3px solid black;
-    border-left: 3px solid blue;
-    border-right: 3px solid black;
-    box-shadow: 5px 5px 15px #888888;
-    color: lightblue;
-    font-family: 'Arial Black';
-    font-size: 99%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 2%;
-    padding-right: 2%;
-    z-index:-1 ;
-}
-
-#continues:hover{
-    border: 3px solid yellow;
-    color: yellow;
-    cursor: pointer;  
-    font-size: 100%;
-    font-weight: bold;
-}
-
-#endScreen{
-    position: absolute;
-    top: 10%;
-    left: 2%;
-    z-index: 2;
-}
-
-#displayScore{
-    z-index: 1;
-    left: 0%;
     
+}
+
+#tankAlreadyFull{
+    width: 40%;
+    height: 80%;
+    bottom: 20%;
+    text-align: center;
+    position: absolute;
+}
+#endBucket {
+    width: 40%;
+    height: 70%;
+    bottom: 30%;
+    left: 55%;
+    text-align: center;
+    position: absolute;
+}
+#endBucketone {
+    font-size: 80%;
+    position: absolute;
+    bottom: 26%;
+    right: 42%;
+    height: 40%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 6%;
+    color: #fff;
+}
+#fillTo {
+    font-size: 80%;
+    position: absolute;
+    bottom: 26%;
+    right: 39%;
+    height: 40%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 6%;
+    color: #fff;
 }

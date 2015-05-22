@@ -3,7 +3,7 @@ body {
     z-index: 1;
 }
 #gameBox{
-    background: url("artwork/level_back.png");
+    background: url("../artwork/level_back.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -115,7 +115,7 @@ body {
 }
 #drainBox {
         float: left;
-    font-size: 90%;
+    font-size: 100%;
     width:20%;
     height: 12%;
     bottom: 0%;
@@ -123,7 +123,6 @@ body {
     position: absolute;
     padding-top: 5%;
     float: right;
-    border: dotted;
     z-index: 3;
     text-align: center;
 }
@@ -209,7 +208,24 @@ gateImg{
     width: 8%; 
     height: 100%;
 }
-#timer{
+#scoreBox{
+    position:  absolute;
+    left:  45%;
+    width:  25%;
+    height:  15%;
+    font-size: 90%;
+}
+#turnDisplay {
+    color: #fff;
+    float:  left;
+    font-size:90%;
+}
+#scoreDisplay {
+    color:  #fff;
+    float: left;
+    font-size:90%;
+    padding-left: 15%;
+}#timer{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -262,27 +278,6 @@ ant6{
     margin-left: 5%;
 }
 
-
-
-
-#scoreBox{
-    position:  absolute;
-    left:  45%;
-    width:  25%;
-    height:  15%;
-    font-size: 90%;
-}
-#turnDisplay {
-    color: #fff;
-    float:  left;
-    font-size:90%;
-}
-#scoreDisplay {
-    color:  #fff;
-    float: left;
-    font-size:90%;
-    padding-left: 15%;
-}
 #endScreen{
     position:  absolute;
     width:  75%;
@@ -380,7 +375,6 @@ ant6{
     padding-bottom: 1%;
     padding-left: 2%;
     padding-right: 2%;
-    z-index: 10;
 }
 
 #restart:hover{
