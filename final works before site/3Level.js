@@ -1037,7 +1037,6 @@ function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                                 image.src = imgName2;
                                 image2 = document.getElementById('tanker');
                                 image2.src = tank2;
-                                scoreCounterTank();
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
