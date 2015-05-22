@@ -3,7 +3,7 @@
             //plays the sound when clicked
             function click_Button() {
             audio.play();
-            window.location.replace("../index.html")
+            window.top.location.href = "http://waterworksgame.herobo.com/";
             }
 
 
@@ -273,7 +273,7 @@ function gameOver(){
     
     button.addEventListener("click", function() {
         audio.play();
-        window.location.replace("../index.html");
+        window.top.location.href = "http://waterworksgame.herobo.com/";
                                                 
                                                 })
     buttonRestart.addEventListener("click", function() {
@@ -372,7 +372,7 @@ function gameWin(){
     // Creates a Division to hold the star image.
     button.addEventListener("click", function() {
         audio.play();
-        window.location.replace("../index.html") })
+        window.top.location.href = "http://waterworksgame.herobo.com/" })
     buttonRestart.addEventListener("click", function() {
         audio.play();
         window.location.replace("2Level.html") })
