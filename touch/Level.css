@@ -3,15 +3,14 @@ body {
     z-index: 1;
 }
 #gameBox{
-    background: url("../artwork/level_back.png");
+    background: url("../artwork/level_back_tutorial.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-
     position: fixed;
-    top: 10%;
+    top: 0%;
     left: 0%;
-    height: 80%;
-    width: 90%;  
+    height: 100%;
+    width: 100%;  
     z-index: +2;
 }
 
@@ -81,22 +80,7 @@ body {
     padding-left: 5%;
     position: absolute;
 }
-#bucket3{
-    float: left;
-    height: 15%;
-    width: 15%;
-}
-#bucketNum3{
-    height: 120%;
-    width: 100%;
-}
-#bucketthree{
-    height: 50%;
-    width: 10%;
-    padding-top: 7.5%;
-    padding-left: 5%;
-    position: absolute;
-}
+
 #hose{
     width:15%;
     height: 20%;
@@ -332,7 +316,7 @@ ant6{
 
 #starImage{
     position: absolute;
-    top: 17%;
+    top: 20%;
     left: 20%;
     height: 60%;
     width: 60%;
@@ -422,8 +406,7 @@ ant6{
 #endScreen{
     position:  absolute;
     width:  75%;
-    left:  9%;
-    right: 9%;
+    left:  0%;
     height:  50%;
     top: 10%;
     border: 4em solid #E8981E;
