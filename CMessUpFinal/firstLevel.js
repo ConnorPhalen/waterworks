@@ -313,12 +313,14 @@ function testCollision(objectA, objectB){
             function emptyBucket(imgName) {
                 var data = event.dataTransfer.getData("text");
                 if (data == "bucket1" || data == "bucketone") {
+                    scoreCounter();
                     image = document.getElementById("bucketNum1");
                     image.src = imgName;
                     var max = document.getElementById("bucketnummax").innerHTML;
                     document.getElementById("bucketnumchange").innerHTML = "0";
                 }
                 if (data == "bucket2" || data == "bucketNum2") {
+                    scoreCounter();
                     image = document.getElementById("bucketNum2");
                     image.src = imgName;
                     var max = document.getElementById("bucketnummax2").innerHTML;
@@ -331,7 +333,6 @@ function testCollision(objectA, objectB){
             function moveWater(imgName, imgName2) {
                 var data = event.dataTransfer.getData("text");
                 if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
-                    scoreCounter();
                     // bucket2max parsed
                     var bucket2max = document.getElementById('bucketnummax2').innerHTML;
                     var bucket2max2 = parseInt(bucket2max);
@@ -349,7 +350,7 @@ function testCollision(objectA, objectB){
                         document.getElementById('bucketnumchange2').innerHTML = bucket2max2;
                         var originBucket = numChange2 - diff;
                         document.getElementById('bucketnumchange').innerHTML = originBucket;
-
+                        scoreCounter();
                         if (originBucket == zero) {
                             image = document.getElementById('bucketNum1');
                             image.src = imgName;
@@ -363,7 +364,7 @@ function testCollision(objectA, objectB){
                         image.src = imgName;
                         image2 = document.getElementById('bucketNum2');
                         image2.src = imgName2;
-
+                        scoreCounter();
                         if (both == zero) {
                             image = document.getElementById('bucketNum2');
                             image.src = imgName;
@@ -376,6 +377,7 @@ function testCollision(objectA, objectB){
                         image.src = imgName;
                         image2 = document.getElementById('bucketNum2');
                         image2.src = imgName2;
+                        scoreCounter();
                     }
                 }
                 if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
@@ -399,7 +401,7 @@ function testCollision(objectA, objectB){
                         document.getElementById('bucketnumchange2').innerHTML = originBucket;
                         image2 = document.getElementById('bucketNum1');
                         image2.src = imgName2;
-
+                        scoreCounter();
                         if (originBucket == zero) {
                             image = document.getElementById('bucketNum2');
                             image.src = imgName;
@@ -413,7 +415,7 @@ function testCollision(objectA, objectB){
                         image2.src = imgName2;
                         image = document.getElementById('bucketNum2');
                         image.src = imgName;
-
+                        scoreCounter();
                         if (both == zero) {
                             image2 = document.getElementById('bucketNum1');
                             image2.src = imgName
@@ -426,6 +428,7 @@ function testCollision(objectA, objectB){
                         image.src = imgName;
                         image2 = document.getElementById('bucketNum1');
                         image2.src = imgName2;
+                        scoreCounter();
                     }
                 }
                 if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
@@ -471,6 +474,7 @@ function testCollision(objectA, objectB){
                                 document.getElementById('bucketnumchange').innerHTML = bucketMax;
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
+                                scoreCounter();
                             }
                             if (newSum == zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
@@ -478,6 +482,7 @@ function testCollision(objectA, objectB){
                                 document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
+                                scoreCounter();
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
@@ -485,6 +490,7 @@ function testCollision(objectA, objectB){
                                 document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum1');
                                 image.src = imgName2;
+                                scoreCounter();
                             }
                         }
                     }
@@ -569,6 +575,7 @@ function testCollision(objectA, objectB){
                                 document.getElementById('bucketnumchange3').innerHTML = bucketMax;
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
+                                scoreCounter();
                             }
                             if (newSum == zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
@@ -576,6 +583,7 @@ function testCollision(objectA, objectB){
                                 document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
+                                scoreCounter();
                             }
                             if (newSum < zero) {
                                 document.getElementById('bucketnumchangeend').innerHTML = zero;
@@ -583,6 +591,7 @@ function testCollision(objectA, objectB){
                                 document.getElementById('endBucket').style.backgroundColor = '';
                                 image = document.getElementById('bucketNum3');
                                 image.src = imgName2;
+                                scoreCounter();
                             }
                         }
                     }
