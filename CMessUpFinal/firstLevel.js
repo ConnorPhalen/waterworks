@@ -172,12 +172,14 @@ function gameOver(){
     // Changes the src of the wave so it stops the .gif animation.
     document.getElementById('wave').src = "artwork/long_wave_1.png";
 }
+
 function winCheck(){
-var tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
-if(parseInt(tankMax) == parseInt(tankCurrent)){
-gameWin();
+    var tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
+    if(parseInt(tankMax) == parseInt(tankCurrent)){
+        gameWin();
     }
 }
+
 function gameWin(){
      // Creates the new Div that will show and hold the final scores.
     var gameOverDiv = document.createElement("div");
