@@ -1,32 +1,30 @@
 body {
-    background-color: darkblue;
+    background-color: aqua;
+    z-index: 1;
 }
 #gameBox{
     background: url("../artwork/level_back.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+
     position: fixed;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;  
+    top: 10%;
+    left: 0%;
+    height: 80%;
+    width: 90%;  
+    z-index: +2;
 }
+
 #quit{
     position: fixed;
-<<<<<<< HEAD
     top: 11%;
     right: 15%;
-=======
-    top: 2.5%;
-    right: 2.5%;
->>>>>>> bbceb6653021e3fd87929f2dad0bd2d11f80ed5c
     background-color: darkblue;
     border-radius: 11%;
     border-top: 3px solid blue;
     border-bottom: 3px solid black;
     border-left: 3px solid blue;
     border-right: 3px solid black;
-<<<<<<< HEAD
     box-shadow: 5px 5px 15px #888888;
     color: lightblue;
     font-family: 'Arial Black';
@@ -35,26 +33,12 @@ body {
     padding-bottom: 1%;
     padding-left: 2%;
     padding-right: 2%;    
-=======
-    color: lightblue;
-    font-family: 'Arial Black';
-    font-size: 99%;
-    padding-top: 0.5%;
-    padding-bottom: 0.5%;
-    padding-left: 2%;
-    padding-right: 2%;  
-   
->>>>>>> bbceb6653021e3fd87929f2dad0bd2d11f80ed5c
 }
 #quit:hover {
     border: 3px solid yellow;
     color: yellow;
     cursor: pointer;  
-<<<<<<< HEAD
     font-size: 100%;
-=======
-    font-size: 150%;
->>>>>>> bbceb6653021e3fd87929f2dad0bd2d11f80ed5c
     font-weight: bold;
 }
 #buckets {
@@ -84,15 +68,15 @@ body {
     width: 100%;
 }
 #bucketone {
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 10%;
     padding-top: 7.5%;
     padding-left: 5%;
     position: absolute;
 }
 #buckettwo {
-    height: 100%;
-    width: 100%;
+    height: 50%;
+    width: 10%;
     padding-top: 7.5%;
     padding-left: 5%;
     position: absolute;
@@ -116,11 +100,10 @@ body {
     width: 8%;
     height: 65%;
     margin-right: 32%;
-    z-index: -1
-            float: left;
-    font-size: 90%;
+    z-index: ;
+    float: left;
     top: 28%;
-    left:6%;
+    left:5%;
     position: absolute;
     
 }
@@ -128,12 +111,13 @@ body {
     width: 100%;
     height:100%;
     padding-bottom: 5%;
+    z-index: -2;
 }
 #drainBox {
         float: left;
     font-size: 90%;
     width:20%;
-    height: 15%;
+    height: 12%;
     bottom: 0%;
     left:0%;
     position: absolute;
@@ -145,11 +129,6 @@ body {
 #tanks{
     position: absolute;
     right: 0%;
-<<<<<<< HEAD
-    bottom: 20%;
-    height: 50%;
-    width: 20%;
-=======
     bottom: 12%;
     height: 40%;
     width: 15%;
@@ -158,30 +137,24 @@ body {
 #tanker{
     height: 100%;
     width: 100%;
->>>>>>> d174652dee43e7c20ba68b5a54a0e8509da89b37
 }
 #tankToFill{
     border: solid;
     width: 40%;
-    height: 50%;
-    bottom: 0%;
+    height: 80%;
+    bottom: 20%;
+    left: %;
+    text-align: center;
     position: absolute;
     
 }
 #tankAlreadyFull{
     border: solid;
-    background-color: aqua;
     width: 40%;
-<<<<<<< HEAD
     height: 80%;
     bottom: 20%;
     left: 55%;
     text-align: center;
-=======
-    height: 50%;
-    bottom: 0%;
-    left: 50%;
->>>>>>> bbceb6653021e3fd87929f2dad0bd2d11f80ed5c
     position: absolute;
 }
 #tunnel {
@@ -191,14 +164,20 @@ body {
     bottom: 0%;
     position: absolute;
 }
-#tunnelImg{
+tunnelImg{
   position: absolute;
     width: 100%;
     height: 50%;
-    bottom: 0%;
-    z-index:1 ;
-    
+    bottom: 0%;    
 }
+#tunnelImage{
+ position: absolute;
+    width: 100%;
+    height: 25%;
+    bottom: 0%;
+    z-index:1;   
+}
+
 #tunnelBackground{
    position: absolute;
     width: 101.7%;
@@ -216,7 +195,7 @@ body {
     position:  absolute;
     left:  45%;
     width:  25%;
-    font-size: 80%;
+    font-size: 90%;
     height:  15%;
     border: 2px solid black;
     background-color: #fff;
@@ -234,7 +213,10 @@ body {
 }
 #wave{
     position: absolute;
-    
+    left: -75%;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
 }
 #ants{
     position: absolute;
@@ -242,31 +224,37 @@ body {
     width: 100%;
 }
 #ant1{
-    margin-left: 10%;
+    position: absolute;
+    margin-left: 30%;
     height: 80%;
     width: 10%;
 }
 #ant2{
-    margin-left: 5%;
+    position: absolute;
+    margin-left: 55%;
     height: 80%;
     width: 10%;
 }
 #ant3{
-    margin-left: 5%;
+    position: absolute;
+    margin-left: 40%;
     height: 80%;
     width: 10%;
 }
 #ant4{
-    margin-left: 5%;
+    position: absolute;
+    margin-left: 65%;
     height: 80%;
     width: 10%;
 }
 #ant5{
-    margin-left: 5%;
+    position: absolute;
+    margin-left: 80%;
     height: 80%;
     width: 10%;
 }
 #ant6{
     height: 80%;
     width: 10%;
+    margin-left: 5%;
 }
