@@ -1,4 +1,4 @@
- // gets the sound
+// gets the sound
             var audio = new Audio('sounds/water_click.wav');
             //plays the sound when clicked
             function click_Button() {
@@ -18,8 +18,6 @@ var scoreStart = 1000;
 var turnsLowest = 3;
 var turnsMax = 7;
 var scoreReduction = 100;
-var tankMax = parseInt(document.getElementById('fillTo').innerHTML);
-var tankCurrent = 0;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -172,7 +170,7 @@ function gameOver(){
     clearInterval(mainTimer);
 
     // Changes the src of the wave so it stops the .gif animation.
-    document.getElementById('wave').src = "../artwork/long_wave_1.png";
+    document.getElementById('wave').src = "artwork/long_wave_1.png";
 }
 
 function gameWin(){
@@ -194,12 +192,12 @@ function gameWin(){
     starImage.id = "starImage";
     if (playerTurns > turnsLowest) {
         if (playerTurns < turnsMax) {
-            starImage.src = "../artwork/long_wave_1.png";
+            starImage.src = "artwork/long_wave_1.png";
         }else{
-            starImage.src = "../artwork/long_wave_2.png";
+            starImage.src = "artwork/long_wave_2.png";
         }
     }else{
-        starImage.src = "../artwork/long_wave_3.png";
+        starImage.src = "artwork/long_wave_3.png";
     }
 
     // Creates a paragraph element to hold and move the score valeus around.
@@ -220,7 +218,7 @@ function gameWin(){
     clearInterval(mainTimer);
 
     // Changes the src of the wave so it stops the .gif animation.
-    document.getElementById('wave').src = "../artwork/long_wave_1.png";
+    document.getElementById('wave').src = "artwork/long_wave_1.png";
 }
 
 
@@ -270,13 +268,7 @@ function testCollision(objectA, objectB){
 }
 //-------------------- End Collision code.
 
-//
-function winCheck(){
-    var tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
-    if(parseInt(tankMax) == parseInt(tankCurrent)){
-        gameWin();
-    }
-}
+
 
 
 
@@ -302,7 +294,7 @@ function winCheck(){
             function dragStart(event) {
                 event.preventDefault();
             }
-            //drag for first bucket
+            //drag for frist bucket
             function drag(event) {
                 event.dataTransfer.setData("text", event.target.id);
             }
@@ -314,14 +306,12 @@ function winCheck(){
             function emptyBucket(imgName) {
                 var data = event.dataTransfer.getData("text");
                 if (data == "bucket1" || data == "bucketone") {
-                    scoreCounter();
                     image = document.getElementById("bucketNum1");
                     image.src = imgName;
                     var max = document.getElementById("bucketnummax").innerHTML;
                     document.getElementById("bucketnumchange").innerHTML = "0";
                 }
                 if (data == "bucket2" || data == "bucketNum2") {
-                    scoreCounter();
                     image = document.getElementById("bucketNum2");
                     image.src = imgName;
                     var max = document.getElementById("bucketnummax2").innerHTML;
@@ -347,12 +337,11 @@ function winCheck(){
                     var diff2 = bucket2max - bucket2change;
                     var diff = parseInt(diff2);
                     var zero = "0";
-                    // if( document.getElementById('bucketnumchange').innerHTML == 0 || document.getElementById('bucketnumchange').innerHTML == document.getElementById('bucketnummax').innerHTML)
                     if (numChange2 > diff) {
                         document.getElementById('bucketnumchange2').innerHTML = bucket2max2;
                         var originBucket = numChange2 - diff;
                         document.getElementById('bucketnumchange').innerHTML = originBucket;
-                        scoreCounter();
+
                         if (originBucket == zero) {
                             image = document.getElementById('bucketNum1');
                             image.src = imgName;
@@ -366,7 +355,7 @@ function winCheck(){
                         image.src = imgName;
                         image2 = document.getElementById('bucketNum2');
                         image2.src = imgName2;
-                        scoreCounter();
+
                         if (both == zero) {
                             image = document.getElementById('bucketNum2');
                             image.src = imgName;
@@ -379,7 +368,6 @@ function winCheck(){
                         image.src = imgName;
                         image2 = document.getElementById('bucketNum2');
                         image2.src = imgName2;
-                        scoreCounter();
                     }
                 }
                 if ((data == "bucket2" || data == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
@@ -403,7 +391,6 @@ function winCheck(){
                         document.getElementById('bucketnumchange2').innerHTML = originBucket;
                         image2 = document.getElementById('bucketNum1');
                         image2.src = imgName2;
-                        scoreCounter();
 
                         if (originBucket == zero) {
                             image = document.getElementById('bucketNum2');
@@ -418,7 +405,6 @@ function winCheck(){
                         image2.src = imgName2;
                         image = document.getElementById('bucketNum2');
                         image.src = imgName;
-                        scoreCounter();
 
                         if (both == zero) {
                             image2 = document.getElementById('bucketNum1');
@@ -432,7 +418,6 @@ function winCheck(){
                         image.src = imgName;
                         image2 = document.getElementById('bucketNum1');
                         image2.src = imgName2;
-                        scoreCounter();
                     }
                 }
                 if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket1" || event.target.id == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax")) {
@@ -449,7 +434,156 @@ function winCheck(){
                     document.getElementById('bucketnumchange2').innerHTML = bucket2change2;
                 }
             }
-           /* function fillTank(){
-                
-                
-            }*/
+            
+            function fillTank(imgName, imgName2) {
+                var data = event.dataTransfer.getData("text");
+                var zero = "0";
+
+                if ((data == "bucket1" || data == "bucketone" || data == "bucketnumchange" || data == "bucketnummax") && (event.target.id == "endBucket" || event.target.id == "endBucketone" || event.target.id == "bucketnumchangeend")) {
+                    // parse the changing number of end bucket
+                    var tank = document.getElementById('bucketnumchangeend').innerHTML;
+                    var tankAmount = parseInt(tank);
+                    // parse changing number of bucket 1
+                    var bucket1Change = document.getElementById('bucketnumchange').innerHTML;
+                    var bucketChange = parseInt(bucket1Change);
+                    // parse max of bucket 1
+                    var bucket1Max = document.getElementById('bucketnummax').innerHTML;
+                    var bucketMax = parseInt(bucket1Max);
+                    // create the total for end bucket
+                    var total = tankAmount + bucketChange;
+                    if (bucketChange == zero) {
+                        if (tankAmount == zero) {
+                            document.getElementById('bucketnumchangeend').innerHTML = zero;
+                            document.getElementById('bucketnumchange').innerHTML = zero;
+                        }
+                        if (tankAmount > zero) {
+                            var newSum = tankAmount - bucketMax;
+                            if (newSum > zero) {
+                                document.getElementById('bucketnumchangeend').innerHTML = newSum;
+                                document.getElementById('bucketnumchange').innerHTML = bucketMax;
+                                image = document.getElementById('bucketNum1');
+                                image.src = imgName2;
+                            }
+                            if (newSum == zero) {
+                                document.getElementById('bucketnumchangeend').innerHTML = zero;
+                                document.getElementById('bucketnumchange').innerHTML = tankAmount;
+                                document.getElementById('endBucket').style.backgroundColor = '';
+                                image = document.getElementById('bucketNum1');
+                                image.src = imgName2;
+                            }
+                            if (newSum < zero) {
+                                document.getElementById('bucketnumchangeend').innerHTML = zero;
+                                document.getElementById('bucketnumchange').innerHTML = tankAmount;
+                                document.getElementById('endBucket').style.backgroundColor = '';
+                                image = document.getElementById('bucketNum1');
+                                image.src = imgName2;
+                            }
+                        }
+                    }
+                    if (bucketChange > zero) {
+                        document.getElementById('bucketnumchangeend').innerHTML = total;
+                        document.getElementById('bucketnumchange').innerHTML = zero;
+                        image = document.getElementById('bucketNum1');
+                        image.src = imgName;
+                        document.getElementById('endBucket').style.backgroundColor = 'LightBlue';
+                    }
+                }
+                if ((data == "bucket2" || data == "buckettwo" || data == "bucketnumchange2" || data == "bucketnummax2") && (event.target.id == "endBucket" || event.target.id == "endBucketone" || event.target.id == "bucketnumchangeend")) {
+                    // parse the changing number of end bucket
+                    var tank = document.getElementById('bucketnumchangeend').innerHTML;
+                    var tankAmount = parseInt(tank);
+                    // parse changing number of bucket 2
+                    var bucket2Change = document.getElementById('bucketnumchange2').innerHTML;
+                    var bucketChange = parseInt(bucket2Change);
+                    // parse max of bucket 2
+                    var bucket2Max = document.getElementById('bucketnummax2').innerHTML;
+                    var bucketMax = parseInt(bucket2Max);
+                    // create the total for end bucket
+                    var total = tankAmount + bucketChange;
+                    if (bucketChange == zero) {
+                        if (tankAmount == zero) {
+                            document.getElementById('bucketnumchangeend').innerHTML = zero;
+                            document.getElementById('bucketnumchange2').innerHTML = zero;
+                        }
+                        if (tankAmount > zero) {
+                            var newSum = tankAmount - bucketMax;
+                            if (newSum > zero) {
+                                document.getElementById('bucketnumchangeend').innerHTML = newSum;
+                                document.getElementById('bucketnumchange2').innerHTML = bucketMax;
+                                image = document.getElementById('bucketNum2');
+                                image.src = imgName2;
+                            }
+                            if (newSum == zero) {
+                                document.getElementById('bucketnumchangeend').innerHTML = zero;
+                                document.getElementById('bucketnumchange2').innerHTML = tankAmount;
+                                document.getElementById('endBucket').style.backgroundColor = '';
+                                image = document.getElementById('bucketNum2');
+                                image.src = imgName2;
+                            }
+                            if (newSum < zero) {
+                                document.getElementById('bucketnumchangeend').innerHTML = zero;
+                                document.getElementById('bucketnumchange2').innerHTML = tankAmount;
+                                document.getElementById('endBucket').style.backgroundColor = '';
+                                image = document.getElementById('bucketNum2');
+                                image.src = imgName2;
+                            }
+                        }
+                    }
+                    if (bucketChange > zero) {
+                        document.getElementById('bucketnumchangeend').innerHTML = total;
+                        document.getElementById('bucketnumchange2').innerHTML = zero;
+                        image = document.getElementById('bucketNum2');
+                        image.src = imgName;
+                        document.getElementById('endBucket').style.backgroundColor = 'LightBlue';
+                    }
+                }
+                if ((data == "bucket3" || data == "bucketthree" || data == "bucektnumchange3" || data == "bucketnummax3") && (event.target.id == "endBucket" || event.target.id == "endBucketone" || event.target.id == "bucketnumchangeend")) {
+                    // parse the changing number of end bucket
+                    var tank = document.getElementById('bucketnumchangeend').innerHTML;
+                    var tankAmount = parseInt(tank);
+                    // parse changing number of bucket 3
+                    var bucket3Change = document.getElementById('bucketnumchange3').innerHTML;
+                    var bucketChange = parseInt(bucket3Change);
+                    // parse max of bucket 3
+                    var bucket3Max = document.getElementById('bucketnummax3').innerHTML;
+                    var bucketMax = parseInt(bucket3Max);
+                    // create the total for end bucket
+                    var total = tankAmount + bucketChange;
+                    if (bucketChange == zero) {
+                        if (tankAmount == zero) {
+                            document.getElementById('bucketnumchangeend').innerHTML = zero;
+                            document.getElementById('bucketnumchange3').innerHTML = zero;
+                        }
+                        if (tankAmount > zero) {
+                            var newSum = tankAmount - bucketMax;
+                            if (newSum > zero) {
+                                document.getElementById('bucketnumchangeend').innerHTML = newSum;
+                                document.getElementById('bucketnumchange3').innerHTML = bucketMax;
+                                image = document.getElementById('bucketNum3');
+                                image.src = imgName2;
+                            }
+                            if (newSum == zero) {
+                                document.getElementById('bucketnumchangeend').innerHTML = zero;
+                                document.getElementById('bucketnumchange3').innerHTML = tankAmount;
+                                document.getElementById('endBucket').style.backgroundColor = '';
+                                image = document.getElementById('bucketNum3');
+                                image.src = imgName2;
+                            }
+                            if (newSum < zero) {
+                                document.getElementById('bucketnumchangeend').innerHTML = zero;
+                                document.getElementById('bucketnumchange3').innerHTML = tankAmount;
+                                document.getElementById('endBucket').style.backgroundColor = '';
+                                image = document.getElementById('bucketNum3');
+                                image.src = imgName2;
+                            }
+                        }
+                    }
+                    if (bucketChange > zero) {
+                        document.getElementById('bucketnumchangeend').innerHTML = total;
+                        document.getElementById('bucketnumchange3').innerHTML = zero;
+                        image = document.getElementById('bucketNum3');
+                        image.src = imgName;
+                        document.getElementById('endBucket').style.backgroundColor = 'LightBlue';
+                    }
+                }
+            }
