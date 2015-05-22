@@ -140,7 +140,6 @@ body {
     width: 100%;
 }
 #tankAlreadyFull{
-    border: solid;
     width: 40%;
     height: 80%;
     bottom: 20%;
@@ -150,7 +149,6 @@ body {
     
 }
 #endBucket {
-    border: solid;
     width: 40%;
     height: 80%;
     bottom: 20%;
@@ -158,16 +156,15 @@ body {
     text-align: center;
     position: absolute;
 }
-endBucketone {
+#endBucketone {
     font-size: 80%;
     position: absolute;
     width: 80px;
     height:  100px;
-    text-align: center;
     padding-top: 60px;
     color: #fff;
 }
-fillTo {
+#fillTo {
     
 }
 #tunnel {
