@@ -296,10 +296,18 @@ ant6{
     z-index: 2;
 }
 
+
+
+
+
+
+
 #gameEndDisplay{
+    position: absolute;
     font-size: 500%;
     font-weight: bold;
-    top:  0px;
+    top:  0%;
+    left: 0%;
 }
 
 #starDisplay{
@@ -307,5 +315,102 @@ ant6{
 }
 
 #starImage{
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    height: 60%;
+    width: 30%;
+}
+#winQuit{
+     position: fixed;
+    top: 75%;
+    right: 21%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#winQuit:hover{
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+#restart{
+    position: fixed;
+    top: 75%;
+    right: 30%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#restart:hover{
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#continues{
+        position: fixed;
+    top: 75%;
+    right: 40%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#continues:hover{
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#endScreen{
+    position: absolute;
+    top: 10%;
+    left: 0%;
+}
+
+#displayScore{
+    z-index: 1;
+    left: 0%;
     
 }
