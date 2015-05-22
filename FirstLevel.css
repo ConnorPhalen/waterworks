@@ -209,22 +209,6 @@ gateImg{
     width: 8%; 
     height: 100%;
 }
-
-#scoreBox{
-    position:  absolute;
-    left:  45%;
-    width:  25%;
-    font-size: 90%;
-    height:  15%;
-    border: 2px solid black;
-    background-color: #fff;
-}
-#turnDisplay{
-    font-size:80%;
-}
-#scoreDisplay{
-   font-size:80%;
-}
 #timer{
     position: absolute;
     height: 100%;
@@ -286,10 +270,19 @@ ant6{
     left:  45%;
     width:  25%;
     height:  15%;
-    border: 2px solid black;
-    background-color: #fff;
+    font-size: 90%;
 }
-
+#turnDisplay {
+    color: #fff;
+    float:  left;
+    font-size:90%;
+}
+#scoreDisplay {
+    color:  #fff;
+    float: left;
+    font-size:90%;
+    padding-left: 15%;
+}
 #endScreen{
     position:  absolute;
     width:  75%;
