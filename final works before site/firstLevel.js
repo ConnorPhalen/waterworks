@@ -148,7 +148,7 @@ function scoreCounter(){
     }
 }
 
-// For second bucket.
+// For first bucket.
 function scoreCounterTank1(){
     
     var buck1 = parseInt(document.getElementById("bucketnumchange").innerHTML);
