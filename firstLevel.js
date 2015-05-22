@@ -172,7 +172,12 @@ function gameOver(){
     // Changes the src of the wave so it stops the .gif animation.
     document.getElementById('wave').src = "artwork/long_wave_1.png";
 }
-
+function winCheck(){
+var tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
+if(parseInt(tankMax) == parseInt(tankCurrent)){
+gameWin();
+    }
+}
 function gameWin(){
      // Creates the new Div that will show and hold the final scores.
     var gameOverDiv = document.createElement("div");
@@ -324,6 +329,7 @@ function testCollision(objectA, objectB){
             function moveWater(imgName, imgName2) {
                 var data = event.dataTransfer.getData("text");
                 if ((data == "bucket1" || data == "bucketone" || event.target.id == "bucketnumchange" || event.target.id == "bucketnummax") && (event.target.id == "bucket2" || event.target.id == "buckettwo" || event.target.id == "bucketnumchange2" || event.target.id == "bucketnummax2")) {
+                    scoreCounter();
                     // bucket2max parsed
                     var bucket2max = document.getElementById('bucketnummax2').innerHTML;
                     var bucket2max2 = parseInt(bucket2max);
@@ -586,4 +592,5 @@ function testCollision(objectA, objectB){
                         document.getElementById('endBucket').style.backgroundColor = 'LightBlue';
                     }
                 }
+                winCheck();
             }
