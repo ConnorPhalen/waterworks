@@ -3,6 +3,7 @@
             //plays the sound when clicked
             function click_Button() {
             audio.play();
+            window.location.replace("../index.html")
             }
 
 
@@ -235,8 +236,16 @@ function gameOver(){
     document.getElementById('wave').src = "../artwork/wave_2.png";
     
     
-    button.addEventListener("click", function() { window.location.replace("../index.html") })
-    buttonRestart.addEventListener("click", function() { window.location.replace("1Level.html") })
+    button.addEventListener("click", function() {
+        audio.play();
+        window.location.replace("../index.html");
+                                                
+                                                })
+    buttonRestart.addEventListener("click", function() {
+        audio.play();
+        window.location.replace("1Level.html") 
+    
+    })
     
 }
 
@@ -326,9 +335,15 @@ function gameWin(){
     document.getElementById('wave').src = "../artwork/long_wave_1.png";
 
     // Creates a Division to hold the star image.
-    button.addEventListener("click", function() { window.location.replace("../index.html") })
-    buttonRestart.addEventListener("click", function() { window.location.replace("1Level.html") })
-    continueButton.addEventListener("click", function() { window.location.replace("2Level.html") })
+    button.addEventListener("click", function() {
+        audio.play();
+        window.location.replace("../index.html") })
+    buttonRestart.addEventListener("click", function() {
+        audio.play();
+        window.location.replace("1Level.html") })
+    continueButton.addEventListener("click", function() {
+        audio.play();
+        window.location.replace("2Level.html") })
 }
 
 
@@ -542,7 +557,7 @@ function testCollision(objectA, objectB){
 
 
 //fill tank function-----------------------------------------------------------------------------------------------------------------------------------------
-             function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
+function fillTank(imgName, imgName2, tank1, tank2, tank3, tank4) {
                 var data = event.dataTransfer.getData("text");
                 var zero = "0";
                 scoreCounterTank();
@@ -586,6 +601,7 @@ function testCollision(objectA, objectB){
                                 if (newSum == tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank1;
+                                    document.getElementById('endBucketone').style.right = "30%";
                                     gameWin();
                                 }
                             }
@@ -625,6 +641,7 @@ function testCollision(objectA, objectB){
                         if (total == tankermax) {
                             image2 = document.getElementById('tanker');
                             image2.src = tank1;
+                            document.getElementById('endBucketone').style.right = "30%";
                             gameWin();
                         }
                         if (total == zero) {
@@ -672,6 +689,7 @@ function testCollision(objectA, objectB){
                                 if (newSum == tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank1;
+                                    document.getElementById('endBucketone').style.right = "30%";
                                     gameWin();
                                 }
                             }
@@ -709,6 +727,7 @@ function testCollision(objectA, objectB){
                         if (total == tankermax) {
                             image2 = document.getElementById('tanker');
                             image2.src = tank1;
+                            document.getElementById('endBucketone').style.right = "30%";
                             gameWin();
                         }
                         if (total == zero) {
@@ -756,6 +775,7 @@ function testCollision(objectA, objectB){
                                 if (newSum == tankermax) {
                                     image2 = document.getElementById('tanker');
                                     image2.src = tank1;
+                                    document.getElementById('endBucketone').style.right = "30%";
                                     gameWin();
                                 }
                             }
@@ -795,6 +815,7 @@ function testCollision(objectA, objectB){
                         if (total == tankermax) {
                             image2 = document.getElementById('tanker');
                             image2.src = tank1;
+                            document.getElementById('endBucketone').style.right = "30%";
                             gameWin();
                         }
                         if (total == zero) {
