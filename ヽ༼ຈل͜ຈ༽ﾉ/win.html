@@ -38,49 +38,6 @@
                 width: 100%;
                 
             }
-        
-            #music {
-                
-                background: url('volume-empty.png') no-repeat;
-                background-size: 100% 100%;
-                display: inline;
-                position: absolute;
-                top: 15%;
-                height: 11%;
-                width: 80%;
-                
-            }
-        
-            #music .ui-slider-range-min {
-                
-                background: url('volume-full.png') no-repeat;
-                background-size: 100% 100%;
-                height: 100%;
-                
-            }
-        
-            #music .ui-slider-handle {
-                
-                background: url('volume-knob.png');
-                background-repeat: no-repeat;
-                background-size: 100% 100%;
-                margin-left: -8%;
-                position: absolute;
-                top: -44%;
-                width: 18%;
-                height: 250%;
-                
-            }
-            
-            #player {
-                
-                position: fixed;
-                top: 3%;
-                right: 0px;
-                height: 10%;
-                width: 10%;
-                
-            }
             
             @keyframes flash {
                 
@@ -105,13 +62,20 @@
             }
             
         </style>
-	    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	    <script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
-        <script type="text/javascript" src="options.js"></script>
+        <script>
+
+            onload = function () {
+
+                var bg_music = new Audio('../audio/bg_msc.mp3');
+
+                bg_music.play();
+
+            }
+
+        </script>
     </head>
     <body>
         <div id="mbar"></div>
-        <div id="player"><div id="music"></div></div>
-        <iframe id="fram_g" src=""></iframe>
+        <iframe id="fram_g" src="kpton.html"></iframe>
     </body>
 </html>
