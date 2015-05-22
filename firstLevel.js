@@ -9,9 +9,9 @@
 // Just sets up some initial variables.
 var time = 0;
 var timeOverflow = 0;
-var TIMEOVERFLOW_MAX = 2;
+var TIMEOVERFLOW_MAX = 8;
 var timerDelay = 33;
-var waveMovement = 4;
+var waveMovement = 1;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 var playerTurns = 0;
 var scoreStart = 1000;
@@ -62,7 +62,7 @@ function timeAdd(){
 // Grabs the picture ID, and its style value of left, and adds x px.
 function move() {
     wave = document.getElementById("wave").style.left;
-	wave = (parseInt(wave)+ waveMovement + "px");
+	wave = (parseInt(wave)+ waveMovement + "%");
 	document.getElementById("wave").style.left = wave;
 }
 
