@@ -146,14 +146,44 @@ function scoreCounter(){
 
 //
 function scoreCounterTank(){
-    playerTurns++;
+
+    var buck1 = parseInt(document.getElementById("bucketnumchange").innerHTML);
+    var buck2 = parseInt(document.getElementById("bucketnumchange2").innerHTML);
+    var tank = parseInt(document.getElementById("bucketnumchangeend").innerHTML);
+
+    var trythis1 = buck1 + tank;
+    var trythis2 = buck2 + tank;
+
+    switch(trythis1){
+
+        case 0:
+            break;
+
+        default:
+            playerTurns++;
+            scoreStart -= scoreReduction;
+            document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+            break;
+}
+
+ switch(trythis2){
+
+        case 0:
+            break;
+
+        default:
+            playerTurns++;
+            scoreStart -= scoreReduction;
+            document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+            break;
+}
 
     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
 
     // Takes away a bit of scroe for each turn the player takes.
-        scoreStart -= scoreReduction;
-        document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+    //    scoreStart -= scoreReduction;
+    //    document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
 
     // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
@@ -205,8 +235,10 @@ function gameWin(){
     starDisplay.id = 'starDisplay';
 
     // Creates the element for the star image, and checks to see how many stars the user should have.
-    var starImage = document.createElement("img");
+    var starImage = document.createElement("button");
     starImage.id = "starImage";
+    starImage.appendChild(document.createTextNode('I am button'));
+    starImage.onclick = alertz();
     if (playerTurns > turnsLowest) {
         if (playerTurns < turnsMax) {
             starImage.src = "../artwork/long_wave_1.png";
@@ -238,9 +270,9 @@ function gameWin(){
     document.getElementById('wave').src = "../artwork/long_wave_1.png";
 }
 
-
-
-
+function alertz(){
+    alert("POW!!!");
+}
 
 
 
@@ -614,5 +646,4 @@ function testCollision(objectA, objectB){
                         document.getElementById('endBucket').style.backgroundColor = 'LightBlue';
                     }
                 }
-                winCheck();
             }
