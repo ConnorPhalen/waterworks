@@ -29,13 +29,6 @@ function loseCheck(){
      }
 }
 
-function winCheck(){
-    var tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
-    if(parseInt(tankMax) == parseInt(tankCurrent)){
-        gameWin();
-    }
-}
-
 // Increments the timer and moves the image. timeOverflow basically slows things down by a division of X.
 // Want to make an algorithm to just plug-in numbers to get a set time. Would take a lot of math and time though.
 function timeAdd(){
@@ -167,7 +160,7 @@ function scoreCounterTank(){
 
     // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
-        gameOver();
+        gameWin();
         
     }
 }
@@ -200,6 +193,12 @@ function gameOver(){
     document.getElementById('wave').src = "artwork/long_wave_1.png";
 }
 
+function winCheck(){
+    var tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
+    if(parseInt(tankMax) == parseInt(tankCurrent)){
+        gameWin();
+    }
+}
 
 function gameWin(){
      // Creates the new Div that will show and hold the final scores.
