@@ -15,8 +15,11 @@ var waveMovement = 4;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
 var playerTurns = 0;
 var scoreStart = 1000;
-var TURNS_MAX = 0;
+var turnsLowest = 3;
+var turnsMax = 7;
 var scoreReduction = 100;
+var tankMax = parseInt(document.getElementById('fillTo').innerHTML);
+var tankCurrent = 0;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -88,6 +91,16 @@ function antCollision(wave, ant) {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 // Checks the values of the buckets, and adds turns if they pass the specififed cases.
 function scoreCounter(){
     
@@ -123,14 +136,13 @@ function scoreCounter(){
     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
 
-    // If player turns are above the max, then start to take away points with other turns.
-    if(playerTurns > TURNS_MAX){
+    // Takes away a bit of scroe for each turn the player takes.
         scoreStart -= scoreReduction;
         document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
-    }
+
     // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
-        gameOver();
+        gameWin();
         
     }
 }
@@ -173,6 +185,23 @@ function gameWin(){
     gameOverDisplay.id = 'gameEndDisplay';
     gameOverDisplay.innerHTML = "YOU WIN, M8!";
 
+    // Creates a Division to hold the star image.
+    var starDisplay = document.createElement("div");
+    starDisplay.id = 'starDisplay';
+
+    // Creates the element for the star image, and checks to see how many stars the user should have.
+    var starImage = document.createElement("img");
+    starImage.id = "starImage";
+    if (playerTurns > turnsLowest) {
+        if (playerTurns < turnsMax) {
+            starImage.src = "../artwork/long_wave_1.png";
+        }else{
+            starImage.src = "../artwork/long_wave_2.png";
+        }
+    }else{
+        starImage.src = "../artwork/long_wave_3.png";
+    }
+
     // Creates a paragraph element to hold and move the score valeus around.
     var finalScoreDisplay = document.createElement("p");
     finalScoreDisplay.id = 'displayScore';
@@ -182,7 +211,9 @@ function gameWin(){
     finalScoreDisplay.appendChild(scoreShow); 
 
     // Attaches the new elements together and then puts them on the document body to display.
+    starDisplay.appendChild(starImage);
     gameOverDiv.appendChild(finalScoreDisplay);
+    gameOverDiv.appendChild(starDisplay);
     document.body.appendChild(gameOverDiv);
 
     // Clears the wave timer to get rid of the wave movement.
@@ -191,6 +222,18 @@ function gameWin(){
     // Changes the src of the wave so it stops the .gif animation.
     document.getElementById('wave').src = "../artwork/long_wave_1.png";
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
 function testCollision(objectA, objectB){
@@ -226,6 +269,14 @@ function testCollision(objectA, objectB){
     }
 }
 //-------------------- End Collision code.
+
+//
+function winCheck(){
+    tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
+    if(parseInt(tankMax) == parseInt(tankCurrent)){
+        gameWin();
+    }
+}
 
 
 
