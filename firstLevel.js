@@ -272,7 +272,7 @@ function gameWin(){
             starImage.src = "artwork/star.png";
         }
     }else{
-        starImage.src = "artwork/star.png";
+        starImage.src = "artwork/smilestar.png";
     }
         // Creates the new Div that will show and hold the final scores.
     var gameOverDiv = document.createElement("div");
