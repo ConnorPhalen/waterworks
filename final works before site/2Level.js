@@ -335,9 +335,9 @@ function gameWin(){
     var starImage = document.createElement("img");
     starImage.id = "starImage";
     
-        if (playerTurns < turnsLowest) {
+       if (playerTurns <= turnsLowest) {
             starImage.src = "../artwork/3stars.png";
-        }else if(playerTurns < turnsMax && playerTurns > turnsLowest){
+        }else if(playerTurns <= turnsMax && playerTurns > turnsLowest){
             starImage.src = "../artwork/3stars1empty.png";
         }else{
         starImage.src = "../artwork/3star2empty.png";
