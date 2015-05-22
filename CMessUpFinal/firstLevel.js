@@ -18,8 +18,6 @@ var scoreStart = 1000;
 var turnsLowest = 3;
 var turnsMax = 7;
 var scoreReduction = 100;
-var tankMax = parseInt(document.getElementById('fillTo').innerHTML);
-var tankCurrent = 0;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
@@ -128,7 +126,8 @@ function scoreCounter(){
         default:
 
             playerTurns++;
-
+            scoreStart -= scoreReduction;
+            document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
             break;
 
     }
@@ -136,9 +135,7 @@ function scoreCounter(){
     // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
     document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
 
-    // Takes away a bit of scroe for each turn the player takes.
-        scoreStart -= scoreReduction;
-        document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+
 
     // If score is zero or lower, call gameOver();
     if(scoreStart < 1){
@@ -194,8 +191,7 @@ function gameOver(){
 }
 
 function winCheck(){
-    var tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
-    if(parseInt(tankMax) == parseInt(tankCurrent)){
+    if(parseInt(document.getElementById('bucketnumchangeend').innerHTML) == parseInt(document.getElementById('fillTo').innerHTML)){
         gameWin();
     }
 }
@@ -272,7 +268,7 @@ function testCollision(objectA, objectB){
     bID = document.getElementById(objectB).style;
 
     // Checks to see if the X position (from left of screen) is within the width of the second image.
-    if((parseInt(bID.left) - parseInt(aID.width)) - 1 < parseInt(aID.left) && parseInt(aID.left) < ((parseInt(bID.left) + parseInt(bID.width)) + 1)){
+    if((parseInt(bID.left) - parseInt(aID.width)) + 6 < parseInt(aID.left) && parseInt(aID.left) < ((parseInt(bID.left) + parseInt(bID.width)) + 1)){
         collideX = true;
     }else{
         collideX = false;
