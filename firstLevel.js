@@ -265,13 +265,11 @@ function gameWin(){
     var starImage = document.createElement("img");
     starImage.id = "starImage";
     
-    if (playerTurns > turnsLowest) {
         if (playerTurns < turnsLowest) {
             starImage.src = "artwork/3stars.png";
-        }else if(playerTurns<turnsMax){
+        }else if(playerTurns < turnsMax && playerTurns > turnsLowest){
             starImage.src = "artwork/3stars1empty.png";
-        }
-    }else{
+        }else{
         starImage.src = "artwork/3star2empty.png";
     }
         // Creates the new Div that will show and hold the final scores.

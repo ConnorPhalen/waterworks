@@ -307,7 +307,7 @@ ant6{
     font-size: 500%;
     font-weight: bold;
     top:  0%;
-    left: 0%;
+    left: 30%;
 }
 
 #starDisplay{
@@ -317,9 +317,9 @@ ant6{
 #starImage{
     position: absolute;
     top: 30%;
-    left: 35%;
+    left: 15%;
     height: 60%;
-    width: 30%;
+    width: 60%;
 }
 #winQuit{
      position: fixed;
