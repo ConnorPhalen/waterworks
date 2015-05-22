@@ -307,7 +307,8 @@ ant6{
     font-size: 500%;
     font-weight: bold;
     top:  0%;
-    left: 30%;
+    left: 5%;
+    text-align: center;
 }
 
 #starDisplay{
@@ -316,8 +317,8 @@ ant6{
 
 #starImage{
     position: absolute;
-    top: 30%;
-    left: 15%;
+    top: 20%;
+    left: 20%;
     height: 60%;
     width: 60%;
 }
@@ -406,7 +407,7 @@ ant6{
 #endScreen{
     position: absolute;
     top: 10%;
-    left: 0%;
+    left: 2%;
 }
 
 #displayScore{
