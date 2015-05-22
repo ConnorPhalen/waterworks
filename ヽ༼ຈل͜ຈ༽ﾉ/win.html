@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Water Works</title>
+        <style>
+            
+            body {
+                
+                background-color: darkblue;
+                
+            }
+            
+            #mbar {
+                
+                background-image: url("../artwork/splash.png");
+                background-position: 5% 45%;
+                background-repeat: no-repeat;
+                background-size: 10% 70%;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                height: 10%;
+                width: 100%;
+                animation-name: flash;
+                animation-duration: 5s;
+                
+            }
+            
+            #fram_g {
+                
+                border-style: none;
+                position: fixed;
+                top: 10%;
+                left: 0px; 
+                height: 90%;
+                width: 100%;
+                
+            }
+            
+            @keyframes flash {
+                
+                0% {
+                
+                    opacity: 0.01;
+                    
+                }
+            
+                60% {
+                
+                    opacity: 0.01;
+                    
+                }
+            
+                100% {
+                
+                    opacity: 1;
+                    
+                }
+            
+            }
+            
+        </style>
+        <script>
+
+            onload = function () {
+
+                var bg_music = new Audio('../audio/bg_msc.mp3');
+
+                bg_music.play();
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="mbar"></div>
+        <iframe id="fram_g" src="kpton.html"></iframe>
+    </body>
+</html>

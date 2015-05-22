@@ -14,7 +14,7 @@
             
             #mbar {
                 
-                background-image: url("../artwork/splash.png");
+                background-image: url("artwork/splash.png");
                 background-position: 5% 45%;
                 background-repeat: no-repeat;
                 background-size: 10% 70%;
@@ -23,7 +23,7 @@
                 left: 0px;
                 height: 10%;
                 width: 100%;
-                animation-name: flash;
+                animation-name: fin;
                 animation-duration: 5s;
                 
             }
@@ -41,7 +41,7 @@
         
             #music {
                 
-                background: url('volume-empty.png') no-repeat;
+                background: url('artwork/volume-empty.png') no-repeat;
                 background-size: 100% 100%;
                 display: inline;
                 position: absolute;
@@ -53,7 +53,7 @@
         
             #music .ui-slider-range-min {
                 
-                background: url('volume-full.png') no-repeat;
+                background: url('artwork/volume-full.png') no-repeat;
                 background-size: 100% 100%;
                 height: 100%;
                 
@@ -61,7 +61,7 @@
         
             #music .ui-slider-handle {
                 
-                background: url('volume-knob.png');
+                background: url('artwork/volume-knob.png');
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 margin-left: -8%;
@@ -82,7 +82,7 @@
                 
             }
             
-            @keyframes flash {
+            @keyframes fin {
                 
                 0% {
                 
@@ -108,18 +108,37 @@
 	    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	    <script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
         <script type="text/javascript" src="options.js"></script>
+        <script>
+
+            onload = function () {
+
+                if (window.location.href.match(/usn=/)) {
+
+                    var url = window.location.href;
+                    var name = url.split('=');
+
+                    alert("Welcome to Water Works, " + name[1] + "!");
+
+                } else {
+                    
+                    window.location.replace("http://www.waterworksgame.herobo.com");
+
+                }
+
+            }
+
+        </script>
+        <script>
+
+            // embed level number in address
+            // set attribute for iframe
+            // problem solved lol
+
+        </script>
     </head>
     <body>
         <div id="mbar"></div>
         <div id="player"><div id="music"></div></div>
-<<<<<<< HEAD
         <iframe id="fram_g" src=""></iframe>
-=======
-<<<<<<< HEAD
-        <iframe id="fram_g" src="http://www.google.com"></iframe>
-=======
-        <iframe id="fram_g" src="kpton.html"></iframe>
->>>>>>> 00888b1ba5e521510581d11129ecf16b37d7fbbf
->>>>>>> 85cfb63d0f65fd86cecf6ca7db26e52b0983a737
     </body>
 </html>

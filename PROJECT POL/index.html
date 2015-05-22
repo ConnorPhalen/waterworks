@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Water Works</title>
+        <style>
+            body {
+                /*include penis joke here.*/
+            }
+            #bg_img {
+                background-image: url("artwork/Background.jpg");
+                background-repeat: no-repeat;
+                background-size:  100% 100%;
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                height: 100%;
+                width: 100%;
+            }
+            #splash {
+                background-image: url("artwork/splash.png");
+                background-repeat: no-repeat;
+                background-size:  100% 100%;
+                position: absolute;
+                top: 15%;
+                left: 35%;
+                height: 20%;
+                width: 30%;
+                animation-name: fin_splash;
+                animation-duration: 5s;
+            }
+            #username {
+                font-family: 'Comic Sans MS';
+                font-size:100%;
+                position: absolute;
+                top: 45%;
+                left: 40%;
+                width: 20%;
+                animation-name: fin_text;
+                animation-duration: 7s;
+            }
+            @keyframes fin_splash {
+                0% {
+                    top: 10%;
+                    opacity: 0;
+                }
+                40% {
+                    top: 10%;
+                    opacity: 0;
+                }
+                100% {
+                    top: 15%;
+                    opacity: 1;
+                }
+            }
+            @keyframes fin_text {
+                0% {
+                    left: -40%;
+                    opacity: 0;
+                }
+                90% {
+                    height: 0%;
+                    width: 0%;
+                    opacity: 0;
+                }
+                100% {
+                    left: 40%;
+                    opacity: 1;
+                }
+            }
+        </style>
+        <script>
+
+            function checkString() {
+
+                var target = document.getElementById("username");
+
+                if (target.value.indexOf(" ") > -1) {
+
+                    target.value = "";
+
+                    signal();
+
+                }
+
+                signal();
+
+            }
+
+            function minLength() {
+
+                if (document.getElementById("username").value.length >= 3) {
+
+                    return true
+                }
+
+                return false;
+            }
+
+            function signal() {
+
+                var target = document.getElementById("username");
+
+                if (minLength() == true) {
+
+                    target.style.backgroundColor = "lightyellow";
+
+                } else {
+
+                    target.style.backgroundColor = "white";
+
+                }
+
+            }
+
+            function proceed() {
+
+                var target = document.getElementById("username");
+
+                if (minLength() == true) {
+
+                    var resp = confirm("Confirm username?");
+
+                    if (resp == true) {
+
+                        window.location.replace("play.html?usn=" + target.value);
+
+                    } else {
+
+                        target.value = "";
+
+                        signal();
+
+                    };
+
+                }
+
+            }
+
+            onload = function () {
+
+                var music = new Audio('audio/ryan_mod_hov.mp3');
+
+                music.volume = 0.5;
+                music.play();
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="bg_img"></div>
+        <div id="splash"></div>
+        <input type="text" id="username" name="username" placeholder="enter at yellow" maxlength="15" onkeyup="checkString  ()" onchange="proceed()" />
+
+    </body>
+</html>
