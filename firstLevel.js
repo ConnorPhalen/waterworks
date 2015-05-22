@@ -6,18 +6,24 @@
             }
 
 
-            // Just sets up some initial variables.
+// Just sets up some initial variables.
 var time = 0;
 var timeOverflow = 0;
 var TIMEOVERFLOW_MAX = 2;
 var timerDelay = 33;
 var waveMovement = 4;
 var mainTimer = setInterval(function () { timeAdd();}, timerDelay);
+var playerTurns = 0;
+var scoreStart = 1000;
+var turnsLowest = 3;
+var turnsMax = 7;
+var scoreReduction = 100;
 
 // Checks to see if time has reached its max limit.
 function loseCheck(){
-    if(testCollision('batman', 'gateImg')){
+    if(testCollision('wave', 'gateImg')){
         clearInterval(mainTimer);
+        gameOver();
      }
 }
 
@@ -26,34 +32,38 @@ function loseCheck(){
 function timeAdd(){
     time++;
     timeOverflow++;
+    // Basically acts as a divider to slow down movement of the wave.
     if(timeOverflow > TIMEOVERFLOW_MAX){
         timeOverflow = 0;
         move();
     }
     loseCheck();
-    // Tests for checking if there is a stickmanX, then run the collision code and delete them if true.
-    if(document.getElementById('stickman1') !== null){
-        stickmanCollision('batman', 'stickman1');
+    // Tests for checking if there is an antX, then run the collision code and delete them if true.
+    if(document.getElementById('ant1') !== null){
+        antCollision('wave', 'ant1');
     }
-    if(document.getElementById('stickman2') !== null){
-        stickmanCollision('batman', 'stickman2');
+    if(document.getElementById('ant2') !== null){
+        antCollision('wave', 'ant2');
     }
-    if(document.getElementById('stickman3') !== null){
-        stickmanCollision('batman', 'stickman3');
+    if(document.getElementById('ant3') !== null){
+        antCollision('wave', 'ant3');
     }
-    if(document.getElementById('stickman4') !== null){
-        stickmanCollision('batman', 'stickman4');
+    if(document.getElementById('ant4') !== null){
+        antCollision('wave', 'ant4');
     }
-    if(document.getElementById('stickman5') !== null){
-        stickmanCollision('batman', 'stickman5');
+    if(document.getElementById('ant5') !== null){
+        antCollision('wave', 'ant5');
+    }
+    if(document.getElementById('ant6') !== null){
+        antCollision('wave', 'ant6');
     }
 }
 
 // Grabs the picture ID, and its style value of left, and adds x px.
 function move() {
-    batman = document.getElementById("batman").style.left;
-	batman = (parseInt(batman)+ waveMovement + "px");
-	document.getElementById("batman").style.left = batman;
+    wave = document.getElementById("wave").style.left;
+	wave = (parseInt(wave)+ waveMovement + "px");
+	document.getElementById("wave").style.left = wave;
 }
 
 // Page loads, then starts a timer that moves and increments values with a delay of timerDelay.
@@ -67,16 +77,161 @@ function move() {
 }*/
 
 // Function to test out the "wave" and stickman collisions. If they do collide, the stickman will delete itself.
-function stickmanCollision(wave, stickman) {
+function antCollision(wave, ant) {
     waveID = wave;
-    stickmanID = stickman;
-    if(testCollision(waveID, stickmanID)){
-        stickmanID = document.getElementById(stickman);
-        if (stickmanID.parentNode) {
-            stickmanID.parentNode.removeChild(stickmanID);
+    antID = ant;
+    // Tests collision of wave against ant.
+    if(testCollision(waveID, antID)){
+        antID = document.getElementById(ant);
+        if (antID.parentNode) {
+            antID.parentNode.removeChild(antID);
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+// Checks the values of the buckets, and adds turns if they pass the specififed cases.
+function scoreCounter(){
+    
+    // Sets some variables to help keep the code cleaner.
+    var buck1 = parseInt(document.getElementById("bucketnumchange").innerHTML);
+    var buck2 = parseInt(document.getElementById("bucketnumchange2").innerHTML);
+    var buck1max = parseInt(document.getElementById("bucketnummax").innerHTML);
+    var buck2max = parseInt(document.getElementById("bucketnummax2").innerHTML);
+
+    // Sets variables to get the values of turns that do not count towards the total.
+    var trythis = buck1 + buck2;
+    var trythiscomp = buck1max + buck2max;
+
+    // By default, get add a turn, but if turn exception, do not increment.
+    switch(trythis) {
+
+        case 0:
+
+            break; 
+
+        case trythiscomp:
+
+            break;
+
+        default:
+
+            playerTurns++;
+
+            break;
+
+    }
+
+    // Displays the turns used, and score reduction (could get rid of it, or have it subtract from total level score and show).
+    document.getElementById("turnDisplay").innerHTML = "Turns Used: " + playerTurns;
+
+    // Takes away a bit of scroe for each turn the player takes.
+        scoreStart -= scoreReduction;
+        document.getElementById("scoreDisplay").innerHTML = "Score: " + scoreStart;
+
+    // If score is zero or lower, call gameOver();
+    if(scoreStart < 1){
+        gameWin();
+        
+    }
+}
+
+// Creates a new div on the screen to display the users end score and other values.
+function gameOver(){
+    // Creates the new Div that will show and hold the final scores.
+    var gameOverDiv = document.createElement("div");
+    gameOverDiv.id = 'endScreen';
+
+    // Creates a paragraph element to hold the game over message.
+    var gameOverDisplay = document.createElement("p");
+    gameOverDisplay.id = 'gameEndDisplay';
+    gameOverDisplay.innerHTML = "GAME OVER, FOOLS!";
+
+    // Creates a paragraph element to hold the score values around.
+    var finalScoreDisplay = document.createElement("p");
+    finalScoreDisplay.id = 'displayScore';
+    finalScoreDisplay.innerHTML = "Final Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".";
+
+    // Attaches the new elements together and then puts them on the document body to display.
+    gameOverDiv.appendChild(finalScoreDisplay);
+    gameOverDiv.appendChild(gameOverDisplay);
+    document.body.appendChild(gameOverDiv);
+
+    // Clears the wave timer to get rid of the wave movement.
+    clearInterval(mainTimer);
+
+    // Changes the src of the wave so it stops the .gif animation.
+    document.getElementById('wave').src = "artwork/long_wave_1.png";
+}
+
+function gameWin(){
+     // Creates the new Div that will show and hold the final scores.
+    var gameOverDiv = document.createElement("div");
+    gameOverDiv.id = 'endScreen';
+
+     // Creates a paragraph element to hold the game over message.
+    var gameOverDisplay = document.createElement("p");
+    gameOverDisplay.id = 'gameEndDisplay';
+    gameOverDisplay.innerHTML = "YOU WIN, M8!";
+
+    // Creates a Division to hold the star image.
+    var starDisplay = document.createElement("div");
+    starDisplay.id = 'starDisplay';
+
+    // Creates the element for the star image, and checks to see how many stars the user should have.
+    var starImage = document.createElement("img");
+    starImage.id = "starImage";
+    if (playerTurns > turnsLowest) {
+        if (playerTurns < turnsMax) {
+            starImage.src = "artwork/long_wave_1.png";
+        }else{
+            starImage.src = "artwork/long_wave_2.png";
+        }
+    }else{
+        starImage.src = "artwork/long_wave_3.png";
+    }
+
+    // Creates a paragraph element to hold and move the score valeus around.
+    var finalScoreDisplay = document.createElement("p");
+    finalScoreDisplay.id = 'displayScore';
+
+    // Creates a text node to write out the info, and attaches it to the paragraph element.
+    var scoreShow = document.createTextNode("Final Score: " + scoreStart + "\n Turns Used: " + playerTurns + ".");
+    finalScoreDisplay.appendChild(scoreShow); 
+
+    // Attaches the new elements together and then puts them on the document body to display.
+    starDisplay.appendChild(starImage);
+    gameOverDiv.appendChild(finalScoreDisplay);
+    gameOverDiv.appendChild(starDisplay);
+    document.body.appendChild(gameOverDiv);
+
+    // Clears the wave timer to get rid of the wave movement.
+    clearInterval(mainTimer);
+
+    // Changes the src of the wave so it stops the .gif animation.
+    document.getElementById('wave').src = "artwork/long_wave_1.png";
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ---------------------- Function to test out collisions between images. Best used with more rectangular images.
 function testCollision(objectA, objectB){
@@ -112,6 +267,8 @@ function testCollision(objectA, objectB){
     }
 }
 //-------------------- End Collision code.
+
+
 
 
 
