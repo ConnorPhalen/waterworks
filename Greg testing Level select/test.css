@@ -17,34 +17,7 @@ body {
 #quit{
     position: fixed;
     top: 11%;
-    left: 12%;
-    background-color: darkblue;
-    border-radius: 11%;
-    border-top: 3px solid blue;
-    border-bottom: 3px solid black;
-    border-left: 3px solid blue;
-    border-right: 3px solid black;
-    box-shadow: 5px 5px 15px #888888;
-    color: lightblue;
-    font-family: 'Arial Black';
-    font-size: 99%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    padding-left: 2%;
-    padding-right: 2%;  
-   
-}
-#quit:hover {
-    border: 3px solid yellow;
-    color: yellow;
-    cursor: pointer;  
-    font-size: 100%;
-    font-weight: bold;
-}
-#options{
-    position: fixed;
-    top: 11%;
-    right: 11%;
+    right: 15%;
     background-color: darkblue;
     border-radius: 11%;
     border-top: 3px solid blue;
@@ -60,7 +33,7 @@ body {
     padding-left: 2%;
     padding-right: 2%;    
 }
-#options:hover {
+#quit:hover {
     border: 3px solid yellow;
     color: yellow;
     cursor: pointer;  
@@ -179,7 +152,7 @@ body {
     width: 40%;
     height: 80%;
     bottom: 20%;
-    left: 60%;
+    left: 55%;
     text-align: center;
     position: absolute;
 }
