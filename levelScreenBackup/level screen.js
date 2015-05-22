@@ -272,7 +272,7 @@ function testCollision(objectA, objectB){
 
 //
 function winCheck(){
-    tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
+    var tankCurrent = parseInt(document.getElementById('bucketnumchangeend').innerHTML);
     if(parseInt(tankMax) == parseInt(tankCurrent)){
         gameWin();
     }
