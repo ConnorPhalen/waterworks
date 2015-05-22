@@ -30,42 +30,7 @@
                 width: 100%;
             }
 
-            #player1 {
-            width: 250px;
-            height: 45px;
-            position: relative;
-            display: inline;
-            margin: 0 auto;
-            top: 6px;
-			left: 450px;   
-        }
-        
-        #volume {
-            position: absolute;
-            left: -40px;
-            top: 13px;
-            margin: 0 auto;
-            display: inline;
-            height: 15px;
-            width: 250px;
-            background: url('volume-empty.png') no-repeat left top;
-        }
-        
-        #volume .ui-slider-range-min {
-            height: 13px;
-            width: 250px;
-            position: absolute;
-            background: url('volume-full.png') no-repeat left top;
-        }
-        
-        #volume .ui-slider-handle {
-            width: 27px;
-            height: 28px;
-            background: url('volume-knob.png') no-repeat left top;
-            position: absolute;
-            margin-left: -13px;
-            margin-top: -5px;
-        }
+            
         
         #player p {
             color: #FFCC00;
@@ -75,16 +40,15 @@
             font-size: 20px;
             display: inline;
         }
-        #player1 p{
-                top: -13px;
-            }
-        #fa {
+      
+        #player {
             width: 260px;
             height: 45px;
             position: relative;
             margin: 0 auto;
             top: 3px;
             left: 230px;
+           
         }
         
         #music {
@@ -142,14 +106,10 @@
         <iframe id="fram_g" src="level%20screen%20tests%20css.html"></iframe>
       
         <div id="player">
-		<div id="player1">
-			<p>Volume</p>
-			<div id="volume"></div>
-		</div>
-		<div id="fa">
+		
 			<p>Music</p>
 			<div id="music"></div>
-		</div>
+	
         </div>
     </body>
 </html>
