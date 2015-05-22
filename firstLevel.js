@@ -243,14 +243,6 @@ function gameOver(){
 
 
 
-var button = document.createElement("BUTTON");
-    var buttonText = document.createTextNode("Quit");
-    button.appendChild(buttonText);
-    document.body.appendChild(button);
-
-
-
-
 
 function gameWin(){
     
@@ -337,8 +329,6 @@ function gameWin(){
     document.getElementById('wave').src = "artwork/long_wave_1.png";
 
     // Creates a Division to hold the star image.
-
-
 }
 
 
