@@ -329,15 +329,14 @@ function gameWin(){
     document.getElementById('wave').src = "artwork/long_wave_1.png";
 
     // Creates a Division to hold the star image.
+    while(0<100){
+        
+        winQuit.onclick=index.html;
+
+        restart=firstLevel.html;
+
+    }
 }
-
-
-
-
-
-
-
-
 
 
 
