@@ -3,7 +3,7 @@ body {
     z-index: 1;
 }
 #gameBox{
-    background: url("artwork/level_back_tutorial.png");
+    background: url("../artwork/level_back.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -81,7 +81,22 @@ body {
     padding-left: 5%;
     position: absolute;
 }
-
+#bucket3{
+    float: left;
+    height: 15%;
+    width: 15%;
+}
+#bucketNum3{
+    height: 120%;
+    width: 100%;
+}
+#bucketthree{
+    height: 50%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 5%;
+    position: absolute;
+}
 #hose{
     width:15%;
     height: 20%;
@@ -115,7 +130,7 @@ body {
 }
 #drainBox {
         float: left;
-    font-size: 90%;
+    font-size: 100%;
     width:20%;
     height: 12%;
     bottom: 0%;
@@ -123,7 +138,6 @@ body {
     position: absolute;
     padding-top: 5%;
     float: right;
-    border: dotted;
     z-index: 3;
     text-align: center;
 }
@@ -138,6 +152,43 @@ body {
 #tanker{
     height: 100%;
     width: 100%;
+}
+#tankAlreadyFull{
+    width: 40%;
+    height: 80%;
+    bottom: 20%;
+    text-align: center;
+    position: absolute;
+}
+#endBucket {
+    width: 40%;
+    height: 70%;
+    bottom: 30%;
+    left: 55%;
+    text-align: center;
+    position: absolute;
+}
+#endBucketone {
+    font-size: 80%;
+    position: absolute;
+    bottom: 26%;
+    right: 42%;
+    height: 40%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 6%;
+    color: #fff;
+}
+#fillTo {
+    font-size: 80%;
+    position: absolute;
+    bottom: 26%;
+    right: 39%;
+    height: 40%;
+    width: 10%;
+    padding-top: 7.5%;
+    padding-left: 6%;
+    color: #fff;
 }
 #tunnel {
     width:  98%;
@@ -172,23 +223,24 @@ gateImg{
     width: 8%; 
     height: 100%;
 }
-
 #scoreBox{
     position:  absolute;
     left:  45%;
     width:  25%;
-    font-size: 90%;
     height:  15%;
-    border: 2px solid black;
-    background-color: #fff;
+    font-size: 90%;
 }
-#turnDisplay{
-    font-size:80%;
+#turnDisplay {
+    color: #fff;
+    float:  left;
+    font-size:90%;
 }
-#scoreDisplay{
-   font-size:80%;
-}
-#timer{
+#scoreDisplay {
+    color:  #fff;
+    float: left;
+    font-size:90%;
+    padding-left: 15%;
+}#timer{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -241,29 +293,6 @@ ant6{
     margin-left: 5%;
 }
 
-
-
-
-#scoreBox{
-    position:  absolute;
-    left:  45%;
-    width:  25%;
-    height:  15%;
-    border: 2px solid black;
-    background-color: #fff;
-}
-
-#endScreen{
-    position:  absolute;
-    width:  75%;
-    left:  10%;
-    height:  65%;
-    top: 10%;
-    border: 4em solid #E8981E;
-    background-color:  #FAB54C;
-    z-index: 5;
-}
-
 #displayScore{
     position: absolute;
     left:  100px;
@@ -277,10 +306,24 @@ ant6{
     z-index: 2;
 }
 
+
+
+
+
+
+#gameOverDiv{
+    z-index: 5;
+}
 #gameEndDisplay{
-    font-size: 500%;
+    position: absolute;
+    font-size: 400%;
     font-weight: bold;
-    top:  0px;
+    top:  -15%;
+    left: 5%;
+    height: 40%;
+    width: 80%;
+    text-align: center;
+    z-index: 3;
 }
 
 #starDisplay{
@@ -288,43 +331,109 @@ ant6{
 }
 
 #starImage{
-    
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    height: 60%;
+    width: 60%;
+}
+#winQuit{
+    position: fixed;
+    top: 58%;
+    right: 21%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#winQuit:hover{
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
+}
+#restart{
+    position: fixed;
+    top: 58%;
+    right: 30%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
-#tankAlreadyFull{
-    width: 40%;
-    height: 80%;
-    bottom: 20%;
-    text-align: center;
-    position: absolute;
+#restart:hover{
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
 }
-#endBucket {
-    width: 40%;
-    height: 70%;
-    bottom: 30%;
-    left: 55%;
-    text-align: center;
-    position: absolute;
+
+#continues{
+        position: fixed;
+    top: 58%;
+    right: 40%;
+    background-color: darkblue;
+    border-radius: 11%;
+    border-top: 3px solid blue;
+    border-bottom: 3px solid black;
+    border-left: 3px solid blue;
+    border-right: 3px solid black;
+    box-shadow: 5px 5px 15px #888888;
+    color: lightblue;
+    font-family: 'Arial Black';
+    font-size: 99%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    z-index:-1 ;
 }
-#endBucketone {
-    font-size: 80%;
-    position: absolute;
-    bottom: 26%;
-    right: 42%;
-    height: 40%;
-    width: 10%;
-    padding-top: 7.5%;
-    padding-left: 6%;
-    color: #fff;
+
+#continues:hover{
+    border: 3px solid yellow;
+    color: yellow;
+    cursor: pointer;  
+    font-size: 100%;
+    font-weight: bold;
 }
-#fillTo {
-    font-size: 80%;
-    position: absolute;
-    bottom: 26%;
-    right: 39%;
-    height: 40%;
-    width: 10%;
-    padding-top: 7.5%;
-    padding-left: 6%;
-    color: #fff;
+#endScreen{
+    position:  absolute;
+    width:  75%;
+    left:  0%;
+    height:  50%;
+    top: 10%;
+    border: 4em solid #E8981E;
+    background-color:  #FAB54C;
+    z-index: 2;
+}
+
+
+
+#displayScore{
+    z-index: 1;
+    left: 0%;
+    
 }
