@@ -5,11 +5,16 @@
         <meta charset="utf-8" />
         <title>Water Works</title>
         <style>
+            
             body {
+                
                 background-color: darkblue;
+                
             }
-            #ldbar {
-                background-image: url("../rsc/splash.png");
+            
+            #mbar {
+                
+                background-image: url("../artwork/splash.png");
                 background-position: 5% 45%;
                 background-repeat: no-repeat;
                 background-size: 12% 80%;
@@ -20,139 +25,93 @@
                 width: 100%;
                 animation-name: flash;
                 animation-duration: 5s;
+                
             }
+            
             #fram_g {
+                
                 border-style: none;
                 position: fixed;
                 top: 10%;
                 left: 0px; 
                 height: 90%;
                 width: 100%;
+                
             }
-
-            #player1 {
-            width: 250px;
-            height: 45px;
-            position: relative;
-            display: inline;
-            margin: 0 auto;
-            top: 6px;
-			left: 450px;
+        
+            #player {
+                
+                position: fixed;
+                top: 3%;
+                right: 0px;
+                height: 10%;
+                width: 10%;
+                
+            }
+        
+            #music {
+                
+                background: url('volume-empty.png') no-repeat;
+                background-size: 100% 100%;
+                display: inline;
+                position: absolute;
+                top: 15%;
+                height: 11%;
+                width: 80%;
+                
+            }
+        
+            #music .ui-slider-range-min {
+                
+                background: url('volume-full.png') no-repeat;
+                background-size: 100% 100%;
+                height: 100%;
+                
+            }
+        
+            #music .ui-slider-handle {
+                
+                background: url('volume-knob.png');
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                margin-left: -4%;
+                position: absolute;
+                top: -44%;
+                width: 18%;
+                height: 250%;
+                
+            }
             
-            
-        }
-        
-        #volume {
-            position: absolute;
-            left: -40px;
-            top: 13px;
-            margin: 0 auto;
-            display: inline;
-            height: 15px;
-            width: 250px;
-            background: url('volume-empty.png') no-repeat left top;
-        }
-        
-        #volume .ui-slider-range-min {
-            height: 13px;
-            width: 250px;
-            position: absolute;
-            background: url('volume-full.png') no-repeat left top;
-        }
-        
-        #volume .ui-slider-handle {
-            width: 27px;
-            height: 28px;
-            background: url('volume-knob.png') no-repeat left top;
-            position: absolute;
-            margin-left: -13px;
-            margin-top: -5px;
-        }
-        
-        #player p {
-            color: #FFCC00;
-            position: absolute;
-            top: -10px;
-            left: -150px;
-            font-size: 20px;
-            display: inline;
-        }
-        #player1 p{
-                top: -13px;
-            }
-        #fa {
-            width: 260px;
-            height: 45px;
-            position: relative;
-            margin: 0 auto;
-            top: 3px;
-            left: 230px;
-           
-        }
-        
-        #music {
-            position: absolute;
-            left: -55px;
-            top: 15px;
-            display:  inline;
-            margin: 0 auto;
-            height: 13px;
-            width: 250px;
-            background: url('volume-empty.png') no-repeat left top;
-        }
-        
-        #music .ui-slider-range-min {
-            height: 13px;
-            width: 250px;
-            position: absolute;
-            background: url('volume-full.png') no-repeat left top;
-        }
-        
-        #music .ui-slider-handle {
-            width: 27px;
-            height: 28px;
-            background: url('volume-knob.png');
-            background-repeat: no-repeat;
-            position: absolute;
-            margin-left: -13px;
-            margin-top: -5px;
-        }
-        #sound {
-                top: -50%;
-            }
-         
             @keyframes flash {
+                
                 0% {
+                
                     opacity: 0.01;
                     
                 }
+            
                 60% {
+                
                     opacity: 0.01;
                     
                 }
+            
                 100% {
+                
                     opacity: 1;
+                    
                 }
+            
             }
+            
         </style>
-         </style>
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
-    <script type="text/javascript" src="options.js"></script>
+	    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	    <script src="http://code.jquery.com/ui/jquery-ui-git.js"></script>
+        <script type="text/javascript" src="options.js"></script>
     </head>
     <body>
-        <div id="ldbar"></div>
+        <div id="mbar"></div>
+        <div id="player"><div id="music"></div></div>
         <iframe id="fram_g" src="level%20screen%20tests%20css.html"></iframe>
-      
-        <div id="player">
-		<div id="player1">
-			<p>Volume</p>
-			<div id="volume"></div>
-		</div>
-		<div id="fa">
-			<p>Music</p>
-			<div id="music"></div>
-		</div>
-        </div>
     </body>
 </html>
